@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
+		03EDA92D210487EA006CCB67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA92C210487EA006CCB67 /* ViewController.m */; };
+		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
+		03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA931210487EA006CCB67 /* Assets.xcassets */; };
+		03EDA935210487EA006CCB67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA933210487EA006CCB67 /* LaunchScreen.storyboard */; };
+		03EDA938210487EA006CCB67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA937210487EA006CCB67 /* main.m */; };
+		03EDA942210487EA006CCB67 /* BeachCleanupActivityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA941210487EA006CCB67 /* BeachCleanupActivityTests.m */; };
+		03EDA94D210487EA006CCB67 /* BeachCleanupActivityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA94C210487EA006CCB67 /* BeachCleanupActivityUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03EDA93E210487EA006CCB67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDA91D210487EA006CCB67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03EDA924210487EA006CCB67;
+			remoteInfo = BeachCleanupActivity;
+		};
+		03EDA949210487EA006CCB67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDA91D210487EA006CCB67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03EDA924210487EA006CCB67;
+			remoteInfo = BeachCleanupActivity;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03EDA925210487EA006CCB67 /* BeachCleanupActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeachCleanupActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03EDA928210487EA006CCB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		03EDA929210487EA006CCB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		03EDA92B210487EA006CCB67 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		03EDA92C210487EA006CCB67 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		03EDA92F210487EA006CCB67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03EDA931210487EA006CCB67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03EDA934210487EA006CCB67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		03EDA936210487EA006CCB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03EDA937210487EA006CCB67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		03EDA93D210487EA006CCB67 /* BeachCleanupActivityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeachCleanupActivityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03EDA941210487EA006CCB67 /* BeachCleanupActivityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeachCleanupActivityTests.m; sourceTree = "<group>"; };
+		03EDA943210487EA006CCB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03EDA948210487EA006CCB67 /* BeachCleanupActivityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeachCleanupActivityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03EDA94C210487EA006CCB67 /* BeachCleanupActivityUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeachCleanupActivityUITests.m; sourceTree = "<group>"; };
+		03EDA94E210487EA006CCB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03EDA922210487EA006CCB67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03EDA93A210487EA006CCB67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03EDA945210487EA006CCB67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03EDA91C210487EA006CCB67 = {
+			isa = PBXGroup;
+			children = (
+				03EDA927210487EA006CCB67 /* BeachCleanupActivity */,
+				03EDA940210487EA006CCB67 /* BeachCleanupActivityTests */,
+				03EDA94B210487EA006CCB67 /* BeachCleanupActivityUITests */,
+				03EDA926210487EA006CCB67 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		03EDA926210487EA006CCB67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03EDA925210487EA006CCB67 /* BeachCleanupActivity.app */,
+				03EDA93D210487EA006CCB67 /* BeachCleanupActivityTests.xctest */,
+				03EDA948210487EA006CCB67 /* BeachCleanupActivityUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03EDA927210487EA006CCB67 /* BeachCleanupActivity */ = {
+			isa = PBXGroup;
+			children = (
+				03EDA928210487EA006CCB67 /* AppDelegate.h */,
+				03EDA929210487EA006CCB67 /* AppDelegate.m */,
+				03EDA92B210487EA006CCB67 /* ViewController.h */,
+				03EDA92C210487EA006CCB67 /* ViewController.m */,
+				03EDA92E210487EA006CCB67 /* Main.storyboard */,
+				03EDA931210487EA006CCB67 /* Assets.xcassets */,
+				03EDA933210487EA006CCB67 /* LaunchScreen.storyboard */,
+				03EDA936210487EA006CCB67 /* Info.plist */,
+				03EDA937210487EA006CCB67 /* main.m */,
+			);
+			path = BeachCleanupActivity;
+			sourceTree = "<group>";
+		};
+		03EDA940210487EA006CCB67 /* BeachCleanupActivityTests */ = {
+			isa = PBXGroup;
+			children = (
+				03EDA941210487EA006CCB67 /* BeachCleanupActivityTests.m */,
+				03EDA943210487EA006CCB67 /* Info.plist */,
+			);
+			path = BeachCleanupActivityTests;
+			sourceTree = "<group>";
+		};
+		03EDA94B210487EA006CCB67 /* BeachCleanupActivityUITests */ = {
+			isa = PBXGroup;
+			children = (
+				03EDA94C210487EA006CCB67 /* BeachCleanupActivityUITests.m */,
+				03EDA94E210487EA006CCB67 /* Info.plist */,
+			);
+			path = BeachCleanupActivityUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03EDA924210487EA006CCB67 /* BeachCleanupActivity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03EDA951210487EA006CCB67 /* Build configuration list for PBXNativeTarget "BeachCleanupActivity" */;
+			buildPhases = (
+				03EDA921210487EA006CCB67 /* Sources */,
+				03EDA922210487EA006CCB67 /* Frameworks */,
+				03EDA923210487EA006CCB67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeachCleanupActivity;
+			productName = BeachCleanupActivity;
+			productReference = 03EDA925210487EA006CCB67 /* BeachCleanupActivity.app */;
+			productType = "com.apple.product-type.application";
+		};
+		03EDA93C210487EA006CCB67 /* BeachCleanupActivityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03EDA954210487EA006CCB67 /* Build configuration list for PBXNativeTarget "BeachCleanupActivityTests" */;
+			buildPhases = (
+				03EDA939210487EA006CCB67 /* Sources */,
+				03EDA93A210487EA006CCB67 /* Frameworks */,
+				03EDA93B210487EA006CCB67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03EDA93F210487EA006CCB67 /* PBXTargetDependency */,
+			);
+			name = BeachCleanupActivityTests;
+			productName = BeachCleanupActivityTests;
+			productReference = 03EDA93D210487EA006CCB67 /* BeachCleanupActivityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03EDA947210487EA006CCB67 /* BeachCleanupActivityUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03EDA957210487EA006CCB67 /* Build configuration list for PBXNativeTarget "BeachCleanupActivityUITests" */;
+			buildPhases = (
+				03EDA944210487EA006CCB67 /* Sources */,
+				03EDA945210487EA006CCB67 /* Frameworks */,
+				03EDA946210487EA006CCB67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03EDA94A210487EA006CCB67 /* PBXTargetDependency */,
+			);
+			name = BeachCleanupActivityUITests;
+			productName = BeachCleanupActivityUITests;
+			productReference = 03EDA948210487EA006CCB67 /* BeachCleanupActivityUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03EDA91D210487EA006CCB67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = JoshLin;
+				TargetAttributes = {
+					03EDA924210487EA006CCB67 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					03EDA93C210487EA006CCB67 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 03EDA924210487EA006CCB67;
+					};
+					03EDA947210487EA006CCB67 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 03EDA924210487EA006CCB67;
+					};
+				};
+			};
+			buildConfigurationList = 03EDA920210487EA006CCB67 /* Build configuration list for PBXProject "BeachCleanupActivity" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03EDA91C210487EA006CCB67;
+			productRefGroup = 03EDA926210487EA006CCB67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03EDA924210487EA006CCB67 /* BeachCleanupActivity */,
+				03EDA93C210487EA006CCB67 /* BeachCleanupActivityTests */,
+				03EDA947210487EA006CCB67 /* BeachCleanupActivityUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03EDA923210487EA006CCB67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03EDA935210487EA006CCB67 /* LaunchScreen.storyboard in Resources */,
+				03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */,
+				03EDA930210487EA006CCB67 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03EDA93B210487EA006CCB67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03EDA946210487EA006CCB67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03EDA921210487EA006CCB67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03EDA92D210487EA006CCB67 /* ViewController.m in Sources */,
+				03EDA938210487EA006CCB67 /* main.m in Sources */,
+				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03EDA939210487EA006CCB67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03EDA942210487EA006CCB67 /* BeachCleanupActivityTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03EDA944210487EA006CCB67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03EDA94D210487EA006CCB67 /* BeachCleanupActivityUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03EDA93F210487EA006CCB67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03EDA924210487EA006CCB67 /* BeachCleanupActivity */;
+			targetProxy = 03EDA93E210487EA006CCB67 /* PBXContainerItemProxy */;
+		};
+		03EDA94A210487EA006CCB67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03EDA924210487EA006CCB67 /* BeachCleanupActivity */;
+			targetProxy = 03EDA949210487EA006CCB67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		03EDA92E210487EA006CCB67 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03EDA92F210487EA006CCB67 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		03EDA933210487EA006CCB67 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03EDA934210487EA006CCB67 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03EDA94F210487EA006CCB67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		03EDA950210487EA006CCB67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03EDA952210487EA006CCB67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFHCXY3FVB;
+				INFOPLIST_FILE = BeachCleanupActivity/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoshLin.BeachCleanupActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		03EDA953210487EA006CCB67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFHCXY3FVB;
+				INFOPLIST_FILE = BeachCleanupActivity/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoshLin.BeachCleanupActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		03EDA955210487EA006CCB67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFHCXY3FVB;
+				INFOPLIST_FILE = BeachCleanupActivityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoshLin.BeachCleanupActivityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeachCleanupActivity.app/BeachCleanupActivity";
+			};
+			name = Debug;
+		};
+		03EDA956210487EA006CCB67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFHCXY3FVB;
+				INFOPLIST_FILE = BeachCleanupActivityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoshLin.BeachCleanupActivityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeachCleanupActivity.app/BeachCleanupActivity";
+			};
+			name = Release;
+		};
+		03EDA958210487EA006CCB67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFHCXY3FVB;
+				INFOPLIST_FILE = BeachCleanupActivityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoshLin.BeachCleanupActivityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BeachCleanupActivity;
+			};
+			name = Debug;
+		};
+		03EDA959210487EA006CCB67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFHCXY3FVB;
+				INFOPLIST_FILE = BeachCleanupActivityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoshLin.BeachCleanupActivityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BeachCleanupActivity;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03EDA920210487EA006CCB67 /* Build configuration list for PBXProject "BeachCleanupActivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03EDA94F210487EA006CCB67 /* Debug */,
+				03EDA950210487EA006CCB67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03EDA951210487EA006CCB67 /* Build configuration list for PBXNativeTarget "BeachCleanupActivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03EDA952210487EA006CCB67 /* Debug */,
+				03EDA953210487EA006CCB67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03EDA954210487EA006CCB67 /* Build configuration list for PBXNativeTarget "BeachCleanupActivityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03EDA955210487EA006CCB67 /* Debug */,
+				03EDA956210487EA006CCB67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03EDA957210487EA006CCB67 /* Build configuration list for PBXNativeTarget "BeachCleanupActivityUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03EDA958210487EA006CCB67 /* Debug */,
+				03EDA959210487EA006CCB67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03EDA91D210487EA006CCB67 /* Project object */;
+}
