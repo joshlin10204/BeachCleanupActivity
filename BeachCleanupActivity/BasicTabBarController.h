@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  BasicTabBarController.h
 //  BeachCleanupActivity
 //
-//  Created by JoshLin on 2018/7/22.
+//  Created by JoshLin on 2018/7/23.
 //  Copyright © 2018年 JoshLin. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BasicTabBarController : UITabBarController
 
 @end
-

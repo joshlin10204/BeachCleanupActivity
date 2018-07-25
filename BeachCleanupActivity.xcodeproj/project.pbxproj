@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
-		03EDA92D210487EA006CCB67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA92C210487EA006CCB67 /* ViewController.m */; };
 		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
 		03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA931210487EA006CCB67 /* Assets.xcassets */; };
 		03EDA935210487EA006CCB67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA933210487EA006CCB67 /* LaunchScreen.storyboard */; };
 		03EDA938210487EA006CCB67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA937210487EA006CCB67 /* main.m */; };
 		03EDA942210487EA006CCB67 /* BeachCleanupActivityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA941210487EA006CCB67 /* BeachCleanupActivityTests.m */; };
 		03EDA94D210487EA006CCB67 /* BeachCleanupActivityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA94C210487EA006CCB67 /* BeachCleanupActivityUITests.m */; };
+		03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */; };
+		03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA95E21061D7A006CCB67 /* BasicTabBar.m */; };
+		03EDA962210780E1006CCB67 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA961210780E1006CCB67 /* ActivityViewController.m */; };
+		03EDA9652107811F006CCB67 /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA9642107811F006CCB67 /* TicketsViewController.m */; };
+		03EDA96821078132006CCB67 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96721078132006CCB67 /* HomeViewController.m */; };
+		03EDA96B2107815B006CCB67 /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96A2107815B006CCB67 /* NoticeViewController.m */; };
+		03EDA96F21078179006CCB67 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96E21078179006CCB67 /* UserInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +44,6 @@
 		03EDA925210487EA006CCB67 /* BeachCleanupActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeachCleanupActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EDA928210487EA006CCB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03EDA929210487EA006CCB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		03EDA92B210487EA006CCB67 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		03EDA92C210487EA006CCB67 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		03EDA92F210487EA006CCB67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03EDA931210487EA006CCB67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03EDA934210487EA006CCB67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,20 @@
 		03EDA948210487EA006CCB67 /* BeachCleanupActivityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeachCleanupActivityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EDA94C210487EA006CCB67 /* BeachCleanupActivityUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeachCleanupActivityUITests.m; sourceTree = "<group>"; };
 		03EDA94E210487EA006CCB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03EDA95A21061D2C006CCB67 /* BasicTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTabBarController.h; sourceTree = "<group>"; };
+		03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTabBarController.m; sourceTree = "<group>"; };
+		03EDA95D21061D7A006CCB67 /* BasicTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTabBar.h; sourceTree = "<group>"; };
+		03EDA95E21061D7A006CCB67 /* BasicTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTabBar.m; sourceTree = "<group>"; };
+		03EDA960210780E1006CCB67 /* ActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		03EDA961210780E1006CCB67 /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		03EDA9632107811F006CCB67 /* TicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
+		03EDA9642107811F006CCB67 /* TicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
+		03EDA96621078132006CCB67 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		03EDA96721078132006CCB67 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		03EDA9692107815B006CCB67 /* NoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
+		03EDA96A2107815B006CCB67 /* NoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
+		03EDA96D21078179006CCB67 /* UserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		03EDA96E21078179006CCB67 /* UserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +121,20 @@
 			children = (
 				03EDA928210487EA006CCB67 /* AppDelegate.h */,
 				03EDA929210487EA006CCB67 /* AppDelegate.m */,
-				03EDA92B210487EA006CCB67 /* ViewController.h */,
-				03EDA92C210487EA006CCB67 /* ViewController.m */,
+				03EDA95A21061D2C006CCB67 /* BasicTabBarController.h */,
+				03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */,
+				03EDA95D21061D7A006CCB67 /* BasicTabBar.h */,
+				03EDA95E21061D7A006CCB67 /* BasicTabBar.m */,
+				03EDA960210780E1006CCB67 /* ActivityViewController.h */,
+				03EDA961210780E1006CCB67 /* ActivityViewController.m */,
+				03EDA9632107811F006CCB67 /* TicketsViewController.h */,
+				03EDA9642107811F006CCB67 /* TicketsViewController.m */,
+				03EDA96621078132006CCB67 /* HomeViewController.h */,
+				03EDA96721078132006CCB67 /* HomeViewController.m */,
+				03EDA9692107815B006CCB67 /* NoticeViewController.h */,
+				03EDA96A2107815B006CCB67 /* NoticeViewController.m */,
+				03EDA96D21078179006CCB67 /* UserInfoViewController.h */,
+				03EDA96E21078179006CCB67 /* UserInfoViewController.m */,
 				03EDA92E210487EA006CCB67 /* Main.storyboard */,
 				03EDA931210487EA006CCB67 /* Assets.xcassets */,
 				03EDA933210487EA006CCB67 /* LaunchScreen.storyboard */,
@@ -265,9 +295,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EDA92D210487EA006CCB67 /* ViewController.m in Sources */,
+				03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */,
 				03EDA938210487EA006CCB67 /* main.m in Sources */,
+				03EDA96B2107815B006CCB67 /* NoticeViewController.m in Sources */,
+				03EDA9652107811F006CCB67 /* TicketsViewController.m in Sources */,
+				03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */,
 				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
+				03EDA96821078132006CCB67 /* HomeViewController.m in Sources */,
+				03EDA962210780E1006CCB67 /* ActivityViewController.m in Sources */,
+				03EDA96F21078179006CCB67 /* UserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
