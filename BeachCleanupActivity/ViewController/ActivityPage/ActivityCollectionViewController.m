@@ -107,6 +107,28 @@ static NSString * const reuseIdentifier = @"Cell";
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
+//選中Cell (Touch Down)
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ActivityCollectionViewCell *cell = (ActivityCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    //縮小Cell動畫
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         cell.transform = CGAffineTransformMakeScale(0.96, 0.96);
+                     }];
+
+}
+//選中Cell取消 (Touch Down)
+- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    ActivityCollectionViewCell *cell = (ActivityCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    //還原Cell動畫
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         cell.transform = CGAffineTransformMakeScale(1, 1);
+                     }];
+}
+
 
 //Cell 點選轉場動畫
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
