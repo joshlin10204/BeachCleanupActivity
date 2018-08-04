@@ -8,16 +8,15 @@
 
 #import "BasicTabBarController.h"
 #import "BasicTabBar.h"
-#import "ActivityViewController.h"
+#import "ActivityCollectionViewController.h"
 #import "TicketsViewController.h"
 #import "HomeViewController.h"
 #import "NoticeViewController.h"
 #import "UserInfoViewController.h"
-
 @interface BasicTabBarController (){
     
     BasicTabBar * basicTabBar;
-    ActivityViewController * activityViewController;
+    ActivityCollectionViewController * activityCollectionViewController;
     TicketsViewController * ticketsViewController;
     HomeViewController * homeViewController;
     NoticeViewController * noticeViewController;
@@ -32,29 +31,30 @@
     [super viewDidLoad];
     
 
-    activityViewController = [[ActivityViewController alloc]init];
+    activityCollectionViewController = [[ActivityCollectionViewController alloc]init];
     ticketsViewController = [[TicketsViewController alloc]init];
     homeViewController = [[HomeViewController alloc]init];
     noticeViewController = [[NoticeViewController alloc]init];
     userInfoViewController = [[UserInfoViewController alloc]init];
     
+
     
-    [self setupChildVc:activityViewController
+    [self setupChildVc:activityCollectionViewController
                  title:@"Activity"
-                 image:@"TabBarItem_Activity_OffClick"
-         selectedImage:@"TabBarItem_Activity_OnClick"];
+                 image:@"TabBarItem_Activity_Unselected"
+         selectedImage:@"TabBarItem_Activity_Selected"];
     [self setupChildVc:ticketsViewController
                  title:@"Tickets"
-                 image:@"TabBarItem_Ticket_OffClick"
-         selectedImage:@"TabBarItem_Ticket_OnClick"];
+                 image:@"TabBarItem_Ticket_Unselected"
+         selectedImage:@"TabBarItem_Ticket_Selected"];
     [self setupChildVc:noticeViewController
                  title:@"Notice"
-                 image:@"TabBarItem_Notice_OffClick"
-         selectedImage:@"TabBarItem_Notice_OnClick"];
+                 image:@"TabBarItem_Notice_Unselected"
+         selectedImage:@"TabBarItem_Notice_Selected"];
     [self setupChildVc:userInfoViewController
                  title:@"UserInfo"
-                 image:@"TabBarItem_UserInfo_OffClick"
-         selectedImage:@"TabBarItem_UserInfo_OnClick"];
+                 image:@"TabBarItem_UserInfo_Unselected"
+         selectedImage:@"TabBarItem_UserInfo_Selected"];
     
     
     basicTabBar = [[BasicTabBar alloc]init];

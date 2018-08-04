@@ -1,27 +1,28 @@
 //
-//  NoticeViewController.m
+//  HomeViewController.m
 //  BeachCleanupActivity
 //
 //  Created by JoshLin on 2018/7/24.
 //  Copyright © 2018年 JoshLin. All rights reserved.
 //
 
-#import "NoticeViewController.h"
+#import "HomeViewController.h"
 
-@interface NoticeViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation NoticeViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"NoticeViewController");
-
 }
-
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"HomeViewController");
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

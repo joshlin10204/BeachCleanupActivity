@@ -1,5 +1,5 @@
 //
-//  ActivityViewController.h
+//  TicketsViewController.h
 //  BeachCleanupActivity
 //
 //  Created by JoshLin on 2018/7/24.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ActivityViewController : UIViewController
+@interface TicketsViewController : UIViewController
 
 @end
+

@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "TabBarItem_UserInfo_OffClick.png",
+      "filename" : "TestActivityImage.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "TabBarItem_UserInfo_OffClick@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "TabBarItem_UserInfo_OffClick@3x.png",
       "scale" : "3x"
     }
   ],

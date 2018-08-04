@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0305081C21156B57001B4207 /* PresentCellTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0305081B21156B57001B4207 /* PresentCellTransitionController.m */; };
 		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
 		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
 		03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA931210487EA006CCB67 /* Assets.xcassets */; };
@@ -16,11 +17,14 @@
 		03EDA94D210487EA006CCB67 /* BeachCleanupActivityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA94C210487EA006CCB67 /* BeachCleanupActivityUITests.m */; };
 		03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */; };
 		03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA95E21061D7A006CCB67 /* BasicTabBar.m */; };
-		03EDA962210780E1006CCB67 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA961210780E1006CCB67 /* ActivityViewController.m */; };
 		03EDA9652107811F006CCB67 /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA9642107811F006CCB67 /* TicketsViewController.m */; };
 		03EDA96821078132006CCB67 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96721078132006CCB67 /* HomeViewController.m */; };
 		03EDA96B2107815B006CCB67 /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96A2107815B006CCB67 /* NoticeViewController.m */; };
 		03EDA96F21078179006CCB67 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96E21078179006CCB67 /* UserInfoViewController.m */; };
+		03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA977210E084D006CCB67 /* ActivityCollectionViewCell.m */; };
+		03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */; };
+		03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA97E210E11CD006CCB67 /* ActivityViewController.m */; };
+		03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA984211347E4006CCB67 /* ActivityInfoData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0305081A21156B57001B4207 /* PresentCellTransitionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentCellTransitionController.h; sourceTree = "<group>"; };
+		0305081B21156B57001B4207 /* PresentCellTransitionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentCellTransitionController.m; sourceTree = "<group>"; };
 		03EDA925210487EA006CCB67 /* BeachCleanupActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeachCleanupActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EDA928210487EA006CCB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03EDA929210487EA006CCB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,8 +65,6 @@
 		03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTabBarController.m; sourceTree = "<group>"; };
 		03EDA95D21061D7A006CCB67 /* BasicTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTabBar.h; sourceTree = "<group>"; };
 		03EDA95E21061D7A006CCB67 /* BasicTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTabBar.m; sourceTree = "<group>"; };
-		03EDA960210780E1006CCB67 /* ActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
-		03EDA961210780E1006CCB67 /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		03EDA9632107811F006CCB67 /* TicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
 		03EDA9642107811F006CCB67 /* TicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
 		03EDA96621078132006CCB67 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 		03EDA96A2107815B006CCB67 /* NoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
 		03EDA96D21078179006CCB67 /* UserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		03EDA96E21078179006CCB67 /* UserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		03EDA976210E084D006CCB67 /* ActivityCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityCollectionViewCell.h; sourceTree = "<group>"; };
+		03EDA977210E084D006CCB67 /* ActivityCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCollectionViewCell.m; sourceTree = "<group>"; };
+		03EDA979210E0F41006CCB67 /* ActivityCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityCollectionViewController.h; sourceTree = "<group>"; };
+		03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCollectionViewController.m; sourceTree = "<group>"; };
+		03EDA97D210E11CD006CCB67 /* ActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		03EDA97E210E11CD006CCB67 /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		03EDA983211347E4006CCB67 /* ActivityInfoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityInfoData.h; sourceTree = "<group>"; };
+		03EDA984211347E4006CCB67 /* ActivityInfoData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityInfoData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,20 +133,9 @@
 			children = (
 				03EDA928210487EA006CCB67 /* AppDelegate.h */,
 				03EDA929210487EA006CCB67 /* AppDelegate.m */,
-				03EDA95A21061D2C006CCB67 /* BasicTabBarController.h */,
-				03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */,
-				03EDA95D21061D7A006CCB67 /* BasicTabBar.h */,
-				03EDA95E21061D7A006CCB67 /* BasicTabBar.m */,
-				03EDA960210780E1006CCB67 /* ActivityViewController.h */,
-				03EDA961210780E1006CCB67 /* ActivityViewController.m */,
-				03EDA9632107811F006CCB67 /* TicketsViewController.h */,
-				03EDA9642107811F006CCB67 /* TicketsViewController.m */,
-				03EDA96621078132006CCB67 /* HomeViewController.h */,
-				03EDA96721078132006CCB67 /* HomeViewController.m */,
-				03EDA9692107815B006CCB67 /* NoticeViewController.h */,
-				03EDA96A2107815B006CCB67 /* NoticeViewController.m */,
-				03EDA96D21078179006CCB67 /* UserInfoViewController.h */,
-				03EDA96E21078179006CCB67 /* UserInfoViewController.m */,
+				03EDA986211347F2006CCB67 /* Data */,
+				03EDA9872113482A006CCB67 /* Animation */,
+				03EDA98921135801006CCB67 /* ViewController */,
 				03EDA92E210487EA006CCB67 /* Main.storyboard */,
 				03EDA931210487EA006CCB67 /* Assets.xcassets */,
 				03EDA933210487EA006CCB67 /* LaunchScreen.storyboard */,
@@ -160,6 +161,57 @@
 				03EDA94E210487EA006CCB67 /* Info.plist */,
 			);
 			path = BeachCleanupActivityUITests;
+			sourceTree = "<group>";
+		};
+		03EDA97C210E0FBE006CCB67 /* ActivityPage */ = {
+			isa = PBXGroup;
+			children = (
+				03EDA979210E0F41006CCB67 /* ActivityCollectionViewController.h */,
+				03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */,
+				03EDA976210E084D006CCB67 /* ActivityCollectionViewCell.h */,
+				03EDA977210E084D006CCB67 /* ActivityCollectionViewCell.m */,
+				03EDA97D210E11CD006CCB67 /* ActivityViewController.h */,
+				03EDA97E210E11CD006CCB67 /* ActivityViewController.m */,
+			);
+			path = ActivityPage;
+			sourceTree = "<group>";
+		};
+		03EDA986211347F2006CCB67 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				03EDA983211347E4006CCB67 /* ActivityInfoData.h */,
+				03EDA984211347E4006CCB67 /* ActivityInfoData.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		03EDA9872113482A006CCB67 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				0305081A21156B57001B4207 /* PresentCellTransitionController.h */,
+				0305081B21156B57001B4207 /* PresentCellTransitionController.m */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		03EDA98921135801006CCB67 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				03EDA95A21061D2C006CCB67 /* BasicTabBarController.h */,
+				03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */,
+				03EDA95D21061D7A006CCB67 /* BasicTabBar.h */,
+				03EDA95E21061D7A006CCB67 /* BasicTabBar.m */,
+				03EDA97C210E0FBE006CCB67 /* ActivityPage */,
+				03EDA9632107811F006CCB67 /* TicketsViewController.h */,
+				03EDA9642107811F006CCB67 /* TicketsViewController.m */,
+				03EDA96621078132006CCB67 /* HomeViewController.h */,
+				03EDA96721078132006CCB67 /* HomeViewController.m */,
+				03EDA9692107815B006CCB67 /* NoticeViewController.h */,
+				03EDA96A2107815B006CCB67 /* NoticeViewController.m */,
+				03EDA96D21078179006CCB67 /* UserInfoViewController.h */,
+				03EDA96E21078179006CCB67 /* UserInfoViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,14 +348,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */,
+				03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */,
 				03EDA938210487EA006CCB67 /* main.m in Sources */,
 				03EDA96B2107815B006CCB67 /* NoticeViewController.m in Sources */,
 				03EDA9652107811F006CCB67 /* TicketsViewController.m in Sources */,
 				03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */,
 				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
+				0305081C21156B57001B4207 /* PresentCellTransitionController.m in Sources */,
+				03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */,
 				03EDA96821078132006CCB67 /* HomeViewController.m in Sources */,
-				03EDA962210780E1006CCB67 /* ActivityViewController.m in Sources */,
+				03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */,
 				03EDA96F21078179006CCB67 /* UserInfoViewController.m in Sources */,
+				03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

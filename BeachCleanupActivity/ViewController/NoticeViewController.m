@@ -1,23 +1,29 @@
 //
-//  UserInfoViewController.m
+//  NoticeViewController.m
 //  BeachCleanupActivity
 //
 //  Created by JoshLin on 2018/7/24.
 //  Copyright © 2018年 JoshLin. All rights reserved.
 //
 
-#import "UserInfoViewController.h"
+#import "NoticeViewController.h"
 
-@interface UserInfoViewController ()
+@interface NoticeViewController ()
 
 @end
 
-@implementation UserInfoViewController
+@implementation NoticeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"UserInfoViewController");
+    [self setTitle:@"Notice"];
+
+
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"NoticeViewController");
 
 }
 
