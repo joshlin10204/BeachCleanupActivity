@@ -12,7 +12,7 @@
 @property (strong, nonatomic) UIImageView *activityImage;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *subtitleLabel;
-@property (strong, nonatomic) UIButton *joinButton;
+@property (strong, nonatomic) UIButton *signupButton;
 
 
 

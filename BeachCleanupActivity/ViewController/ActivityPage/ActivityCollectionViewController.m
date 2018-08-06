@@ -99,7 +99,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
     ActivityViewController * activityViewController = [[ActivityViewController alloc]init];
-    activityViewController.activityInofo = [allActivityInfoArray objectAtIndex:indexPath.row];
+    activityViewController.activityInfo = [allActivityInfoArray objectAtIndex:indexPath.row];
     activityViewController.transitioningDelegate = self;
     UICollectionViewLayoutAttributes* attributes =  [collectionView layoutAttributesForItemAtIndexPath:indexPath];
     CGRect cellFrame = [self.collectionView convertRect:attributes.frame toView:self.view];

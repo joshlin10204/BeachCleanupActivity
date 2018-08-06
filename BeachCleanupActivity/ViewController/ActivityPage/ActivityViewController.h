@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ActivityViewController : UIViewController
-@property (strong,nonatomic)NSMutableDictionary *activityInofo;
+@property (strong,nonatomic)NSMutableDictionary *activityInfo;
 
 @property (strong,nonatomic)UIView *basicView;
 @property (strong,nonatomic)UIImageView *activityImageView;
@@ -19,6 +19,10 @@
 @property (strong,nonatomic)NSLayoutConstraint *viewRightConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *viewBottomConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *imageHeightConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *infoBasicViewHeightConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *titleHeightConstraint;
+
+
 
 
 

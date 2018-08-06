@@ -63,7 +63,7 @@
     [self.contentView addSubview:infoBasicView];
     [self initTitleLabel];
     [self initSubtitleLabel];
-    [self initJoinButton];
+    [self initSignupButton];
 }
 
 - (void)initTitleLabel{
@@ -91,21 +91,21 @@
     [infoBasicView addSubview:self.subtitleLabel];
     
 }
-- (void)initJoinButton{
+- (void)initSignupButton{
     CGFloat width = infoBasicView.frame.size.width * 0.25;
     CGFloat height = infoBasicView.frame.size.height * 0.5;
     CGFloat x = infoBasicView.frame.size.width - infoBasicView.frame.size.width * 0.05 - width  ;
     CGFloat y = infoBasicView.frame.size.height /2 - height/2;
-    self.joinButton = [[UIButton alloc]initWithFrame:CGRectMake(x, y, width, height)];
-    self.joinButton.layer.cornerRadius = 20;
-    self.joinButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
-    [self.joinButton setTitle:@"報名" forState:UIControlStateNormal];
-    [self.joinButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.joinButton.backgroundColor = [UIColor colorWithRed:(255.0f/255.0f) green:(117.0f/255.0f) blue:(134.0f/255.0f) alpha:1];
-    [self.joinButton addTarget:self
+    self.signupButton = [[UIButton alloc]initWithFrame:CGRectMake(x, y, width, height)];
+    self.signupButton.layer.cornerRadius = 20;
+    self.signupButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
+    [self.signupButton setTitle:@"報名" forState:UIControlStateNormal];
+    [self.signupButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.signupButton.backgroundColor = [UIColor colorWithRed:(255.0f/255.0f) green:(117.0f/255.0f) blue:(134.0f/255.0f) alpha:1];
+    [self.signupButton addTarget:self
                         action:@selector(onClickJoinBtn:)
               forControlEvents:UIControlEventTouchUpInside];
-    [infoBasicView addSubview:self.joinButton];
+    [infoBasicView addSubview:self.signupButton];
     
 }
 - (void)onClickJoinBtn:(id)sender{

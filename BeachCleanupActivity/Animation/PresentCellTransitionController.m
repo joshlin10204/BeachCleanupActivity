@@ -27,18 +27,23 @@
     toViewController.basicView.layer.cornerRadius = 14 ;
     toViewController.activityImageView.contentMode = UIViewContentModeScaleToFill;
     toViewController.imageHeightConstraint.constant = self.cellFrame.size.height * 0.7 ;
+    toViewController.infoBasicViewHeightConstraint.constant = self.cellFrame.size.height *0.3;
     toViewController.viewTopConstraint.constant = self.cellFrame.origin.y  ;
     toViewController.viewLeftConstraint.constant = self.cellFrame.origin.x ;
     toViewController.viewRightConstraint.constant = -(bounds.size.width - self.cellFrame.origin.x - self.cellFrame.size.width);
     toViewController.viewBottomConstraint.constant = -(bounds.size.height - self.cellFrame.origin.y - self.cellFrame.size.height);
+    NSLog(@"Josh 1 :%f",toViewController.infoBasicViewHeightConstraint.constant);
+
     [toViewController.view.layer layoutIfNeeded];
     
     
-    CGFloat imageHeight = toViewController.view.frame.size.height*0.5;
+    CGFloat imageHeight = toViewController.view.frame.size.height * 0.5;
+    CGFloat infoBasicViewHeight = toViewController.view.frame.size.height * 0.3;
     UIViewPropertyAnimator * animator =[[UIViewPropertyAnimator alloc]initWithDuration:0.6
                                                                           dampingRatio:0.7
                                                                             animations:^{
                                                                                 toViewController.imageHeightConstraint.constant = imageHeight;
+                                                                                toViewController.infoBasicViewHeightConstraint.constant =infoBasicViewHeight;
                                                                                 toViewController.viewTopConstraint.constant = 0 ;
                                                                                 toViewController.viewLeftConstraint.constant = 0 ;
                                                                                 toViewController.viewRightConstraint.constant = 0;
@@ -48,10 +53,10 @@
                                                                                 [toViewController.view.layer layoutIfNeeded];
                                                                     
                                                                             }];
-    [animator startAnimation];
-    [animator addCompletion:^(UIViewAnimatingPosition finalPosition){
-        [transitionContext completeTransition:YES];
-    }];
+//    [animator startAnimation];
+//    [animator addCompletion:^(UIViewAnimatingPosition finalPosition){
+//        [transitionContext completeTransition:YES];
+//    }];
 
     
 }
