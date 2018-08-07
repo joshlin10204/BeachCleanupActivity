@@ -31,19 +31,29 @@
     CGFloat infoBasicViewHeight = self.cellFrame.size.height *0.3;
     CGFloat titleLabelHeight = infoBasicViewHeight *0.6;
     CGFloat subtitleLabelHeight = infoBasicViewHeight *0.3;
+    CGFloat labelWidth = self.cellFrame.size.width *0.6;
+    CGFloat signupBtnWidth = self.cellFrame.size.width *0.25;
+    CGFloat signupBtnHeight= infoBasicViewHeight *0.5;
+
     
     
     activityView.basicView.layer.cornerRadius = 14 ;
     activityView.activityImageView.contentMode = UIViewContentModeScaleToFill;
     activityView.imageHeightConstraint.constant =  imageHeight;
     activityView.infoBasicViewHeightConstraint.constant = infoBasicViewHeight;
-    activityView.titleHeightConstraint.constant = titleLabelHeight;
-    activityView.subtitleHeightConstraint.constant = subtitleLabelHeight;
-    
+   
     activityView.titleLeftConstraint.constant = self.cellFrame.size.width*0.05;
-    activityView.titleRightConstraint.constant =  - self.cellFrame.size.width*0.4;
+    activityView.titleHeightConstraint.constant = titleLabelHeight;
+    activityView.titleWidthConstraint.constant =  labelWidth;
+    
     activityView.subtitleLeftConstraint.constant = self.cellFrame.size.width*0.05;
-    activityView.subtitleRightConstraint.constant =  - self.cellFrame.size.width*0.4;
+    activityView.subtitleHeightConstraint.constant = subtitleLabelHeight;
+    activityView.subtitleWidthConstraint.constant = labelWidth;
+    
+    activityView.signupBtnRightConstraint.constant = - self.cellFrame.size.width*0.05;
+    activityView.signupBtnHeightConstraint.constant = signupBtnHeight;
+    activityView.signupBtneWidthConstraint.constant = signupBtnWidth;
+    
 
     activityView.basicViewTopConstraint.constant = self.cellFrame.origin.y  ;
     activityView.basicViewLeftConstraint.constant = self.cellFrame.origin.x ;
@@ -55,7 +65,7 @@
 
 - (void) presentTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext toActivityView:(ActivityViewController*)activityView{
     
-    CGFloat imageHeight = activityView.view.frame.size.height * 0.5;
+    CGFloat imageHeight = activityView.view.frame.size.height * 0.4;
     UIViewPropertyAnimator * animator =[[UIViewPropertyAnimator alloc]initWithDuration:0.6
                                                                           dampingRatio:0.7
                                                                             animations:^{

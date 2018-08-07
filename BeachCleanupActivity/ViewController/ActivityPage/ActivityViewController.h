@@ -19,13 +19,15 @@
 @property (strong,nonatomic)NSLayoutConstraint *basicViewBottomConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *imageHeightConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *infoBasicViewHeightConstraint;
-@property (strong,nonatomic)NSLayoutConstraint *titleHeightConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *titleLeftConstraint;
-@property (strong,nonatomic)NSLayoutConstraint *titleRightConstraint;
-@property (strong,nonatomic)NSLayoutConstraint *subtitleHeightConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *titleHeightConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *titleWidthConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *subtitleLeftConstraint;
-@property (strong,nonatomic)NSLayoutConstraint *subtitleRightConstraint;
-
+@property (strong,nonatomic)NSLayoutConstraint *subtitleHeightConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *subtitleWidthConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *signupBtnRightConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *signupBtnHeightConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *signupBtneWidthConstraint;
 
 
 

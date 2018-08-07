@@ -15,6 +15,7 @@
     UILabel *titleLabel;
     UILabel *subtitleLabel;
     UIButton *signupButton;
+    UIButton *closeButton;
 }
 
 @end
@@ -31,6 +32,8 @@
     [self initInfoBasicView];
     [self initTiltleLabel];
     [self initSubtitleLabel];
+    [self initSignupButton];
+    [self initCloseButton];
 }
 
 - (void)initBasicView{
@@ -127,14 +130,15 @@
     
     NSLayoutConstraint *labelTopConstraint = [titleLabel.topAnchor constraintEqualToAnchor:infoBasicView.topAnchor];
     self.titleLeftConstraint = [titleLabel.leftAnchor constraintEqualToAnchor:infoBasicView.leftAnchor];
-    self.titleRightConstraint = [titleLabel.rightAnchor constraintEqualToAnchor:infoBasicView.rightAnchor];
     self.titleHeightConstraint = [titleLabel.heightAnchor constraintEqualToConstant:infoBasicView.frame.size.height];
+    self.titleWidthConstraint = [titleLabel.widthAnchor constraintEqualToConstant:infoBasicView.frame.size.width];
+
     
     labelTopConstraint.active = YES;
     self.titleLeftConstraint.active = YES;
-    self.titleRightConstraint.active = YES;
     self.titleHeightConstraint.active = YES;
-    
+    self.titleWidthConstraint.active = YES;
+
     
 }
 - (void)initSubtitleLabel{
@@ -153,26 +157,92 @@
     
     NSLayoutConstraint *labelTopConstraint = [subtitleLabel.topAnchor constraintEqualToAnchor:titleLabel.bottomAnchor];
     self.subtitleLeftConstraint = [subtitleLabel.leftAnchor constraintEqualToAnchor:infoBasicView.leftAnchor];
-    self.subtitleRightConstraint = [subtitleLabel.rightAnchor constraintEqualToAnchor:infoBasicView.rightAnchor];
     self.subtitleHeightConstraint = [subtitleLabel.heightAnchor constraintEqualToConstant:infoBasicView.frame.size.height];
-    
+    self.subtitleWidthConstraint = [subtitleLabel.widthAnchor constraintEqualToConstant:infoBasicView.frame.size.width];
+
     
     labelTopConstraint.active = YES;
     self.subtitleLeftConstraint.active = YES;
-    self.subtitleRightConstraint.active = YES;
     self.subtitleHeightConstraint.active = YES;
-    
-    
+    self.subtitleWidthConstraint.active = YES;
+
 }
 
 -(void)initSignupButton{
+    signupButton = [[UIButton alloc]init];
+    signupButton.backgroundColor = [UIColor colorWithRed:(255.0f/255.0f)
+                                                   green:(117.0f/255.0f)
+                                                    blue:(134.0f/255.0f)
+                                                   alpha:1];
+    signupButton.translatesAutoresizingMaskIntoConstraints = NO;
+    signupButton.layer.cornerRadius = 20;
+    signupButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
+    [signupButton setTitle:@"報名" forState:UIControlStateNormal];
+    [signupButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [signupButton addTarget:self
+                     action:@selector(onClickSignupBtn:)
+           forControlEvents:UIControlEventTouchUpInside];
+    [infoBasicView addSubview:signupButton];
+    
+    NSLayoutConstraint *buttonTopConstraint = [NSLayoutConstraint constraintWithItem:signupButton
+                                                                           attribute:NSLayoutAttributeCenterY
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:infoBasicView
+                                                                           attribute:NSLayoutAttributeCenterY
+                                                                          multiplier:1
+                                                                            constant:0];
+    self.signupBtnRightConstraint = [signupButton.rightAnchor constraintEqualToAnchor:infoBasicView.rightAnchor];
+    self.signupBtnHeightConstraint = [signupButton.heightAnchor constraintEqualToConstant:infoBasicView.frame.size.height];
+    self.signupBtneWidthConstraint= [signupButton.widthAnchor constraintEqualToConstant:infoBasicView.frame.size.width];
+
+    buttonTopConstraint.active = YES;
+    self.signupBtnRightConstraint.active = YES;
+    self.signupBtnHeightConstraint.active = YES;
+    self.signupBtneWidthConstraint.active = YES;
+    
+
+    
+}
+- (void)onClickSignupBtn:(id)sender{
+    NSLog(@"onClickSignupBtn");
     
 }
 
 - (void)initCloseButton{
     
+    closeButton = [[UIButton alloc]init];
+    closeButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [closeButton setImage:[UIImage imageNamed:@"Button_Close"] forState:UIControlStateNormal];
+    [closeButton addTarget:self
+                    action:@selector(onClickCloseBtn:)
+          forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:closeButton];
+    
+    CGFloat width = self.view.frame.size.width *0.1;
+    NSLayoutConstraint *buttonTopConstraint = [closeButton.topAnchor constraintEqualToAnchor:self.activityImageView.topAnchor
+                                                                                    constant:width * 0.5];
+    NSLayoutConstraint *buttonRightConstraint = [closeButton.rightAnchor constraintEqualToAnchor:self.activityImageView.rightAnchor
+                                                                                        constant:-width * 0.5];
+    NSLayoutConstraint *buttonHeightConstraint = [closeButton.heightAnchor constraintEqualToConstant:width];
+    NSLayoutConstraint *buttonWidthConstraint = [closeButton.widthAnchor constraintEqualToConstant:width];
+    
+    buttonTopConstraint.active = YES;
+    buttonRightConstraint.active = YES;
+    buttonHeightConstraint.active = YES;
+    buttonWidthConstraint.active = YES;
+    
+
+    
 }
 
+- (void)onClickCloseBtn:(id)sender{
+    NSLog(@"Close");
+    [self dismissViewControllerAnimated:YES completion:^{
+
+    }];
+    
+    
+}
 /*
  #pragma mark - Navigation
  
