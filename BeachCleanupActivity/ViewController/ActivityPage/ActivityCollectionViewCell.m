@@ -71,6 +71,8 @@
     CGFloat height = infoBasicView.frame.size.height * 0.6;
     CGFloat x = infoBasicView.frame.size.width *  0.05 ;
     CGFloat y = 0;
+    
+    NSLog(@"Josh cell :%f",x);
     self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, width, height)];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:30];
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
@@ -79,12 +81,12 @@
     
 }
 - (void)initSubtitleLabel{
-    CGFloat width = infoBasicView.frame.size.width * 0.3;
-    CGFloat height = infoBasicView.frame.size.height * 0.4;
+    CGFloat width = infoBasicView.frame.size.width * 0.6;
+    CGFloat height = infoBasicView.frame.size.height * 0.3;
     CGFloat x = infoBasicView.frame.size.width *  0.05 ;
-    CGFloat y = infoBasicView.frame.size.height - height;
+    CGFloat y = self.titleLabel.frame.size.height;
     self.subtitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, width, height)];
-    self.subtitleLabel.font = [UIFont boldSystemFontOfSize:30];
+    self.subtitleLabel.font = [UIFont boldSystemFontOfSize:20];
     self.subtitleLabel.baselineAdjustment = UIBaselineAdjustmentNone;
     self.subtitleLabel.adjustsFontSizeToFitWidth = YES;
     self.subtitleLabel.textColor = [UIColor colorWithRed:(200.0f / 255.0f) green:(200.0f / 255.0f) blue:(200.0f / 255.0f) alpha:1];

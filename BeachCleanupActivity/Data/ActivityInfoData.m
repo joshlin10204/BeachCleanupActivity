@@ -31,7 +31,7 @@
     UIImage *image = [UIImage imageNamed:@"TestActivityImage"];
     NSString *idString = @"1";
     NSString *titleString = @"五告熱";
-    NSString *subtitleString = @"麟山鼻淨灘";
+    NSString *subtitleString = @"麟山鼻淨灘 X 衝浪";
 
     NSString *dateString = @"2018/05/26";
     NSString *timeString = @"14:00";

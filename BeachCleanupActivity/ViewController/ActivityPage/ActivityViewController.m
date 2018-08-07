@@ -30,7 +30,7 @@
     [self initActivityImageView];
     [self initInfoBasicView];
     [self initTiltleLabel];
-    
+    [self initSubtitleLabel];
 }
 
 - (void)initBasicView{
@@ -40,15 +40,15 @@
     self.basicView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview: self.basicView];
     
-    self.viewTopConstraint = [self.basicView.topAnchor constraintEqualToAnchor:self.view.topAnchor];
-    self.viewLeftConstraint = [self.basicView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
-    self.viewRightConstraint = [self.basicView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
-    self.viewBottomConstraint = [self.basicView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
+    self.basicViewTopConstraint = [self.basicView.topAnchor constraintEqualToAnchor:self.view.topAnchor];
+    self.basicViewLeftConstraint = [self.basicView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
+    self.basicViewRightConstraint = [self.basicView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
+    self.basicViewBottomConstraint = [self.basicView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
     
-    self.viewTopConstraint.active = YES;
-    self.viewLeftConstraint.active = YES;
-    self.viewRightConstraint.active = YES;
-    self.viewBottomConstraint.active = YES;
+    self.basicViewTopConstraint.active = YES;
+    self.basicViewLeftConstraint.active = YES;
+    self.basicViewRightConstraint.active = YES;
+    self.basicViewBottomConstraint.active = YES;
     
     
     
@@ -83,8 +83,7 @@
     NSLayoutConstraint *imageTopConstraint = [self.activityImageView.topAnchor constraintEqualToAnchor:self.basicView.topAnchor];
     NSLayoutConstraint *imageLeftConstraint = [self.activityImageView.leftAnchor constraintEqualToAnchor:self.basicView.leftAnchor];
     NSLayoutConstraint *imageRightConstraint = [self.activityImageView.rightAnchor constraintEqualToAnchor:self.basicView.rightAnchor];
-    
-    self.imageHeightConstraint = [self.activityImageView.heightAnchor constraintEqualToConstant: self.view.frame.size.height *0.5];
+    self.imageHeightConstraint = [self.activityImageView.heightAnchor constraintEqualToConstant:self.view.frame.size.height];
     
     imageTopConstraint.active = YES;
     imageLeftConstraint.active = YES;
@@ -100,10 +99,8 @@
     NSLayoutConstraint *viewTopConstraint = [infoBasicView.topAnchor constraintEqualToAnchor:self.activityImageView.bottomAnchor];
     NSLayoutConstraint *viewLeftConstraint = [infoBasicView.leftAnchor constraintEqualToAnchor:self.basicView.leftAnchor];
     NSLayoutConstraint *viewRightConstraint = [infoBasicView.rightAnchor constraintEqualToAnchor:self.basicView.rightAnchor];
-    self.infoBasicViewHeightConstraint = [infoBasicView.heightAnchor constraintEqualToConstant:self.view.frame.size.height *0.2];
+    self.infoBasicViewHeightConstraint = [infoBasicView.heightAnchor constraintEqualToConstant:100];
     
-    NSLog(@"Josh 2 :%f",self.infoBasicViewHeightConstraint.constant);
-
     viewTopConstraint.active = YES;
     viewLeftConstraint.active = YES;
     viewRightConstraint.active = YES;
@@ -114,45 +111,56 @@
 
 - (void)initTiltleLabel{
     
-//    CGFloat width = infoBasicView.frame.size.width * 0.6;
-//    CGFloat height = infoBasicView.frame.size.height * 0.6;
-//    CGFloat x = infoBasicView.frame.size.width *  0.05 ;
-//    CGFloat y = 0;
     
     titleLabel = [[UILabel alloc]init];
-    titleLabel.font = [UIFont boldSystemFontOfSize:30];
     titleLabel.adjustsFontSizeToFitWidth = YES;
-    titleLabel.textColor = [UIColor colorWithRed:(100.0f / 255.0f) green:(100.0f / 255.0f) blue:(100.0f / 255.0f) alpha:1];
-    titleLabel.text = [self.activityInfo objectForKey:ACTIVITY_INFO_TITLE];
     titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-
+    titleLabel.font = [UIFont boldSystemFontOfSize:30];
+    titleLabel.textColor = [UIColor colorWithRed:(100.0f / 255.0f)
+                                           green:(100.0f / 255.0f)
+                                            blue:(100.0f / 255.0f)
+                                           alpha:1];
+    titleLabel.text = [self.activityInfo objectForKey:ACTIVITY_INFO_TITLE];
     [infoBasicView addSubview:titleLabel];
     
-    NSLog(@"Josh 3:%f",self.infoBasicViewHeightConstraint.constant);
-    NSLog(@"Josh 3:%f",self.infoBasicViewHeightConstraint.constant);
-
+    
+    
     NSLayoutConstraint *labelTopConstraint = [titleLabel.topAnchor constraintEqualToAnchor:infoBasicView.topAnchor];
-    NSLayoutConstraint *labelLeftConstraint = [titleLabel.leftAnchor constraintEqualToAnchor:infoBasicView.leftAnchor constant:self.view.frame.size.width*0.05];
-    NSLayoutConstraint *labelRightConstraint = [titleLabel.rightAnchor constraintEqualToAnchor:infoBasicView.rightAnchor];
-    NSLayoutConstraint *labelHeightConstraint = [titleLabel.heightAnchor                                                  constraintEqualToConstant:self.infoBasicViewHeightConstraint.constant*0.6];
-
+    self.titleLeftConstraint = [titleLabel.leftAnchor constraintEqualToAnchor:infoBasicView.leftAnchor];
+    self.titleRightConstraint = [titleLabel.rightAnchor constraintEqualToAnchor:infoBasicView.rightAnchor];
+    self.titleHeightConstraint = [titleLabel.heightAnchor constraintEqualToConstant:infoBasicView.frame.size.height];
     
     labelTopConstraint.active = YES;
-    labelLeftConstraint.active = YES;
-    labelRightConstraint.active = YES;
-    labelHeightConstraint. active = YES;
+    self.titleLeftConstraint.active = YES;
+    self.titleRightConstraint.active = YES;
+    self.titleHeightConstraint.active = YES;
     
     
 }
 - (void)initSubtitleLabel{
     subtitleLabel = [[UILabel alloc]init];
-    subtitleLabel.font = [UIFont boldSystemFontOfSize:30];
-    subtitleLabel.baselineAdjustment = UIBaselineAdjustmentNone;
     subtitleLabel.adjustsFontSizeToFitWidth = YES;
-    subtitleLabel.textColor = [UIColor colorWithRed:(200.0f / 255.0f) green:(200.0f / 255.0f) blue:(200.0f / 255.0f) alpha:1];
+    subtitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    subtitleLabel.font = [UIFont boldSystemFontOfSize:20];
+    subtitleLabel.baselineAdjustment = UIBaselineAdjustmentNone;
+    subtitleLabel.textColor = [UIColor colorWithRed:(200.0f / 255.0f)
+                                              green:(200.0f / 255.0f)
+                                               blue:(200.0f / 255.0f)
+                                              alpha:1];
     subtitleLabel.text = [self.activityInfo objectForKey:ACTIVITY_INFO_SUBTITLE];
-
     [infoBasicView addSubview:subtitleLabel];
+    
+    
+    NSLayoutConstraint *labelTopConstraint = [subtitleLabel.topAnchor constraintEqualToAnchor:titleLabel.bottomAnchor];
+    self.subtitleLeftConstraint = [subtitleLabel.leftAnchor constraintEqualToAnchor:infoBasicView.leftAnchor];
+    self.subtitleRightConstraint = [subtitleLabel.rightAnchor constraintEqualToAnchor:infoBasicView.rightAnchor];
+    self.subtitleHeightConstraint = [subtitleLabel.heightAnchor constraintEqualToConstant:infoBasicView.frame.size.height];
+    
+    
+    labelTopConstraint.active = YES;
+    self.subtitleLeftConstraint.active = YES;
+    self.subtitleRightConstraint.active = YES;
+    self.subtitleHeightConstraint.active = YES;
     
     
 }

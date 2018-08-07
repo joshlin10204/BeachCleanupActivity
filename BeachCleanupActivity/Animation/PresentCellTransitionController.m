@@ -14,51 +14,65 @@
     return 0.4f;
 }
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
-    
-    NSLog(@"animateTransition");
-    
+        
     ActivityViewController *toViewController = (ActivityViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *containerView = [transitionContext containerView];
-    CGRect bounds = [[UIScreen mainScreen]bounds];
     [containerView addSubview:toViewController.view];
 
-    
-    
-    toViewController.basicView.layer.cornerRadius = 14 ;
-    toViewController.activityImageView.contentMode = UIViewContentModeScaleToFill;
-    toViewController.imageHeightConstraint.constant = self.cellFrame.size.height * 0.7 ;
-    toViewController.infoBasicViewHeightConstraint.constant = self.cellFrame.size.height *0.3;
-    toViewController.viewTopConstraint.constant = self.cellFrame.origin.y  ;
-    toViewController.viewLeftConstraint.constant = self.cellFrame.origin.x ;
-    toViewController.viewRightConstraint.constant = -(bounds.size.width - self.cellFrame.origin.x - self.cellFrame.size.width);
-    toViewController.viewBottomConstraint.constant = -(bounds.size.height - self.cellFrame.origin.y - self.cellFrame.size.height);
-    NSLog(@"Josh 1 :%f",toViewController.infoBasicViewHeightConstraint.constant);
+    [self updateActivityViewLayoutConstraint:toViewController];
+    [self presentTransitionContext:transitionContext toActivityView:toViewController];
 
-    [toViewController.view.layer layoutIfNeeded];
+}
+
+- (void)updateActivityViewLayoutConstraint:(ActivityViewController*)activityView{
+    
+    CGRect bounds = [[UIScreen mainScreen]bounds];
+    CGFloat imageHeight = self.cellFrame.size.height * 0.7;
+    CGFloat infoBasicViewHeight = self.cellFrame.size.height *0.3;
+    CGFloat titleLabelHeight = infoBasicViewHeight *0.6;
+    CGFloat subtitleLabelHeight = infoBasicViewHeight *0.3;
     
     
-    CGFloat imageHeight = toViewController.view.frame.size.height * 0.5;
-    CGFloat infoBasicViewHeight = toViewController.view.frame.size.height * 0.3;
+    activityView.basicView.layer.cornerRadius = 14 ;
+    activityView.activityImageView.contentMode = UIViewContentModeScaleToFill;
+    activityView.imageHeightConstraint.constant =  imageHeight;
+    activityView.infoBasicViewHeightConstraint.constant = infoBasicViewHeight;
+    activityView.titleHeightConstraint.constant = titleLabelHeight;
+    activityView.subtitleHeightConstraint.constant = subtitleLabelHeight;
+    
+    activityView.titleLeftConstraint.constant = self.cellFrame.size.width*0.05;
+    activityView.titleRightConstraint.constant =  - self.cellFrame.size.width*0.4;
+    activityView.subtitleLeftConstraint.constant = self.cellFrame.size.width*0.05;
+    activityView.subtitleRightConstraint.constant =  - self.cellFrame.size.width*0.4;
+
+    activityView.basicViewTopConstraint.constant = self.cellFrame.origin.y  ;
+    activityView.basicViewLeftConstraint.constant = self.cellFrame.origin.x ;
+    activityView.basicViewRightConstraint.constant = -(bounds.size.width - self.cellFrame.origin.x - self.cellFrame.size.width);
+    activityView.basicViewBottomConstraint.constant = -(bounds.size.height - self.cellFrame.origin.y - self.cellFrame.size.height);
+    [activityView.view.layer layoutIfNeeded];
+ 
+}
+
+- (void) presentTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext toActivityView:(ActivityViewController*)activityView{
+    
+    CGFloat imageHeight = activityView.view.frame.size.height * 0.5;
     UIViewPropertyAnimator * animator =[[UIViewPropertyAnimator alloc]initWithDuration:0.6
                                                                           dampingRatio:0.7
                                                                             animations:^{
-                                                                                toViewController.imageHeightConstraint.constant = imageHeight;
-                                                                                toViewController.infoBasicViewHeightConstraint.constant =infoBasicViewHeight;
-                                                                                toViewController.viewTopConstraint.constant = 0 ;
-                                                                                toViewController.viewLeftConstraint.constant = 0 ;
-                                                                                toViewController.viewRightConstraint.constant = 0;
-                                                                                toViewController.viewBottomConstraint.constant = 0;
-                                                                                toViewController.basicView.layer.cornerRadius = 0 ;
-                                                                                toViewController.activityImageView.contentMode = UIViewContentModeScaleAspectFill;
-                                                                                [toViewController.view.layer layoutIfNeeded];
-                                                                    
+                                                                                activityView.imageHeightConstraint.constant = imageHeight;
+                                                                                activityView.basicViewTopConstraint.constant = 0 ;
+                                                                                activityView.basicViewLeftConstraint.constant = 0 ;
+                                                                                activityView.basicViewRightConstraint.constant = 0;
+                                                                                activityView.basicViewBottomConstraint.constant = 0;
+                                                                                activityView.basicView.layer.cornerRadius = 0 ;
+                                                                                activityView.activityImageView.contentMode = UIViewContentModeScaleAspectFill;
+                                                                                [activityView.view.layer layoutIfNeeded];
+                                                                                
                                                                             }];
-//    [animator startAnimation];
-//    [animator addCompletion:^(UIViewAnimatingPosition finalPosition){
-//        [transitionContext completeTransition:YES];
-//    }];
-
-    
+    [animator startAnimation];
+    [animator addCompletion:^(UIViewAnimatingPosition finalPosition){
+            [transitionContext completeTransition:YES];
+    }];
 }
 
 @end
