@@ -11,12 +11,15 @@
 @interface ActivityViewController : UIViewController
 @property (strong,nonatomic)NSMutableDictionary *activityInfo;
 
-@property (strong,nonatomic)UIView *basicView;
+@property (strong,nonatomic)UIView *contentView;
 @property (strong,nonatomic)UIImageView *activityImageView;
-@property (strong,nonatomic)NSLayoutConstraint *basicViewTopConstraint;
-@property (strong,nonatomic)NSLayoutConstraint *basicViewLeftConstraint;
-@property (strong,nonatomic)NSLayoutConstraint *basicViewRightConstraint;
-@property (strong,nonatomic)NSLayoutConstraint *basicViewBottomConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *scrollViewTopConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *scrollViewLeftConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *scrollViewRightConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *scrollViewBottomConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *contentViewHeightConstraint;
+@property (strong,nonatomic)NSLayoutConstraint *contentViewWidthConstraint;
+
 @property (strong,nonatomic)NSLayoutConstraint *imageHeightConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *infoBasicViewHeightConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *titleLeftConstraint;

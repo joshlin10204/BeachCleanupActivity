@@ -37,9 +37,13 @@
 
     
     
-    activityView.basicView.layer.cornerRadius = 14 ;
+    activityView.contentView.layer.cornerRadius = 14 ;
+    activityView.contentViewHeightConstraint.constant = self.cellFrame.size.height;
+    activityView.contentViewWidthConstraint.constant = self.cellFrame.size.width;
+    
     activityView.activityImageView.contentMode = UIViewContentModeScaleToFill;
     activityView.imageHeightConstraint.constant =  imageHeight;
+    
     activityView.infoBasicViewHeightConstraint.constant = infoBasicViewHeight;
    
     activityView.titleLeftConstraint.constant = self.cellFrame.size.width*0.05;
@@ -55,10 +59,10 @@
     activityView.signupBtneWidthConstraint.constant = signupBtnWidth;
     
 
-    activityView.basicViewTopConstraint.constant = self.cellFrame.origin.y  ;
-    activityView.basicViewLeftConstraint.constant = self.cellFrame.origin.x ;
-    activityView.basicViewRightConstraint.constant = -(bounds.size.width - self.cellFrame.origin.x - self.cellFrame.size.width);
-    activityView.basicViewBottomConstraint.constant = -(bounds.size.height - self.cellFrame.origin.y - self.cellFrame.size.height);
+    activityView.scrollViewTopConstraint.constant = self.cellFrame.origin.y  ;
+    activityView.scrollViewLeftConstraint.constant = self.cellFrame.origin.x ;
+    activityView.scrollViewRightConstraint.constant = -(bounds.size.width - self.cellFrame.origin.x - self.cellFrame.size.width);
+    activityView.scrollViewBottomConstraint.constant = -(bounds.size.height - self.cellFrame.origin.y - self.cellFrame.size.height);
     [activityView.view.layer layoutIfNeeded];
  
 }
@@ -66,15 +70,20 @@
 - (void) presentTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext toActivityView:(ActivityViewController*)activityView{
     
     CGFloat imageHeight = activityView.view.frame.size.height * 0.4;
+    CGFloat height = activityView.view.frame.size.height ;
+    CGFloat width = activityView.view.frame.size.width ;
+
     UIViewPropertyAnimator * animator =[[UIViewPropertyAnimator alloc]initWithDuration:0.6
                                                                           dampingRatio:0.7
                                                                             animations:^{
                                                                                 activityView.imageHeightConstraint.constant = imageHeight;
-                                                                                activityView.basicViewTopConstraint.constant = 0 ;
-                                                                                activityView.basicViewLeftConstraint.constant = 0 ;
-                                                                                activityView.basicViewRightConstraint.constant = 0;
-                                                                                activityView.basicViewBottomConstraint.constant = 0;
-                                                                                activityView.basicView.layer.cornerRadius = 0 ;
+                                                                                activityView.contentViewHeightConstraint.constant = height;
+                                                                                activityView.contentViewWidthConstraint.constant = width;
+                                                                                activityView.scrollViewTopConstraint.constant = 0 ;
+                                                                                activityView.scrollViewLeftConstraint.constant = 0 ;
+                                                                                activityView.scrollViewRightConstraint.constant = 0;
+                                                                                activityView.scrollViewBottomConstraint.constant = 0;
+                                                                                activityView.contentView.layer.cornerRadius = 0 ;
                                                                                 activityView.activityImageView.contentMode = UIViewContentModeScaleAspectFill;
                                                                                 [activityView.view.layer layoutIfNeeded];
                                                                                 

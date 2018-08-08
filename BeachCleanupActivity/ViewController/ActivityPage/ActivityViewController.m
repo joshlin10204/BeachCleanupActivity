@@ -25,9 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self initBasicView];
+//    self.automaticallyAdjustsScrollViewInsets = false ;
+
     [self initScrollVIew];
+    [self initContentView];
     [self initActivityImageView];
     [self initInfoBasicView];
     [self initTiltleLabel];
@@ -36,42 +37,49 @@
     [self initCloseButton];
 }
 
-- (void)initBasicView{
+- (void)initScrollVIew{
+    CGFloat height = self.view.frame.size.height ;
+    scrollView = [[UIScrollView alloc]init];
+    scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    scrollView.backgroundColor = [UIColor whiteColor];
+    scrollView.contentSize = CGSizeMake(0,height*2);//暫時設定兩倍長度
+    scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//避免出現空白
+    [self.view addSubview:scrollView];
     
-    self.basicView = [[UIView alloc] initWithFrame:self.view.frame];
-    self.basicView.backgroundColor = [UIColor whiteColor];
-    self.basicView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview: self.basicView];
+    self.scrollViewTopConstraint = [scrollView.topAnchor constraintEqualToAnchor:self.view.topAnchor];
+    self.scrollViewLeftConstraint = [scrollView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
+    self.scrollViewRightConstraint = [scrollView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
+    self.scrollViewBottomConstraint = [scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
     
-    self.basicViewTopConstraint = [self.basicView.topAnchor constraintEqualToAnchor:self.view.topAnchor];
-    self.basicViewLeftConstraint = [self.basicView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
-    self.basicViewRightConstraint = [self.basicView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
-    self.basicViewBottomConstraint = [self.basicView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
-    
-    self.basicViewTopConstraint.active = YES;
-    self.basicViewLeftConstraint.active = YES;
-    self.basicViewRightConstraint.active = YES;
-    self.basicViewBottomConstraint.active = YES;
+    self.scrollViewTopConstraint.active = YES;
+    self.scrollViewLeftConstraint.active = YES;
+    self.scrollViewRightConstraint.active = YES;
+    self.scrollViewBottomConstraint.active = YES;
     
     
     
 }
-- (void)initScrollVIew{
+
+
+- (void)initContentView{
     
-    scrollView = [[UIScrollView alloc]init];
-    scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.basicView addSubview:scrollView];
+    self.contentView = [[UIView alloc] initWithFrame:self.view.frame];
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    [scrollView addSubview: self.contentView];
     
-    NSLayoutConstraint *viewTopConstraint = [scrollView.topAnchor constraintEqualToAnchor:self.basicView.topAnchor];
-    NSLayoutConstraint *viewLeftConstraint = [scrollView.leftAnchor constraintEqualToAnchor:self.basicView.leftAnchor];
-    NSLayoutConstraint *viewRightConstraint = [scrollView.rightAnchor constraintEqualToAnchor:self.basicView.rightAnchor];
-    NSLayoutConstraint *viewBottomConstraint = [scrollView.bottomAnchor constraintEqualToAnchor:self.basicView.bottomAnchor];
+    
+    NSLayoutConstraint *viewTopConstraint = [self.contentView.topAnchor constraintEqualToAnchor:scrollView.topAnchor];
+    NSLayoutConstraint *viewLeftConstraint = [self.contentView.leftAnchor constraintEqualToAnchor:scrollView.leftAnchor];
+    self.contentViewHeightConstraint = [self.contentView.heightAnchor constraintEqualToConstant:self.view.frame.size.height];
+    self.contentViewWidthConstraint = [self.contentView.widthAnchor constraintEqualToConstant:self.view.frame.size.width];
+
+    
     
     viewTopConstraint.active = YES;
     viewLeftConstraint.active = YES;
-    viewRightConstraint.active = YES;
-    viewBottomConstraint.active = YES;
-    
+    self.contentViewHeightConstraint.active = YES;
+    self.contentViewWidthConstraint.active = YES;
     
     
 }
@@ -81,11 +89,12 @@
     self.activityImageView = [[UIImageView alloc]initWithImage:[self.activityInfo objectForKey:ACTIVITY_INFO_IMAGE]];
     self.activityImageView.clipsToBounds = YES;
     self.activityImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    [scrollView addSubview:self.activityImageView];
+    [self.contentView addSubview:self.activityImageView];
     
-    NSLayoutConstraint *imageTopConstraint = [self.activityImageView.topAnchor constraintEqualToAnchor:self.basicView.topAnchor];
-    NSLayoutConstraint *imageLeftConstraint = [self.activityImageView.leftAnchor constraintEqualToAnchor:self.basicView.leftAnchor];
-    NSLayoutConstraint *imageRightConstraint = [self.activityImageView.rightAnchor constraintEqualToAnchor:self.basicView.rightAnchor];
+    NSLayoutConstraint *imageTopConstraint = [self.activityImageView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor];
+    NSLayoutConstraint *imageLeftConstraint = [self.activityImageView.leftAnchor constraintEqualToAnchor:self.contentView.leftAnchor];
+    NSLayoutConstraint *imageRightConstraint = [self.activityImageView.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor];
+
     self.imageHeightConstraint = [self.activityImageView.heightAnchor constraintEqualToConstant:self.view.frame.size.height];
     
     imageTopConstraint.active = YES;
@@ -97,11 +106,11 @@
 - (void)initInfoBasicView{
     infoBasicView = [[UIView alloc]init];
     infoBasicView.translatesAutoresizingMaskIntoConstraints = NO;
-    [scrollView addSubview:infoBasicView];
+    [self.contentView addSubview:infoBasicView];
     
     NSLayoutConstraint *viewTopConstraint = [infoBasicView.topAnchor constraintEqualToAnchor:self.activityImageView.bottomAnchor];
-    NSLayoutConstraint *viewLeftConstraint = [infoBasicView.leftAnchor constraintEqualToAnchor:self.basicView.leftAnchor];
-    NSLayoutConstraint *viewRightConstraint = [infoBasicView.rightAnchor constraintEqualToAnchor:self.basicView.rightAnchor];
+    NSLayoutConstraint *viewLeftConstraint = [infoBasicView.leftAnchor constraintEqualToAnchor:self.contentView.leftAnchor];
+    NSLayoutConstraint *viewRightConstraint = [infoBasicView.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor];
     self.infoBasicViewHeightConstraint = [infoBasicView.heightAnchor constraintEqualToConstant:100];
     
     viewTopConstraint.active = YES;
