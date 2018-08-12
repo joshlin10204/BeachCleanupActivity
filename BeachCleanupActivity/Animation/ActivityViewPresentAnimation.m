@@ -87,7 +87,7 @@
 - (void) updateViewEndLayoutConstraint:(ActivityViewController*)activityView{
     
     CGFloat imageHeight = activityView.view.frame.size.height * 0.4;
-    CGFloat height = activityView.view.frame.size.height ;
+    CGFloat height = activityView.view.frame.size.height*2;
     CGFloat width = activityView.view.frame.size.width ;
     activityView.imageHeightConstraint.constant = imageHeight;
     activityView.contentViewHeightConstraint.constant = height;

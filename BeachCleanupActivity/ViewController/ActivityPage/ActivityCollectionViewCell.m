@@ -9,7 +9,7 @@
 #import "ActivityCollectionViewCell.h"
 @interface ActivityCollectionViewCell(){
     
-    UIView * infoBasicView;
+    UIView * titleInfoBasicView;
     
 }
 @end
@@ -23,7 +23,7 @@
     {
         [self initCellBasicView];
         [self initActivityImage];
-        [self initInfoBasicView];
+        [self initTitleInfoBasicView];
     }
     
     return self;
@@ -54,50 +54,50 @@
 
 }
 
-- (void)initInfoBasicView{
+- (void)initTitleInfoBasicView{
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height *0.3;
     CGFloat x = 0 ;
     CGFloat y = self.frame.size.height - height;
-    infoBasicView = [[UIView alloc]initWithFrame:CGRectMake(x, y, width, height)];
-    [self.contentView addSubview:infoBasicView];
+    titleInfoBasicView = [[UIView alloc]initWithFrame:CGRectMake(x, y, width, height)];
+    [self.contentView addSubview:titleInfoBasicView];
     [self initTitleLabel];
     [self initSubtitleLabel];
     [self initSignupButton];
 }
 
 - (void)initTitleLabel{
-    CGFloat width = infoBasicView.frame.size.width * 0.6;
-    CGFloat height = infoBasicView.frame.size.height * 0.6;
-    CGFloat x = infoBasicView.frame.size.width *  0.05 ;
+    CGFloat width = titleInfoBasicView.frame.size.width * 0.6;
+    CGFloat height = titleInfoBasicView.frame.size.height * 0.6;
+    CGFloat x = titleInfoBasicView.frame.size.width *  0.05 ;
     CGFloat y = 0;
     
     NSLog(@"Josh cell :%f",x);
     self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, width, height)];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:30];
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
-    self.titleLabel.textColor = [UIColor colorWithRed:(100.0f / 255.0f) green:(100.0f / 255.0f) blue:(100.0f / 255.0f) alpha:1];
-    [infoBasicView addSubview:self.titleLabel];
+    self.titleLabel.textColor = [UIColor colorWithRed:(80.0f / 255.0f) green:(80.0f / 255.0f) blue:(80.0f / 255.0f) alpha:1];
+    [titleInfoBasicView addSubview:self.titleLabel];
     
 }
 - (void)initSubtitleLabel{
-    CGFloat width = infoBasicView.frame.size.width * 0.6;
-    CGFloat height = infoBasicView.frame.size.height * 0.3;
-    CGFloat x = infoBasicView.frame.size.width *  0.05 ;
+    CGFloat width = titleInfoBasicView.frame.size.width * 0.6;
+    CGFloat height = titleInfoBasicView.frame.size.height * 0.3;
+    CGFloat x = titleInfoBasicView.frame.size.width *  0.05 ;
     CGFloat y = self.titleLabel.frame.size.height;
     self.subtitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, width, height)];
     self.subtitleLabel.font = [UIFont boldSystemFontOfSize:20];
     self.subtitleLabel.baselineAdjustment = UIBaselineAdjustmentNone;
     self.subtitleLabel.adjustsFontSizeToFitWidth = YES;
-    self.subtitleLabel.textColor = [UIColor colorWithRed:(200.0f / 255.0f) green:(200.0f / 255.0f) blue:(200.0f / 255.0f) alpha:1];
-    [infoBasicView addSubview:self.subtitleLabel];
+    self.subtitleLabel.textColor = [UIColor colorWithRed:(170.0f / 255.0f) green:(170.0f / 255.0f) blue:(170.0f / 255.0f) alpha:1];
+    [titleInfoBasicView addSubview:self.subtitleLabel];
     
 }
 - (void)initSignupButton{
-    CGFloat width = infoBasicView.frame.size.width * 0.25;
-    CGFloat height = infoBasicView.frame.size.height * 0.5;
-    CGFloat x = infoBasicView.frame.size.width - infoBasicView.frame.size.width * 0.05 - width  ;
-    CGFloat y = infoBasicView.frame.size.height /2 - height/2;
+    CGFloat width = titleInfoBasicView.frame.size.width * 0.25;
+    CGFloat height = titleInfoBasicView.frame.size.height * 0.5;
+    CGFloat x = titleInfoBasicView.frame.size.width - titleInfoBasicView.frame.size.width * 0.05 - width  ;
+    CGFloat y = titleInfoBasicView.frame.size.height /2 - height/2;
     self.signupButton = [[UIButton alloc]initWithFrame:CGRectMake(x, y, width, height)];
     self.signupButton.layer.cornerRadius = 20;
     self.signupButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
@@ -107,7 +107,7 @@
     [self.signupButton addTarget:self
                         action:@selector(onClickJoinBtn:)
               forControlEvents:UIControlEventTouchUpInside];
-    [infoBasicView addSubview:self.signupButton];
+    [titleInfoBasicView addSubview:self.signupButton];
     
 }
 - (void)onClickJoinBtn:(id)sender{

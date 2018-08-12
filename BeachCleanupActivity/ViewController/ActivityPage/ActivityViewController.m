@@ -8,13 +8,18 @@
 
 #import "ActivityViewController.h"
 #import "ActivityInfoData.h"
+#import "ActivityMainInfoView.h"
 
-@interface ActivityViewController ()<UIViewControllerTransitioningDelegate>{
+@interface ActivityViewController ()<UIViewControllerTransitioningDelegate,UIScrollViewDelegate>{
     
-    UIView *infoBasicView;
+    UIView *titleInfoBasicView;
     UILabel *titleLabel;
     UILabel *subtitleLabel;
     UIButton *signupButton;
+    
+    ActivityMainInfoView * activityMainInfoView;
+
+    
     
 }
 
@@ -37,8 +42,14 @@
     [self initSubtitleLabel];
     [self initSignupButton];
     [self initCloseButton];
+    [self initMainInfoView];
 }
-
+-(void)viewDidLayoutSubviews{
+    
+    [super viewDidLayoutSubviews];
+    [self updateScrollViewContentSize];
+    
+}
 - (void)initScrollVIew{
     CGFloat height = self.view.frame.size.height ;
     self.scrollView = [[UIScrollView alloc]init];
@@ -46,6 +57,7 @@
     self.scrollView.backgroundColor = [UIColor whiteColor];
     self.scrollView.contentSize = CGSizeMake(0,height*2);//暫時設定兩倍長度
     self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//避免出現空白
+    self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView];
     
     self.scrollViewTopConstraint = [self.scrollView.topAnchor constraintEqualToAnchor:self.view.topAnchor];
@@ -60,6 +72,12 @@
     
     
     
+}
+- (void)updateScrollViewContentSize{
+    CGFloat titleInfoViewMaxY = CGRectGetMaxY(titleInfoBasicView.frame) ;
+    CGFloat mainInfoVieBottomViewMaxY = CGRectGetMaxY(activityMainInfoView.mapView.frame) ;
+    CGFloat contentSizeHeight = titleInfoViewMaxY + mainInfoVieBottomViewMaxY ;
+    self.scrollView.contentSize = CGSizeMake(0, contentSizeHeight);
 }
 
 
@@ -103,14 +121,14 @@
     
 }
 - (void)initInfoBasicView{
-    infoBasicView = [[UIView alloc]init];
-    infoBasicView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.contentView addSubview:infoBasicView];
+    titleInfoBasicView = [[UIView alloc]init];
+    titleInfoBasicView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.contentView addSubview:titleInfoBasicView];
     
-    NSLayoutConstraint *viewTopConstraint = [infoBasicView.topAnchor constraintEqualToAnchor:self.activityImageView.bottomAnchor];
-    NSLayoutConstraint *viewLeftConstraint = [infoBasicView.leftAnchor constraintEqualToAnchor:self.contentView.leftAnchor];
-    NSLayoutConstraint *viewRightConstraint = [infoBasicView.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor];
-    self.infoBasicViewHeightConstraint = [infoBasicView.heightAnchor constraintEqualToConstant:100];
+    NSLayoutConstraint *viewTopConstraint = [titleInfoBasicView.topAnchor constraintEqualToAnchor:self.activityImageView.bottomAnchor];
+    NSLayoutConstraint *viewLeftConstraint = [titleInfoBasicView.leftAnchor constraintEqualToAnchor:self.contentView.leftAnchor];
+    NSLayoutConstraint *viewRightConstraint = [titleInfoBasicView.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor];
+    self.infoBasicViewHeightConstraint = [titleInfoBasicView.heightAnchor constraintEqualToConstant:100];
     
     viewTopConstraint.active = YES;
     viewLeftConstraint.active = YES;
@@ -127,19 +145,19 @@
     titleLabel.adjustsFontSizeToFitWidth = YES;
     titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     titleLabel.font = [UIFont boldSystemFontOfSize:30];
-    titleLabel.textColor = [UIColor colorWithRed:(100.0f / 255.0f)
-                                           green:(100.0f / 255.0f)
-                                            blue:(100.0f / 255.0f)
+    titleLabel.textColor = [UIColor colorWithRed:(80.0f / 255.0f)
+                                           green:(80.0f / 255.0f)
+                                            blue:(80.0f / 255.0f)
                                            alpha:1];
     titleLabel.text = [self.activityInfo objectForKey:ACTIVITY_INFO_TITLE];
-    [infoBasicView addSubview:titleLabel];
+    [titleInfoBasicView addSubview:titleLabel];
     
     
     
-    NSLayoutConstraint *labelTopConstraint = [titleLabel.topAnchor constraintEqualToAnchor:infoBasicView.topAnchor];
-    self.titleLeftConstraint = [titleLabel.leftAnchor constraintEqualToAnchor:infoBasicView.leftAnchor];
-    self.titleHeightConstraint = [titleLabel.heightAnchor constraintEqualToConstant:infoBasicView.frame.size.height];
-    self.titleWidthConstraint = [titleLabel.widthAnchor constraintEqualToConstant:infoBasicView.frame.size.width];
+    NSLayoutConstraint *labelTopConstraint = [titleLabel.topAnchor constraintEqualToAnchor:titleInfoBasicView.topAnchor];
+    self.titleLeftConstraint = [titleLabel.leftAnchor constraintEqualToAnchor:titleInfoBasicView.leftAnchor];
+    self.titleHeightConstraint = [titleLabel.heightAnchor constraintEqualToConstant:titleInfoBasicView.frame.size.height];
+    self.titleWidthConstraint = [titleLabel.widthAnchor constraintEqualToConstant:titleInfoBasicView.frame.size.width];
 
     
     labelTopConstraint.active = YES;
@@ -155,18 +173,18 @@
     subtitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     subtitleLabel.font = [UIFont boldSystemFontOfSize:20];
     subtitleLabel.baselineAdjustment = UIBaselineAdjustmentNone;
-    subtitleLabel.textColor = [UIColor colorWithRed:(200.0f / 255.0f)
-                                              green:(200.0f / 255.0f)
-                                               blue:(200.0f / 255.0f)
+    subtitleLabel.textColor = [UIColor colorWithRed:(170.0f / 255.0f)
+                                              green:(170.0f / 255.0f)
+                                               blue:(170.0f / 255.0f)
                                               alpha:1];
     subtitleLabel.text = [self.activityInfo objectForKey:ACTIVITY_INFO_SUBTITLE];
-    [infoBasicView addSubview:subtitleLabel];
+    [titleInfoBasicView addSubview:subtitleLabel];
     
     
     NSLayoutConstraint *labelTopConstraint = [subtitleLabel.topAnchor constraintEqualToAnchor:titleLabel.bottomAnchor];
-    self.subtitleLeftConstraint = [subtitleLabel.leftAnchor constraintEqualToAnchor:infoBasicView.leftAnchor];
-    self.subtitleHeightConstraint = [subtitleLabel.heightAnchor constraintEqualToConstant:infoBasicView.frame.size.height];
-    self.subtitleWidthConstraint = [subtitleLabel.widthAnchor constraintEqualToConstant:infoBasicView.frame.size.width];
+    self.subtitleLeftConstraint = [subtitleLabel.leftAnchor constraintEqualToAnchor:titleInfoBasicView.leftAnchor];
+    self.subtitleHeightConstraint = [subtitleLabel.heightAnchor constraintEqualToConstant:titleInfoBasicView.frame.size.height];
+    self.subtitleWidthConstraint = [subtitleLabel.widthAnchor constraintEqualToConstant:titleInfoBasicView.frame.size.width];
 
     labelTopConstraint.active = YES;
     self.subtitleLeftConstraint.active = YES;
@@ -189,18 +207,18 @@
     [signupButton addTarget:self
                      action:@selector(onClickSignupBtn:)
            forControlEvents:UIControlEventTouchUpInside];
-    [infoBasicView addSubview:signupButton];
+    [titleInfoBasicView addSubview:signupButton];
     
     NSLayoutConstraint *buttonTopConstraint = [NSLayoutConstraint constraintWithItem:signupButton
                                                                            attribute:NSLayoutAttributeCenterY
                                                                            relatedBy:NSLayoutRelationEqual
-                                                                              toItem:infoBasicView
+                                                                              toItem:titleInfoBasicView
                                                                            attribute:NSLayoutAttributeCenterY
                                                                           multiplier:1
                                                                             constant:0];
-    self.signupBtnRightConstraint = [signupButton.rightAnchor constraintEqualToAnchor:infoBasicView.rightAnchor];
-    self.signupBtnHeightConstraint = [signupButton.heightAnchor constraintEqualToConstant:infoBasicView.frame.size.height];
-    self.signupBtneWidthConstraint= [signupButton.widthAnchor constraintEqualToConstant:infoBasicView.frame.size.width];
+    self.signupBtnRightConstraint = [signupButton.rightAnchor constraintEqualToAnchor:titleInfoBasicView.rightAnchor];
+    self.signupBtnHeightConstraint = [signupButton.heightAnchor constraintEqualToConstant:titleInfoBasicView.frame.size.height];
+    self.signupBtneWidthConstraint= [signupButton.widthAnchor constraintEqualToConstant:titleInfoBasicView.frame.size.width];
 
     buttonTopConstraint.active = YES;
     self.signupBtnRightConstraint.active = YES;
@@ -212,6 +230,14 @@
 }
 - (void)onClickSignupBtn:(id)sender{
     NSLog(@"onClickSignupBtn");
+    
+//    NSString *urlString = [@"https://maps.apple.com/maps?q=Taipei" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlString = [@"https://maps.google.com/maps?ll=25.018845,121.557556&z=15" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication]openURL:url
+                                      options:@{}
+                            completionHandler:nil];
     
 }
 
@@ -241,8 +267,53 @@
 }
 
 - (void)onClickCloseBtn:(id)sender{
+    
+    //判斷目前ScrollView位置，是否需滑到最頂端
+    CGFloat scrollY = self.scrollView.contentOffset.y ;
+    if (scrollY>0) {
+        [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+
+}
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)initMainInfoView{
+    activityMainInfoView = [[ActivityMainInfoView alloc]init];
+    activityMainInfoView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.contentView addSubview:activityMainInfoView];
+
+    NSLayoutConstraint *viewTopConstraint = [activityMainInfoView.topAnchor constraintEqualToAnchor:titleInfoBasicView.bottomAnchor];
+    //【暫時】會有錯誤訊息產生 跟titleInfoBasicView.bottomAnchor 有關
+    NSLayoutConstraint *viewLeftConstraint = [activityMainInfoView.leftAnchor constraintEqualToAnchor:self.contentView.leftAnchor];
+    NSLayoutConstraint *viewRightConstraint = [activityMainInfoView.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor];
+    NSLayoutConstraint *viewBottmoConstraint = [activityMainInfoView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor];
+
+    viewTopConstraint.active = YES;
+    viewLeftConstraint.active = YES;
+    viewRightConstraint.active = YES;
+    viewBottmoConstraint.active = YES;
+    CGFloat latitude = [[self.activityInfo objectForKey:ACTIVITY_INFO_LATITUDE]floatValue];
+    CGFloat longitude = [[self.activityInfo objectForKey:ACTIVITY_INFO_LONGITUDE]floatValue];
+
+
+    activityMainInfoView.locationLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_LOCATION];
+    activityMainInfoView.dateLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_DATE];
+    activityMainInfoView.timeLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_TIME];
+    activityMainInfoView.amountLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_AMOUNT];
+    activityMainInfoView.quotaLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_QUOTA];
+    activityMainInfoView.aboutLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_ABOUT];
+    [activityMainInfoView locateToLatitude:latitude
+                                 longitude:longitude
+                                     title:[self.activityInfo objectForKey:ACTIVITY_INFO_TITLE]
+                                   address:[self.activityInfo objectForKey:ACTIVITY_INFO_LOCATION]];
+    
+}
+
+//
 
 /*
  #pragma mark - Navigation

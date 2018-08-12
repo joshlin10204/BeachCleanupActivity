@@ -18,9 +18,23 @@
     
     UIView * fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     ActivityViewController *fromViewController = [self getActivityViewController:fromView];
-
+//    [fromViewController.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];//使ScrollView先滑到最頂端
     [self dismissTransitionContext:transitionContext fromActivityView:fromViewController];
     
+}
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    
+}
+- (void)searchScrollViewInView:(UIView *)supView {
+    for (UIScrollView *subView in supView.subviews) {
+        if ([subView isKindOfClass:[UIScrollView class]] ) {
+            CGPoint offset = subView.contentOffset;
+            offset.y = -subView.contentInset.top;
+            [subView setContentOffset:offset animated:YES];
+        }
+        
+        [self searchScrollViewInView:subView];
+    }
 }
 -(ActivityViewController*)getActivityViewController:(UIView*)activityView{
     

@@ -16,8 +16,13 @@
 #define ACTIVITY_INFO_DATE @"activityInfoDate"
 #define ACTIVITY_INFO_TIME @"activityInfoTime"
 #define ACTIVITY_INFO_LOCATION @"activityInfoLocation"
-#define ACTIVITY_INFO_DETAIL @"activityInfoDetail"
+#define ACTIVITY_INFO_ABOUT @"activityInfoAbout"
 #define ACTIVITY_INFO_QUOTA @"activityInfoQuota"
+#define ACTIVITY_INFO_AMOUNT @"activityInfoAmount"
+#define ACTIVITY_INFO_LONGITUDE @"activityInfoLongitude"
+#define ACTIVITY_INFO_LATITUDE @"activityInfoLatitude"
+
+
 
 
 @interface ActivityInfoData : NSObject
