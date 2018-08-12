@@ -10,9 +10,11 @@
 
 @interface ActivityViewController : UIViewController
 @property (strong,nonatomic)NSMutableDictionary *activityInfo;
-
 @property (strong,nonatomic)UIView *contentView;
 @property (strong,nonatomic)UIImageView *activityImageView;
+@property (strong,nonatomic)UIScrollView *scrollView;
+@property (strong,nonatomic)UIButton *closeButton;
+
 @property (strong,nonatomic)NSLayoutConstraint *scrollViewTopConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *scrollViewLeftConstraint;
 @property (strong,nonatomic)NSLayoutConstraint *scrollViewRightConstraint;

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0305081C21156B57001B4207 /* PresentCellTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0305081B21156B57001B4207 /* PresentCellTransitionController.m */; };
+		031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859C6211CA7AF0038ED56 /* ActivityViewPresentationController.m */; };
+		031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859C9211FC7050038ED56 /* ActivityViewDismissAnimation.m */; };
+		031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859CC211FC8250038ED56 /* ActivityViewPresentAnimation.m */; };
 		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
 		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
 		03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA931210487EA006CCB67 /* Assets.xcassets */; };
@@ -45,8 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0305081A21156B57001B4207 /* PresentCellTransitionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentCellTransitionController.h; sourceTree = "<group>"; };
-		0305081B21156B57001B4207 /* PresentCellTransitionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentCellTransitionController.m; sourceTree = "<group>"; };
+		031859C5211CA7AF0038ED56 /* ActivityViewPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewPresentationController.h; sourceTree = "<group>"; };
+		031859C6211CA7AF0038ED56 /* ActivityViewPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewPresentationController.m; sourceTree = "<group>"; };
+		031859C8211FC7050038ED56 /* ActivityViewDismissAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewDismissAnimation.h; sourceTree = "<group>"; };
+		031859C9211FC7050038ED56 /* ActivityViewDismissAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewDismissAnimation.m; sourceTree = "<group>"; };
+		031859CB211FC8250038ED56 /* ActivityViewPresentAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewPresentAnimation.h; sourceTree = "<group>"; };
+		031859CC211FC8250038ED56 /* ActivityViewPresentAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewPresentAnimation.m; sourceTree = "<group>"; };
 		03EDA925210487EA006CCB67 /* BeachCleanupActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeachCleanupActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EDA928210487EA006CCB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03EDA929210487EA006CCB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -188,8 +194,12 @@
 		03EDA9872113482A006CCB67 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				0305081A21156B57001B4207 /* PresentCellTransitionController.h */,
-				0305081B21156B57001B4207 /* PresentCellTransitionController.m */,
+				031859CB211FC8250038ED56 /* ActivityViewPresentAnimation.h */,
+				031859CC211FC8250038ED56 /* ActivityViewPresentAnimation.m */,
+				031859C8211FC7050038ED56 /* ActivityViewDismissAnimation.h */,
+				031859C9211FC7050038ED56 /* ActivityViewDismissAnimation.m */,
+				031859C5211CA7AF0038ED56 /* ActivityViewPresentationController.h */,
+				031859C6211CA7AF0038ED56 /* ActivityViewPresentationController.m */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -197,11 +207,11 @@
 		03EDA98921135801006CCB67 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				03EDA97C210E0FBE006CCB67 /* ActivityPage */,
 				03EDA95A21061D2C006CCB67 /* BasicTabBarController.h */,
 				03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */,
 				03EDA95D21061D7A006CCB67 /* BasicTabBar.h */,
 				03EDA95E21061D7A006CCB67 /* BasicTabBar.m */,
-				03EDA97C210E0FBE006CCB67 /* ActivityPage */,
 				03EDA9632107811F006CCB67 /* TicketsViewController.h */,
 				03EDA9642107811F006CCB67 /* TicketsViewController.m */,
 				03EDA96621078132006CCB67 /* HomeViewController.h */,
@@ -349,16 +359,18 @@
 			files = (
 				03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */,
 				03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */,
+				031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */,
 				03EDA938210487EA006CCB67 /* main.m in Sources */,
 				03EDA96B2107815B006CCB67 /* NoticeViewController.m in Sources */,
 				03EDA9652107811F006CCB67 /* TicketsViewController.m in Sources */,
 				03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */,
 				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
-				0305081C21156B57001B4207 /* PresentCellTransitionController.m in Sources */,
 				03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */,
 				03EDA96821078132006CCB67 /* HomeViewController.m in Sources */,
 				03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */,
+				031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */,
 				03EDA96F21078179006CCB67 /* UserInfoViewController.m in Sources */,
+				031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */,
 				03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,13 +10,17 @@
 #import "ActivityCollectionViewCell.h"
 #import "ActivityViewController.h"
 #import "ActivityInfoData.h"
-#import "PresentCellTransitionController.h"
+
+#import "ActivityViewPresentationController.h"
+
 
 @interface ActivityCollectionViewController ()<UIViewControllerTransitioningDelegate>
 {
-    PresentCellTransitionController *  presentCellTransitionController;
+
     ActivityInfoData * activityInfoData;
     NSMutableArray * allActivityInfoArray;
+    ActivityViewController * activityViewController;
+    ActivityViewPresentationController * activityViewPresentationController;
     
 }
 
@@ -56,19 +60,15 @@ static NSString * const reuseIdentifier = @"Cell";
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
     [self.collectionView registerClass:[ActivityCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    presentCellTransitionController = [[PresentCellTransitionController alloc]init];
     [self initActivityInfoData];
-    
   
-
     
 }
 
--(void)initActivityInfoData{
+- (void)initActivityInfoData{
     activityInfoData = [[ActivityInfoData alloc]init];
     allActivityInfoArray = [activityInfoData getAllActivityInfo];
 }
-
 
 
 #pragma mark <UICollectionViewDataSource>
@@ -98,12 +98,17 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    ActivityViewController * activityViewController = [[ActivityViewController alloc]init];
-    activityViewController.activityInfo = [allActivityInfoArray objectAtIndex:indexPath.row];
-    activityViewController.transitioningDelegate = self;
     UICollectionViewLayoutAttributes* attributes =  [collectionView layoutAttributesForItemAtIndexPath:indexPath];
     CGRect cellFrame = [self.collectionView convertRect:attributes.frame toView:self.view];
-    presentCellTransitionController.cellFrame = cellFrame;
+    
+    activityViewController = [[ActivityViewController alloc]init];
+    activityViewController.activityInfo = [allActivityInfoArray objectAtIndex:indexPath.row];
+    
+    activityViewPresentationController = [[ActivityViewPresentationController alloc]initWithPresentedViewController:activityViewController presentingViewController:self];
+    activityViewPresentationController.cellFrame = cellFrame;
+    activityViewController.transitioningDelegate = activityViewPresentationController;
+
+
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
@@ -129,12 +134,6 @@ static NSString * const reuseIdentifier = @"Cell";
                      }];
 }
 
-
-//Cell 點選轉場動畫
-- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    
-    return presentCellTransitionController;
-}
 
 
 

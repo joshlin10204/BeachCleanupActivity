@@ -9,13 +9,13 @@
 #import "ActivityViewController.h"
 #import "ActivityInfoData.h"
 
-@interface ActivityViewController (){
-    UIScrollView *scrollView;
+@interface ActivityViewController ()<UIViewControllerTransitioningDelegate>{
+    
     UIView *infoBasicView;
     UILabel *titleLabel;
     UILabel *subtitleLabel;
     UIButton *signupButton;
-    UIButton *closeButton;
+    
 }
 
 @end
@@ -25,8 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.automaticallyAdjustsScrollViewInsets = false ;
 
+
+
+    
     [self initScrollVIew];
     [self initContentView];
     [self initActivityImageView];
@@ -39,17 +41,17 @@
 
 - (void)initScrollVIew{
     CGFloat height = self.view.frame.size.height ;
-    scrollView = [[UIScrollView alloc]init];
-    scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    scrollView.backgroundColor = [UIColor whiteColor];
-    scrollView.contentSize = CGSizeMake(0,height*2);//暫時設定兩倍長度
-    scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//避免出現空白
-    [self.view addSubview:scrollView];
+    self.scrollView = [[UIScrollView alloc]init];
+    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.scrollView.backgroundColor = [UIColor whiteColor];
+    self.scrollView.contentSize = CGSizeMake(0,height*2);//暫時設定兩倍長度
+    self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//避免出現空白
+    [self.view addSubview:self.scrollView];
     
-    self.scrollViewTopConstraint = [scrollView.topAnchor constraintEqualToAnchor:self.view.topAnchor];
-    self.scrollViewLeftConstraint = [scrollView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
-    self.scrollViewRightConstraint = [scrollView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
-    self.scrollViewBottomConstraint = [scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
+    self.scrollViewTopConstraint = [self.scrollView.topAnchor constraintEqualToAnchor:self.view.topAnchor];
+    self.scrollViewLeftConstraint = [self.scrollView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
+    self.scrollViewRightConstraint = [self.scrollView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
+    self.scrollViewBottomConstraint = [self.scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
     
     self.scrollViewTopConstraint.active = YES;
     self.scrollViewLeftConstraint.active = YES;
@@ -66,16 +68,13 @@
     self.contentView = [[UIView alloc] initWithFrame:self.view.frame];
     self.contentView.backgroundColor = [UIColor whiteColor];
     self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    [scrollView addSubview: self.contentView];
+    [self.scrollView addSubview: self.contentView];
     
-    
-    NSLayoutConstraint *viewTopConstraint = [self.contentView.topAnchor constraintEqualToAnchor:scrollView.topAnchor];
-    NSLayoutConstraint *viewLeftConstraint = [self.contentView.leftAnchor constraintEqualToAnchor:scrollView.leftAnchor];
+    NSLayoutConstraint *viewTopConstraint = [self.contentView.topAnchor constraintEqualToAnchor:self.scrollView.topAnchor];
+    NSLayoutConstraint *viewLeftConstraint = [self.contentView.leftAnchor constraintEqualToAnchor:self.scrollView.leftAnchor];
     self.contentViewHeightConstraint = [self.contentView.heightAnchor constraintEqualToConstant:self.view.frame.size.height];
     self.contentViewWidthConstraint = [self.contentView.widthAnchor constraintEqualToConstant:self.view.frame.size.width];
 
-    
-    
     viewTopConstraint.active = YES;
     viewLeftConstraint.active = YES;
     self.contentViewHeightConstraint.active = YES;
@@ -169,7 +168,6 @@
     self.subtitleHeightConstraint = [subtitleLabel.heightAnchor constraintEqualToConstant:infoBasicView.frame.size.height];
     self.subtitleWidthConstraint = [subtitleLabel.widthAnchor constraintEqualToConstant:infoBasicView.frame.size.width];
 
-    
     labelTopConstraint.active = YES;
     self.subtitleLeftConstraint.active = YES;
     self.subtitleHeightConstraint.active = YES;
@@ -219,39 +217,33 @@
 
 - (void)initCloseButton{
     
-    closeButton = [[UIButton alloc]init];
-    closeButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [closeButton setImage:[UIImage imageNamed:@"Button_Close"] forState:UIControlStateNormal];
-    [closeButton addTarget:self
+    self.closeButton = [[UIButton alloc]init];
+    self.closeButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.closeButton setImage:[UIImage imageNamed:@"Button_Close"] forState:UIControlStateNormal];
+    [self.closeButton addTarget:self
                     action:@selector(onClickCloseBtn:)
           forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:closeButton];
+    [self.view addSubview:self.closeButton];
     
     CGFloat width = self.view.frame.size.width *0.1;
-    NSLayoutConstraint *buttonTopConstraint = [closeButton.topAnchor constraintEqualToAnchor:self.activityImageView.topAnchor
+    NSLayoutConstraint *buttonTopConstraint = [self.closeButton.topAnchor constraintEqualToAnchor:self.view.topAnchor
                                                                                     constant:width * 0.5];
-    NSLayoutConstraint *buttonRightConstraint = [closeButton.rightAnchor constraintEqualToAnchor:self.activityImageView.rightAnchor
+    NSLayoutConstraint *buttonRightConstraint = [self.closeButton.rightAnchor constraintEqualToAnchor:self.view.rightAnchor
                                                                                         constant:-width * 0.5];
-    NSLayoutConstraint *buttonHeightConstraint = [closeButton.heightAnchor constraintEqualToConstant:width];
-    NSLayoutConstraint *buttonWidthConstraint = [closeButton.widthAnchor constraintEqualToConstant:width];
+    NSLayoutConstraint *buttonHeightConstraint = [self.closeButton.heightAnchor constraintEqualToConstant:width];
+    NSLayoutConstraint *buttonWidthConstraint = [self.closeButton.widthAnchor constraintEqualToConstant:width];
     
     buttonTopConstraint.active = YES;
     buttonRightConstraint.active = YES;
     buttonHeightConstraint.active = YES;
     buttonWidthConstraint.active = YES;
     
-
-    
 }
 
 - (void)onClickCloseBtn:(id)sender{
-    NSLog(@"Close");
-    [self dismissViewControllerAnimated:YES completion:^{
-
-    }];
-    
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 /*
  #pragma mark - Navigation
  
