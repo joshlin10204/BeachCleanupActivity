@@ -57,12 +57,20 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
     [self.collectionView registerClass:[ActivityCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     [self initActivityInfoData];
   
     
+}
+-(void)viewWillAppear:(BOOL)animated{
+    //设置导航栏 透明效果
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    // 线条背景透明
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
 }
 
 - (void)initActivityInfoData{

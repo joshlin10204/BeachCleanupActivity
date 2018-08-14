@@ -18,20 +18,52 @@
         [[NSBundle mainBundle] loadNibNamed:@"ActivityMainInfoView" owner:self options:nil];
         self.contentView.frame = self.bounds;
         [self addSubview:self.contentView];
+        [self initLocationLabelTouchEven];
+        
     }
     
     return self;
 }
--(void)locateToLatitude:(CGFloat)latitude longitude:(CGFloat)longitude title:(NSString*)titleString address:(NSString*)address{
+- (void)initLocationLabelTouchEven{
     
-    [self.mapView locateToLatitude:latitude longitude:(CGFloat)longitude title:titleString address:address];
+    self.locationLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(onCLickLocationLabel)];
+    [self.locationLabel addGestureRecognizer:tapGesture];
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+- (void)onCLickLocationLabel{
+    
+    NSString *urlString;
+    // 有安裝Google Map App
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
+        urlString = [[NSString alloc]initWithFormat:@"comgooglemaps://?q=%@,%@",self.latitudeString,self.longitudeString];
+    } else {
+        urlString = [[NSString alloc]initWithFormat:@"http://maps.apple.com/?q=%@,%@&z=20",self.latitudeString,self.longitudeString];
 
+    }
+    [self openApplicationUrl:urlString];
+}
+- (IBAction)onClickFacebookBtn:(id)sender {
+    
+    NSString *urlString;
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"fb://"]]) {
+         urlString =[[NSString alloc]initWithFormat:@"fb://profile/%@",self.facebookID];
+
+    }else{
+        urlString =[[NSString alloc]initWithFormat:@"https://www.facebook.com/events/%@",self.facebookID];
+    }
+    [self openApplicationUrl:urlString];
+
+
+}
+
+- (void)openApplicationUrl:(NSString*)urlString{
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication]openURL:url
+                                      options:@{}
+                            completionHandler:nil];
+    
+}
 @end

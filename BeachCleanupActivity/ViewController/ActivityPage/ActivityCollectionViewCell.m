@@ -72,11 +72,10 @@
     CGFloat x = titleInfoBasicView.frame.size.width *  0.05 ;
     CGFloat y = 0;
     
-    NSLog(@"Josh cell :%f",x);
     self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, width, height)];
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:30];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:25];
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
-    self.titleLabel.textColor = [UIColor colorWithRed:(80.0f / 255.0f) green:(80.0f / 255.0f) blue:(80.0f / 255.0f) alpha:1];
+    self.titleLabel.textColor = [UIColor colorWithRed:(20.0f / 255.0f) green:(20.0f / 255.0f) blue:(20.0f / 255.0f) alpha:1];
     [titleInfoBasicView addSubview:self.titleLabel];
     
 }
@@ -86,10 +85,10 @@
     CGFloat x = titleInfoBasicView.frame.size.width *  0.05 ;
     CGFloat y = self.titleLabel.frame.size.height;
     self.subtitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, width, height)];
-    self.subtitleLabel.font = [UIFont boldSystemFontOfSize:20];
+    self.subtitleLabel.font = [UIFont boldSystemFontOfSize:15];
     self.subtitleLabel.baselineAdjustment = UIBaselineAdjustmentNone;
     self.subtitleLabel.adjustsFontSizeToFitWidth = YES;
-    self.subtitleLabel.textColor = [UIColor colorWithRed:(170.0f / 255.0f) green:(170.0f / 255.0f) blue:(170.0f / 255.0f) alpha:1];
+    self.subtitleLabel.textColor = [UIColor colorWithRed:(127.0f / 255.0f) green:(127.0f / 255.0f) blue:(127.0f / 255.0f) alpha:1];
     [titleInfoBasicView addSubview:self.subtitleLabel];
     
 }

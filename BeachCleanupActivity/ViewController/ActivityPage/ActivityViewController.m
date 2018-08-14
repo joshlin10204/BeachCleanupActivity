@@ -75,8 +75,8 @@
 }
 - (void)updateScrollViewContentSize{
     CGFloat titleInfoViewMaxY = CGRectGetMaxY(titleInfoBasicView.frame) ;
-    CGFloat mainInfoVieBottomViewMaxY = CGRectGetMaxY(activityMainInfoView.mapView.frame) ;
-    CGFloat contentSizeHeight = titleInfoViewMaxY + mainInfoVieBottomViewMaxY ;
+    CGFloat mainInfoVieBottomViewMaxY = CGRectGetMaxY(activityMainInfoView.moreInfoButton.frame) ;
+    CGFloat contentSizeHeight = titleInfoViewMaxY + mainInfoVieBottomViewMaxY + self.view.frame.size.height*0.15;
     self.scrollView.contentSize = CGSizeMake(0, contentSizeHeight);
 }
 
@@ -144,10 +144,10 @@
     titleLabel = [[UILabel alloc]init];
     titleLabel.adjustsFontSizeToFitWidth = YES;
     titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    titleLabel.font = [UIFont boldSystemFontOfSize:30];
-    titleLabel.textColor = [UIColor colorWithRed:(80.0f / 255.0f)
-                                           green:(80.0f / 255.0f)
-                                            blue:(80.0f / 255.0f)
+    titleLabel.font = [UIFont boldSystemFontOfSize:25];
+    titleLabel.textColor = [UIColor colorWithRed:(20.0f / 255.0f)
+                                           green:(20.0f / 255.0f)
+                                            blue:(20.0f / 255.0f)
                                            alpha:1];
     titleLabel.text = [self.activityInfo objectForKey:ACTIVITY_INFO_TITLE];
     [titleInfoBasicView addSubview:titleLabel];
@@ -171,11 +171,11 @@
     subtitleLabel = [[UILabel alloc]init];
     subtitleLabel.adjustsFontSizeToFitWidth = YES;
     subtitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    subtitleLabel.font = [UIFont boldSystemFontOfSize:20];
+    subtitleLabel.font = [UIFont boldSystemFontOfSize:15];
     subtitleLabel.baselineAdjustment = UIBaselineAdjustmentNone;
-    subtitleLabel.textColor = [UIColor colorWithRed:(170.0f / 255.0f)
-                                              green:(170.0f / 255.0f)
-                                               blue:(170.0f / 255.0f)
+    subtitleLabel.textColor = [UIColor colorWithRed:(127.0f / 255.0f)
+                                              green:(127.0f / 255.0f)
+                                               blue:(127.0f / 255.0f)
                                               alpha:1];
     subtitleLabel.text = [self.activityInfo objectForKey:ACTIVITY_INFO_SUBTITLE];
     [titleInfoBasicView addSubview:subtitleLabel];
@@ -230,14 +230,7 @@
 }
 - (void)onClickSignupBtn:(id)sender{
     NSLog(@"onClickSignupBtn");
-    
-//    NSString *urlString = [@"https://maps.apple.com/maps?q=Taipei" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *urlString = [@"https://maps.google.com/maps?ll=25.018845,121.557556&z=15" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
-    NSURL *url = [NSURL URLWithString:urlString];
-    [[UIApplication sharedApplication]openURL:url
-                                      options:@{}
-                            completionHandler:nil];
     
 }
 
@@ -296,8 +289,7 @@
     viewLeftConstraint.active = YES;
     viewRightConstraint.active = YES;
     viewBottmoConstraint.active = YES;
-    CGFloat latitude = [[self.activityInfo objectForKey:ACTIVITY_INFO_LATITUDE]floatValue];
-    CGFloat longitude = [[self.activityInfo objectForKey:ACTIVITY_INFO_LONGITUDE]floatValue];
+
 
 
     activityMainInfoView.locationLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_LOCATION];
@@ -306,11 +298,9 @@
     activityMainInfoView.amountLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_AMOUNT];
     activityMainInfoView.quotaLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_QUOTA];
     activityMainInfoView.aboutLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_ABOUT];
-    [activityMainInfoView locateToLatitude:latitude
-                                 longitude:longitude
-                                     title:[self.activityInfo objectForKey:ACTIVITY_INFO_TITLE]
-                                   address:[self.activityInfo objectForKey:ACTIVITY_INFO_LOCATION]];
-    
+    activityMainInfoView.latitudeString = [self.activityInfo objectForKey:ACTIVITY_INFO_LATITUDE];
+    activityMainInfoView.longitudeString = [self.activityInfo objectForKey:ACTIVITY_INFO_LONGITUDE];
+    activityMainInfoView.facebookID = [self.activityInfo objectForKey:ACTIVITY_INFO_FACEBOOKID];
 }
 
 //

@@ -21,6 +21,8 @@
 #define ACTIVITY_INFO_AMOUNT @"activityInfoAmount"
 #define ACTIVITY_INFO_LONGITUDE @"activityInfoLongitude"
 #define ACTIVITY_INFO_LATITUDE @"activityInfoLatitude"
+#define ACTIVITY_INFO_FACEBOOKID @"activityFacebookId"
+
 
 
 

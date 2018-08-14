@@ -12,8 +12,6 @@
 		031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859CC211FC8250038ED56 /* ActivityViewPresentAnimation.m */; };
 		031859D7211FF4120038ED56 /* ActivityMainInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859D6211FF4120038ED56 /* ActivityMainInfoView.m */; };
 		031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031859D8211FF4210038ED56 /* ActivityMainInfoView.xib */; };
-		03374C7B212026C900FCF42A /* ActivityMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03374C7A212026C900FCF42A /* ActivityMapView.m */; };
-		03374C7D2120291500FCF42A /* ActivityMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03374C7C2120291500FCF42A /* ActivityMapView.xib */; };
 		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
 		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
 		03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA931210487EA006CCB67 /* Assets.xcassets */; };
@@ -60,9 +58,6 @@
 		031859D5211FF4120038ED56 /* ActivityMainInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityMainInfoView.h; sourceTree = "<group>"; };
 		031859D6211FF4120038ED56 /* ActivityMainInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityMainInfoView.m; sourceTree = "<group>"; };
 		031859D8211FF4210038ED56 /* ActivityMainInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityMainInfoView.xib; sourceTree = "<group>"; };
-		03374C79212026C900FCF42A /* ActivityMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityMapView.h; sourceTree = "<group>"; };
-		03374C7A212026C900FCF42A /* ActivityMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityMapView.m; sourceTree = "<group>"; };
-		03374C7C2120291500FCF42A /* ActivityMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityMapView.xib; sourceTree = "<group>"; };
 		03EDA925210487EA006CCB67 /* BeachCleanupActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeachCleanupActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EDA928210487EA006CCB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03EDA929210487EA006CCB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -191,9 +186,6 @@
 				031859D5211FF4120038ED56 /* ActivityMainInfoView.h */,
 				031859D6211FF4120038ED56 /* ActivityMainInfoView.m */,
 				031859D8211FF4210038ED56 /* ActivityMainInfoView.xib */,
-				03374C79212026C900FCF42A /* ActivityMapView.h */,
-				03374C7A212026C900FCF42A /* ActivityMapView.m */,
-				03374C7C2120291500FCF42A /* ActivityMapView.xib */,
 			);
 			path = ActivityPage;
 			sourceTree = "<group>";
@@ -349,7 +341,6 @@
 				03EDA935210487EA006CCB67 /* LaunchScreen.storyboard in Resources */,
 				03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */,
 				031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */,
-				03374C7D2120291500FCF42A /* ActivityMapView.xib in Resources */,
 				03EDA930210487EA006CCB67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +374,6 @@
 				03EDA9652107811F006CCB67 /* TicketsViewController.m in Sources */,
 				03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */,
 				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
-				03374C7B212026C900FCF42A /* ActivityMapView.m in Sources */,
 				03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */,
 				03EDA96821078132006CCB67 /* HomeViewController.m in Sources */,
 				031859D7211FF4120038ED56 /* ActivityMainInfoView.m in Sources */,
