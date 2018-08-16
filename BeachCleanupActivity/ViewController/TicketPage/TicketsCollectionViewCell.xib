@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TicketsCollectionViewCell">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="ghf-7K-i7B"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TicketsCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestActivityImage" translatesAutoresizingMaskIntoConstraints="NO" id="Lsi-tv-PlG">
+                    <rect key="frame" x="-0.5" y="66.5" width="375" height="233.5"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="五告熱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fx-KH-KpJ">
+                    <rect key="frame" x="19" y="13.5" width="337.5" height="46.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                    <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfo-v6-WWD">
+                    <rect key="frame" x="19" y="320" width="150" height="27"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.05.26" lineBreakMode="middleTruncation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrt-N3-Lns">
+                    <rect key="frame" x="19" y="347" width="150" height="27"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                    <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1j-UV-0p5">
+                    <rect key="frame" x="206.5" y="320" width="150" height="27"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00-16:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e95-dX-GbZ">
+                    <rect key="frame" x="206.5" y="347" width="150" height="27"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                    <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestQRCode" translatesAutoresizingMaskIntoConstraints="NO" id="hIA-vY-eEl">
+                    <rect key="frame" x="74.5" y="428.5" width="225" height="225"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hIA-vY-eEl" secondAttribute="height" multiplier="1:1" id="jJJ-5r-Ykh"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="y1j-UV-0p5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="55/100" id="0yI-vV-PwU"/>
+                <constraint firstItem="Zrt-N3-Lns" firstAttribute="top" secondItem="dfo-v6-WWD" secondAttribute="bottom" id="2lG-GV-Id3"/>
+                <constraint firstItem="8fx-KH-KpJ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="90/100" id="4d1-y7-wtO"/>
+                <constraint firstItem="Lsi-tv-PlG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="10/100" id="5do-c4-A16"/>
+                <constraint firstItem="8fx-KH-KpJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7IP-j2-eoA"/>
+                <constraint firstItem="e95-dX-GbZ" firstAttribute="leading" secondItem="y1j-UV-0p5" secondAttribute="leading" id="9ye-lu-kUG"/>
+                <constraint firstItem="e95-dX-GbZ" firstAttribute="centerY" secondItem="Zrt-N3-Lns" secondAttribute="centerY" id="B6T-HS-RoU"/>
+                <constraint firstItem="dfo-v6-WWD" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="4/100" id="DcQ-Y3-MRA"/>
+                <constraint firstItem="y1j-UV-0p5" firstAttribute="centerY" secondItem="dfo-v6-WWD" secondAttribute="centerY" id="Gm2-hl-DNX"/>
+                <constraint firstItem="Zrt-N3-Lns" firstAttribute="leading" secondItem="dfo-v6-WWD" secondAttribute="leading" id="Ld7-A9-W2z"/>
+                <constraint firstItem="dfo-v6-WWD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="5/100" id="Oju-Ff-4c1"/>
+                <constraint firstItem="Zrt-N3-Lns" firstAttribute="height" secondItem="dfo-v6-WWD" secondAttribute="height" id="Oqz-Vb-gCb"/>
+                <constraint firstItem="e95-dX-GbZ" firstAttribute="width" secondItem="y1j-UV-0p5" secondAttribute="width" id="U0a-Xr-FD2"/>
+                <constraint firstItem="hIA-vY-eEl" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="60/100" id="aOR-8E-Jo1"/>
+                <constraint firstItem="8fx-KH-KpJ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="7/100" id="bHa-Me-xrZ"/>
+                <constraint firstItem="Lsi-tv-PlG" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="35/100" id="cYH-qS-pDQ"/>
+                <constraint firstItem="Zrt-N3-Lns" firstAttribute="width" secondItem="dfo-v6-WWD" secondAttribute="width" id="gOE-YA-6CL"/>
+                <constraint firstItem="dfo-v6-WWD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="geO-Xb-0Qf"/>
+                <constraint firstItem="hIA-vY-eEl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="grH-ar-UcU"/>
+                <constraint firstItem="dfo-v6-WWD" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="40/100" id="kd2-wa-DNL"/>
+                <constraint firstItem="y1j-UV-0p5" firstAttribute="width" secondItem="dfo-v6-WWD" secondAttribute="width" id="lNW-5F-5k0"/>
+                <constraint firstItem="y1j-UV-0p5" firstAttribute="height" secondItem="dfo-v6-WWD" secondAttribute="height" id="lTH-U0-2Wr"/>
+                <constraint firstItem="Lsi-tv-PlG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="p8B-ao-RIV"/>
+                <constraint firstItem="e95-dX-GbZ" firstAttribute="height" secondItem="y1j-UV-0p5" secondAttribute="height" id="rgK-pp-30A"/>
+                <constraint firstItem="Lsi-tv-PlG" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="tcS-sf-fnI"/>
+                <constraint firstItem="8fx-KH-KpJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="2/100" id="vLk-e0-W5A"/>
+                <constraint firstItem="hIA-vY-eEl" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="98/100" id="vrI-eb-yVa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="TestActivityImage" width="2048" height="1365"/>
+        <image name="TestQRCode" width="281" height="281"/>
+    </resources>
+</document>

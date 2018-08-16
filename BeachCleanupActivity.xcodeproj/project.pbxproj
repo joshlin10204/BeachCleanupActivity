@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030731F021246D610037093E /* TicketsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030731EF21246D610037093E /* TicketsCollectionViewController.m */; };
+		030731F32124716B0037093E /* TicketsCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 030731F22124716B0037093E /* TicketsCollectionViewFlowLayout.m */; };
+		030731F6212482DB0037093E /* TicketsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 030731F5212482DB0037093E /* TicketsCollectionViewCell.m */; };
+		030731F92124871D0037093E /* TicketsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 030731F82124871D0037093E /* TicketsData.m */; };
+		030731FB212496F00037093E /* TicketsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030731FA212496F00037093E /* TicketsCollectionViewCell.xib */; };
 		031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859C6211CA7AF0038ED56 /* ActivityViewPresentationController.m */; };
 		031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859C9211FC7050038ED56 /* ActivityViewDismissAnimation.m */; };
 		031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859CC211FC8250038ED56 /* ActivityViewPresentAnimation.m */; };
@@ -21,7 +26,6 @@
 		03EDA94D210487EA006CCB67 /* BeachCleanupActivityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA94C210487EA006CCB67 /* BeachCleanupActivityUITests.m */; };
 		03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */; };
 		03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA95E21061D7A006CCB67 /* BasicTabBar.m */; };
-		03EDA9652107811F006CCB67 /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA9642107811F006CCB67 /* TicketsViewController.m */; };
 		03EDA96821078132006CCB67 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96721078132006CCB67 /* HomeViewController.m */; };
 		03EDA96B2107815B006CCB67 /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96A2107815B006CCB67 /* NoticeViewController.m */; };
 		03EDA96F21078179006CCB67 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96E21078179006CCB67 /* UserInfoViewController.m */; };
@@ -49,6 +53,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030731EE21246D610037093E /* TicketsCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsCollectionViewController.h; sourceTree = "<group>"; };
+		030731EF21246D610037093E /* TicketsCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsCollectionViewController.m; sourceTree = "<group>"; };
+		030731F12124716B0037093E /* TicketsCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		030731F22124716B0037093E /* TicketsCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		030731F4212482DB0037093E /* TicketsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsCollectionViewCell.h; sourceTree = "<group>"; };
+		030731F5212482DB0037093E /* TicketsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsCollectionViewCell.m; sourceTree = "<group>"; };
+		030731F72124871D0037093E /* TicketsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsData.h; sourceTree = "<group>"; };
+		030731F82124871D0037093E /* TicketsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsData.m; sourceTree = "<group>"; };
+		030731FA212496F00037093E /* TicketsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketsCollectionViewCell.xib; sourceTree = "<group>"; };
 		031859C5211CA7AF0038ED56 /* ActivityViewPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewPresentationController.h; sourceTree = "<group>"; };
 		031859C6211CA7AF0038ED56 /* ActivityViewPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewPresentationController.m; sourceTree = "<group>"; };
 		031859C8211FC7050038ED56 /* ActivityViewDismissAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewDismissAnimation.h; sourceTree = "<group>"; };
@@ -76,8 +89,6 @@
 		03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTabBarController.m; sourceTree = "<group>"; };
 		03EDA95D21061D7A006CCB67 /* BasicTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTabBar.h; sourceTree = "<group>"; };
 		03EDA95E21061D7A006CCB67 /* BasicTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTabBar.m; sourceTree = "<group>"; };
-		03EDA9632107811F006CCB67 /* TicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
-		03EDA9642107811F006CCB67 /* TicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
 		03EDA96621078132006CCB67 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		03EDA96721078132006CCB67 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		03EDA9692107815B006CCB67 /* NoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
@@ -119,6 +130,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030731A92123401E0037093E /* BasicTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				03EDA95A21061D2C006CCB67 /* BasicTabBarController.h */,
+				03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */,
+				03EDA95D21061D7A006CCB67 /* BasicTabBar.h */,
+				03EDA95E21061D7A006CCB67 /* BasicTabBar.m */,
+			);
+			path = BasicTabBar;
+			sourceTree = "<group>";
+		};
+		030731AA212340320037093E /* TicketPage */ = {
+			isa = PBXGroup;
+			children = (
+				030731EE21246D610037093E /* TicketsCollectionViewController.h */,
+				030731EF21246D610037093E /* TicketsCollectionViewController.m */,
+				030731F12124716B0037093E /* TicketsCollectionViewFlowLayout.h */,
+				030731F22124716B0037093E /* TicketsCollectionViewFlowLayout.m */,
+				030731F4212482DB0037093E /* TicketsCollectionViewCell.h */,
+				030731F5212482DB0037093E /* TicketsCollectionViewCell.m */,
+				030731FA212496F00037093E /* TicketsCollectionViewCell.xib */,
+			);
+			path = TicketPage;
+			sourceTree = "<group>";
+		};
 		03EDA91C210487EA006CCB67 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +231,8 @@
 			children = (
 				03EDA983211347E4006CCB67 /* ActivityInfoData.h */,
 				03EDA984211347E4006CCB67 /* ActivityInfoData.m */,
+				030731F72124871D0037093E /* TicketsData.h */,
+				030731F82124871D0037093E /* TicketsData.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -215,13 +253,9 @@
 		03EDA98921135801006CCB67 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				030731A92123401E0037093E /* BasicTabBar */,
 				03EDA97C210E0FBE006CCB67 /* ActivityPage */,
-				03EDA95A21061D2C006CCB67 /* BasicTabBarController.h */,
-				03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */,
-				03EDA95D21061D7A006CCB67 /* BasicTabBar.h */,
-				03EDA95E21061D7A006CCB67 /* BasicTabBar.m */,
-				03EDA9632107811F006CCB67 /* TicketsViewController.h */,
-				03EDA9642107811F006CCB67 /* TicketsViewController.m */,
+				030731AA212340320037093E /* TicketPage */,
 				03EDA96621078132006CCB67 /* HomeViewController.h */,
 				03EDA96721078132006CCB67 /* HomeViewController.m */,
 				03EDA9692107815B006CCB67 /* NoticeViewController.h */,
@@ -339,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03EDA935210487EA006CCB67 /* LaunchScreen.storyboard in Resources */,
+				030731FB212496F00037093E /* TicketsCollectionViewCell.xib in Resources */,
 				03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */,
 				031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */,
 				03EDA930210487EA006CCB67 /* Main.storyboard in Resources */,
@@ -366,12 +401,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030731F021246D610037093E /* TicketsCollectionViewController.m in Sources */,
 				03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */,
 				03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */,
 				031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */,
 				03EDA938210487EA006CCB67 /* main.m in Sources */,
+				030731F92124871D0037093E /* TicketsData.m in Sources */,
+				030731F6212482DB0037093E /* TicketsCollectionViewCell.m in Sources */,
 				03EDA96B2107815B006CCB67 /* NoticeViewController.m in Sources */,
-				03EDA9652107811F006CCB67 /* TicketsViewController.m in Sources */,
+				030731F32124716B0037093E /* TicketsCollectionViewFlowLayout.m in Sources */,
 				03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */,
 				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
 				03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */,

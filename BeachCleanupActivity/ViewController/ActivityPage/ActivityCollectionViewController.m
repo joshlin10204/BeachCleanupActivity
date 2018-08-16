@@ -41,7 +41,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     layout.itemSize = CGSizeMake(width * 0.9, height * 0.45);
     
-    layout.headerReferenceSize = CGSizeMake(10, 10);
+    layout.headerReferenceSize = CGSizeMake(50, 50);
     
     layout.footerReferenceSize = CGSizeMake(10, 10);
     
@@ -67,15 +67,16 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 -(void)viewWillAppear:(BOOL)animated{
-    //设置导航栏 透明效果
+    //NavigationBar 設置透明
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    // 线条背景透明
     self.navigationController.navigationBar.shadowImage = [UIImage new];
 }
 
 - (void)initActivityInfoData{
     activityInfoData = [[ActivityInfoData alloc]init];
     allActivityInfoArray = [activityInfoData getAllActivityInfo];
+    [self.collectionView reloadData];
+
 }
 
 
@@ -142,49 +143,4 @@ static NSString * const reuseIdentifier = @"Cell";
                      }];
 }
 
-
-
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
- // Uncomment this method to specify if the specified item should be highlighted during tracking
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
- return YES;
- }
- */
-
-/*
- // Uncomment this method to specify if the specified item should be selected
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
- return YES;
- }
- */
-
-/*
- // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
- return NO;
- }
- 
- - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
- return NO;
- }
- 
- - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
- 
- }
- */
-
-
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 @end

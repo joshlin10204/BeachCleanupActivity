@@ -9,7 +9,7 @@
 #import "BasicTabBarController.h"
 #import "BasicTabBar.h"
 #import "ActivityCollectionViewController.h"
-#import "TicketsViewController.h"
+#import "TicketsCollectionViewController.h"
 #import "HomeViewController.h"
 #import "NoticeViewController.h"
 #import "UserInfoViewController.h"
@@ -17,7 +17,7 @@
     
     BasicTabBar * basicTabBar;
     ActivityCollectionViewController * activityCollectionViewController;
-    TicketsViewController * ticketsViewController;
+    TicketsCollectionViewController * ticketsCollectionViewController;
     HomeViewController * homeViewController;
     NoticeViewController * noticeViewController;
     UserInfoViewController * userInfoViewController;
@@ -32,7 +32,7 @@
     
 
     activityCollectionViewController = [[ActivityCollectionViewController alloc]init];
-    ticketsViewController = [[TicketsViewController alloc]init];
+    ticketsCollectionViewController = [[TicketsCollectionViewController alloc]init];
     homeViewController = [[HomeViewController alloc]init];
     noticeViewController = [[NoticeViewController alloc]init];
     userInfoViewController = [[UserInfoViewController alloc]init];
@@ -43,7 +43,7 @@
                  title:@"Activity"
                  image:@"TabBarItem_Activity_Unselected"
          selectedImage:@"TabBarItem_Activity_Selected"];
-    [self setupChildVc:ticketsViewController
+    [self setupChildVc:ticketsCollectionViewController
                  title:@"Tickets"
                  image:@"TabBarItem_Ticket_Unselected"
          selectedImage:@"TabBarItem_Ticket_Selected"];
@@ -70,7 +70,7 @@
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
-    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1.0];
+//    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1.0];
     UINavigationController *navVc = [[UINavigationController alloc]initWithRootViewController:vc];
     [self addChildViewController:navVc];
 }
@@ -110,6 +110,7 @@
     layer.path = path.CGPath;
     layer.shadowOpacity = 0.4;
     layer.shadowColor = [[UIColor colorWithRed:(150.0f / 255.0f) green:(150.0f/255.0f) blue:(150.0f/255.0f) alpha:1]CGColor];
+    
     return layer;
 }
 @end
