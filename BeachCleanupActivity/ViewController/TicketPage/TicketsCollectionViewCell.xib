@@ -15,6 +15,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TicketsCollectionViewCell">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="ghf-7K-i7B"/>
+                <outlet property="ticketDateLabel" destination="Zrt-N3-Lns" id="zt6-dc-DtQ"/>
+                <outlet property="ticketImageview" destination="Lsi-tv-PlG" id="Dlj-zu-gWS"/>
+                <outlet property="ticketTimeLabel" destination="e95-dX-GbZ" id="scG-23-GSD"/>
+                <outlet property="ticketTitleLabel" destination="8fx-KH-KpJ" id="rJ3-TB-4dy"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,16 +26,13 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestActivityImage" translatesAutoresizingMaskIntoConstraints="NO" id="Lsi-tv-PlG">
-                    <rect key="frame" x="-0.5" y="66.5" width="375" height="233.5"/>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="五告熱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fx-KH-KpJ">
                     <rect key="frame" x="19" y="13.5" width="337.5" height="46.5"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
                     <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfo-v6-WWD">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfo-v6-WWD">
                     <rect key="frame" x="19" y="320" width="150" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                     <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,7 +44,7 @@
                     <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1j-UV-0p5">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1j-UV-0p5">
                     <rect key="frame" x="206.5" y="320" width="150" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                     <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,13 +62,16 @@
                         <constraint firstAttribute="width" secondItem="hIA-vY-eEl" secondAttribute="height" multiplier="1:1" id="jJJ-5r-Ykh"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestActivityImage" translatesAutoresizingMaskIntoConstraints="NO" id="Lsi-tv-PlG">
+                    <rect key="frame" x="0.0" y="68" width="375" height="233.5"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="y1j-UV-0p5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="55/100" id="0yI-vV-PwU"/>
                 <constraint firstItem="Zrt-N3-Lns" firstAttribute="top" secondItem="dfo-v6-WWD" secondAttribute="bottom" id="2lG-GV-Id3"/>
                 <constraint firstItem="8fx-KH-KpJ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="90/100" id="4d1-y7-wtO"/>
-                <constraint firstItem="Lsi-tv-PlG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="10/100" id="5do-c4-A16"/>
+                <constraint firstItem="Lsi-tv-PlG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="10/100" constant="1.2999999999999972" id="5do-c4-A16"/>
                 <constraint firstItem="8fx-KH-KpJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7IP-j2-eoA"/>
                 <constraint firstItem="e95-dX-GbZ" firstAttribute="leading" secondItem="y1j-UV-0p5" secondAttribute="leading" id="9ye-lu-kUG"/>
                 <constraint firstItem="e95-dX-GbZ" firstAttribute="centerY" secondItem="Zrt-N3-Lns" secondAttribute="centerY" id="B6T-HS-RoU"/>

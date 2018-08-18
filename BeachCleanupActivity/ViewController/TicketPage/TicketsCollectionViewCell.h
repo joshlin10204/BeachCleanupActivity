@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TicketsCollectionViewCell : UICollectionViewCell
-
-@property (weak, nonatomic) IBOutlet UIView *testView;
+@property (weak, nonatomic) IBOutlet UILabel *ticketTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ticketDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ticketTimeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *ticketImageview;
 @end

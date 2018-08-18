@@ -86,8 +86,8 @@
     CGFloat y = self.titleLabel.frame.size.height;
     self.subtitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, width, height)];
     self.subtitleLabel.font = [UIFont boldSystemFontOfSize:15];
-    self.subtitleLabel.baselineAdjustment = UIBaselineAdjustmentNone;
     self.subtitleLabel.adjustsFontSizeToFitWidth = YES;
+    self.subtitleLabel.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
     self.subtitleLabel.textColor = [UIColor colorWithRed:(127.0f / 255.0f) green:(127.0f / 255.0f) blue:(127.0f / 255.0f) alpha:1];
     [titleInfoBasicView addSubview:self.subtitleLabel];
     

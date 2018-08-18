@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="NoticeTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeTableViewCell" rowHeight="210" id="KGk-i7-Jjw" customClass="NoticeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="561" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="561" height="209.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQj-L3-G9O">
+                        <rect key="frame" x="28" y="62" width="84" height="84"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="XQj-L3-G9O" secondAttribute="height" multiplier="1:1" id="Npf-zV-X3L"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活動通知" lineBreakMode="tailTruncation" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-ed-k9v">
+                        <rect key="frame" x="140.5" y="52.5" width="392.5" height="52.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                        <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label Label Label Label Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="PJk-pL-jyQ">
+                        <rect key="frame" x="140.5" y="105" width="392.5" height="84"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="pQb-ed-k9v" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="1/4" id="2GB-mf-Jxx"/>
+                    <constraint firstItem="pQb-ed-k9v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="25/100" id="2x8-Um-bRW"/>
+                    <constraint firstItem="PJk-pL-jyQ" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="40/100" id="9LT-k1-fd1"/>
+                    <constraint firstItem="XQj-L3-G9O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="5/100" id="B7R-SV-szx"/>
+                    <constraint firstItem="PJk-pL-jyQ" firstAttribute="leading" secondItem="pQb-ed-k9v" secondAttribute="leading" id="FTA-De-tDZ"/>
+                    <constraint firstItem="XQj-L3-G9O" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JcW-Bu-iEZ"/>
+                    <constraint firstItem="PJk-pL-jyQ" firstAttribute="width" secondItem="pQb-ed-k9v" secondAttribute="width" id="Jcw-NY-L1h"/>
+                    <constraint firstItem="XQj-L3-G9O" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="15/100" id="Xw0-6R-lQj"/>
+                    <constraint firstItem="pQb-ed-k9v" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="70/100" id="ZYt-7c-FeK"/>
+                    <constraint firstItem="PJk-pL-jyQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="bottom" multiplier="50/100" id="lgQ-6F-b75"/>
+                    <constraint firstItem="pQb-ed-k9v" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" multiplier="50/100" id="z49-A4-wHj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="noticeImageView" destination="XQj-L3-G9O" id="nBh-w9-BcM"/>
+                <outlet property="noticeMessageLabel" destination="PJk-pL-jyQ" id="ffU-rS-Bgv"/>
+                <outlet property="noticeTitleLabel" destination="pQb-ed-k9v" id="283-Sk-b1g"/>
+            </connections>
+            <point key="canvasLocation" x="-124.5" y="49"/>
+        </tableViewCell>
+    </objects>
+</document>

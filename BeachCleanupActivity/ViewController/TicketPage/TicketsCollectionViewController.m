@@ -37,7 +37,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:(255.0f/255.0f) green:(255.0f/255.0f) blue:(255.0f/255.0f) alpha:1];
     self.collectionView.showsHorizontalScrollIndicator = false;
     self.collectionView.userInteractionEnabled = true; //???
     [self.collectionView registerClass:[TicketsCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -74,13 +74,21 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    TicketsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     //增加Cell 陰影
     cell.layer.cornerRadius=14;
     cell.layer.shadowOpacity = 0.6;
     cell.layer.shadowRadius = 5;
     cell.layer.shadowColor = [[UIColor colorWithRed:(100.0f / 255.0f) green:(100.0f/255.0f) blue:(100.0f/255.0f) alpha:1]CGColor];
+    NSMutableDictionary *ticketInfo = [allTicketsArray objectAtIndex:indexPath.row];
+    cell.ticketTitleLabel.text = [ticketInfo objectForKey:TICKET_TITLE];
+    cell.ticketDateLabel.text = [ticketInfo objectForKey:TICKET_DATE];
+    cell.ticketTimeLabel.text = [ticketInfo objectForKey:TICKET_TIME];
+    cell.ticketImageview.image = [ticketInfo objectForKey:TICKET_IMAGE];
+
+    
+    
     
     return cell;
 }

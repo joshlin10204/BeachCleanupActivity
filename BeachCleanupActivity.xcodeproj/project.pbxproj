@@ -12,6 +12,11 @@
 		030731F6212482DB0037093E /* TicketsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 030731F5212482DB0037093E /* TicketsCollectionViewCell.m */; };
 		030731F92124871D0037093E /* TicketsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 030731F82124871D0037093E /* TicketsData.m */; };
 		030731FB212496F00037093E /* TicketsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030731FA212496F00037093E /* TicketsCollectionViewCell.xib */; };
+		030732012127A4E00037093E /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030732002127A4E00037093E /* NoticeTableViewController.m */; };
+		0307320B2127AFD00037093E /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 030732092127AFD00037093E /* NoticeTableViewCell.m */; };
+		0307320C2127AFD00037093E /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0307320A2127AFD00037093E /* NoticeTableViewCell.xib */; };
+		0307320F2127B0020037093E /* NoticeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307320E2127B0020037093E /* NoticeData.m */; };
+		030732122127B0190037093E /* UserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 030732112127B0190037093E /* UserInfoData.m */; };
 		031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859C6211CA7AF0038ED56 /* ActivityViewPresentationController.m */; };
 		031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859C9211FC7050038ED56 /* ActivityViewDismissAnimation.m */; };
 		031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859CC211FC8250038ED56 /* ActivityViewPresentAnimation.m */; };
@@ -27,7 +32,6 @@
 		03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA95B21061D2C006CCB67 /* BasicTabBarController.m */; };
 		03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA95E21061D7A006CCB67 /* BasicTabBar.m */; };
 		03EDA96821078132006CCB67 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96721078132006CCB67 /* HomeViewController.m */; };
-		03EDA96B2107815B006CCB67 /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96A2107815B006CCB67 /* NoticeViewController.m */; };
 		03EDA96F21078179006CCB67 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA96E21078179006CCB67 /* UserInfoViewController.m */; };
 		03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA977210E084D006CCB67 /* ActivityCollectionViewCell.m */; };
 		03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */; };
@@ -62,6 +66,15 @@
 		030731F72124871D0037093E /* TicketsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsData.h; sourceTree = "<group>"; };
 		030731F82124871D0037093E /* TicketsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsData.m; sourceTree = "<group>"; };
 		030731FA212496F00037093E /* TicketsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketsCollectionViewCell.xib; sourceTree = "<group>"; };
+		030731FF2127A4DF0037093E /* NoticeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeTableViewController.h; sourceTree = "<group>"; };
+		030732002127A4E00037093E /* NoticeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeTableViewController.m; sourceTree = "<group>"; };
+		030732082127AFD00037093E /* NoticeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeTableViewCell.h; sourceTree = "<group>"; };
+		030732092127AFD00037093E /* NoticeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeTableViewCell.m; sourceTree = "<group>"; };
+		0307320A2127AFD00037093E /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
+		0307320D2127B0020037093E /* NoticeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeData.h; sourceTree = "<group>"; };
+		0307320E2127B0020037093E /* NoticeData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeData.m; sourceTree = "<group>"; };
+		030732102127B0190037093E /* UserInfoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoData.h; sourceTree = "<group>"; };
+		030732112127B0190037093E /* UserInfoData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoData.m; sourceTree = "<group>"; };
 		031859C5211CA7AF0038ED56 /* ActivityViewPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewPresentationController.h; sourceTree = "<group>"; };
 		031859C6211CA7AF0038ED56 /* ActivityViewPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewPresentationController.m; sourceTree = "<group>"; };
 		031859C8211FC7050038ED56 /* ActivityViewDismissAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewDismissAnimation.h; sourceTree = "<group>"; };
@@ -91,8 +104,6 @@
 		03EDA95E21061D7A006CCB67 /* BasicTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTabBar.m; sourceTree = "<group>"; };
 		03EDA96621078132006CCB67 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		03EDA96721078132006CCB67 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		03EDA9692107815B006CCB67 /* NoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
-		03EDA96A2107815B006CCB67 /* NoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
 		03EDA96D21078179006CCB67 /* UserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		03EDA96E21078179006CCB67 /* UserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		03EDA976210E084D006CCB67 /* ActivityCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityCollectionViewCell.h; sourceTree = "<group>"; };
@@ -155,6 +166,18 @@
 			path = TicketPage;
 			sourceTree = "<group>";
 		};
+		030732052127A5010037093E /* NoticePage */ = {
+			isa = PBXGroup;
+			children = (
+				030731FF2127A4DF0037093E /* NoticeTableViewController.h */,
+				030732002127A4E00037093E /* NoticeTableViewController.m */,
+				030732082127AFD00037093E /* NoticeTableViewCell.h */,
+				030732092127AFD00037093E /* NoticeTableViewCell.m */,
+				0307320A2127AFD00037093E /* NoticeTableViewCell.xib */,
+			);
+			path = NoticePage;
+			sourceTree = "<group>";
+		};
 		03EDA91C210487EA006CCB67 = {
 			isa = PBXGroup;
 			children = (
@@ -213,13 +236,13 @@
 		03EDA97C210E0FBE006CCB67 /* ActivityPage */ = {
 			isa = PBXGroup;
 			children = (
-				03EDA979210E0F41006CCB67 /* ActivityCollectionViewController.h */,
 				03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */,
 				03EDA976210E084D006CCB67 /* ActivityCollectionViewCell.h */,
 				03EDA977210E084D006CCB67 /* ActivityCollectionViewCell.m */,
 				03EDA97D210E11CD006CCB67 /* ActivityViewController.h */,
 				03EDA97E210E11CD006CCB67 /* ActivityViewController.m */,
 				031859D5211FF4120038ED56 /* ActivityMainInfoView.h */,
+				03EDA979210E0F41006CCB67 /* ActivityCollectionViewController.h */,
 				031859D6211FF4120038ED56 /* ActivityMainInfoView.m */,
 				031859D8211FF4210038ED56 /* ActivityMainInfoView.xib */,
 			);
@@ -233,6 +256,10 @@
 				03EDA984211347E4006CCB67 /* ActivityInfoData.m */,
 				030731F72124871D0037093E /* TicketsData.h */,
 				030731F82124871D0037093E /* TicketsData.m */,
+				0307320D2127B0020037093E /* NoticeData.h */,
+				0307320E2127B0020037093E /* NoticeData.m */,
+				030732102127B0190037093E /* UserInfoData.h */,
+				030732112127B0190037093E /* UserInfoData.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -256,10 +283,9 @@
 				030731A92123401E0037093E /* BasicTabBar */,
 				03EDA97C210E0FBE006CCB67 /* ActivityPage */,
 				030731AA212340320037093E /* TicketPage */,
+				030732052127A5010037093E /* NoticePage */,
 				03EDA96621078132006CCB67 /* HomeViewController.h */,
 				03EDA96721078132006CCB67 /* HomeViewController.m */,
-				03EDA9692107815B006CCB67 /* NoticeViewController.h */,
-				03EDA96A2107815B006CCB67 /* NoticeViewController.m */,
 				03EDA96D21078179006CCB67 /* UserInfoViewController.h */,
 				03EDA96E21078179006CCB67 /* UserInfoViewController.m */,
 			);
@@ -377,6 +403,7 @@
 				03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */,
 				031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */,
 				03EDA930210487EA006CCB67 /* Main.storyboard in Resources */,
+				0307320C2127AFD00037093E /* NoticeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,20 +432,23 @@
 				03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */,
 				03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */,
 				031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */,
+				0307320F2127B0020037093E /* NoticeData.m in Sources */,
 				03EDA938210487EA006CCB67 /* main.m in Sources */,
 				030731F92124871D0037093E /* TicketsData.m in Sources */,
 				030731F6212482DB0037093E /* TicketsCollectionViewCell.m in Sources */,
-				03EDA96B2107815B006CCB67 /* NoticeViewController.m in Sources */,
 				030731F32124716B0037093E /* TicketsCollectionViewFlowLayout.m in Sources */,
 				03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */,
 				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
 				03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */,
 				03EDA96821078132006CCB67 /* HomeViewController.m in Sources */,
+				030732012127A4E00037093E /* NoticeTableViewController.m in Sources */,
+				0307320B2127AFD00037093E /* NoticeTableViewCell.m in Sources */,
 				031859D7211FF4120038ED56 /* ActivityMainInfoView.m in Sources */,
 				03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */,
 				031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */,
 				03EDA96F21078179006CCB67 /* UserInfoViewController.m in Sources */,
 				031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */,
+				030732122127B0190037093E /* UserInfoData.m in Sources */,
 				03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
