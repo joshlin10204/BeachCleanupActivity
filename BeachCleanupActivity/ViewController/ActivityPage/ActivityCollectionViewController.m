@@ -12,6 +12,7 @@
 #import "ActivityInfoData.h"
 
 #import "ActivityViewPresentationController.h"
+#import "ActivityCollectionViewFlowLayout.h"
 
 
 @interface ActivityCollectionViewController ()<UIViewControllerTransitioningDelegate>
@@ -32,25 +33,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (instancetype)init{
     self = [super init];
-    
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    CGFloat height = [UIScreen mainScreen].bounds.size.height;
-    
-    
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    
-    layout.itemSize = CGSizeMake(width * 0.9, height * 0.45);
-    
-    layout.headerReferenceSize = CGSizeMake(50, 50);
-    
-    layout.footerReferenceSize = CGSizeMake(10, 10);
-    
-    layout.minimumLineSpacing = 50;
-    
-    layout.minimumInteritemSpacing = 20;
-    
-    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    
+    ActivityCollectionViewFlowLayout * layout = [[ActivityCollectionViewFlowLayout alloc]init];
     return [self initWithCollectionViewLayout:layout];
     
 }
