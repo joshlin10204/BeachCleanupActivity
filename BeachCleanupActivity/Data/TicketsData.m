@@ -29,7 +29,7 @@
     NSString *idString = @"1";
     NSString *titleString = @"五告熱";
     NSString *dateString = @"2018/05/26";
-    NSString *timeString = @"14:00 - 16:30";
+    NSString *timeString = @"14:00-16:30";
     NSString *locationString = @"252新北市三芝區德茂村下員坑";
 
     

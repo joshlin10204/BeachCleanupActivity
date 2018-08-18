@@ -67,9 +67,10 @@
 }
 
 -(void)setupChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{
-    vc.tabBarItem.title = title;
-    vc.tabBarItem.image = [UIImage imageNamed:image];
-    vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
+//    vc.tabBarItem.title = title;
+    vc.tabBarItem.image = [[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    vc.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     UINavigationController *navVc = [[UINavigationController alloc]initWithRootViewController:vc];
     [self addChildViewController:navVc];
 }
