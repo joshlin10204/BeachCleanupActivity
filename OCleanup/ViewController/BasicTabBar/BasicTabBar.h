@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BasicTabBarDelegate<NSObject>
+
+@optional
+- (void)onClickHomeBtn;
+
+
+@end
 @interface BasicTabBar : UITabBar
 
 @property (nonatomic, strong) UIButton * homePageBtn;
+@property (nonatomic, weak) id <BasicTabBarDelegate> delegate;
 
 @end

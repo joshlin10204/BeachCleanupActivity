@@ -28,6 +28,9 @@
 		034A264B212B1D4200B0BCAD /* UserInfoDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A2649212B1D4200B0BCAD /* UserInfoDetailTableViewCell.xib */; };
 		034A264F212B1D8500B0BCAD /* UserInfoPictureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A264D212B1D8500B0BCAD /* UserInfoPictureTableViewCell.m */; };
 		034A2650212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A264E212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib */; };
+		034A2653212B396000B0BCAD /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034A2651212B396000B0BCAD /* LoginPage.storyboard */; };
+		034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2656212B39C900B0BCAD /* LoginViewController.m */; };
+		034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2659212B39E900B0BCAD /* RegisteredViewController.m */; };
 		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
 		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
 		03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA931210487EA006CCB67 /* Assets.xcassets */; };
@@ -99,6 +102,11 @@
 		034A264C212B1D8500B0BCAD /* UserInfoPictureTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoPictureTableViewCell.h; sourceTree = "<group>"; };
 		034A264D212B1D8500B0BCAD /* UserInfoPictureTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoPictureTableViewCell.m; sourceTree = "<group>"; };
 		034A264E212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoPictureTableViewCell.xib; sourceTree = "<group>"; };
+		034A2652212B396000B0BCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OCleanup/Base.lproj/LoginPage.storyboard; sourceTree = "<group>"; };
+		034A2655212B39C900B0BCAD /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		034A2656212B39C900B0BCAD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		034A2658212B39E900B0BCAD /* RegisteredViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteredViewController.h; sourceTree = "<group>"; };
+		034A2659212B39E900B0BCAD /* RegisteredViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteredViewController.m; sourceTree = "<group>"; };
 		03EDA925210487EA006CCB67 /* OCleanup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCleanup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EDA928210487EA006CCB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03EDA929210487EA006CCB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -204,6 +212,18 @@
 				034A264E212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib */,
 			);
 			path = SettingPage;
+			sourceTree = "<group>";
+		};
+		034A2654212B397700B0BCAD /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				034A2655212B39C900B0BCAD /* LoginViewController.h */,
+				034A2656212B39C900B0BCAD /* LoginViewController.m */,
+				034A2658212B39E900B0BCAD /* RegisteredViewController.h */,
+				034A2659212B39E900B0BCAD /* RegisteredViewController.m */,
+				034A2651212B396000B0BCAD /* LoginPage.storyboard */,
+			);
+			path = LoginPage;
 			sourceTree = "<group>";
 		};
 		03EDA91C210487EA006CCB67 = {
@@ -315,6 +335,7 @@
 				030731AA212340320037093E /* TicketPage */,
 				030732052127A5010037093E /* NoticePage */,
 				034A2646212B1CFA00B0BCAD /* SettingPage */,
+				034A2654212B397700B0BCAD /* LoginPage */,
 				03EDA96621078132006CCB67 /* HomeViewController.h */,
 				03EDA96721078132006CCB67 /* HomeViewController.m */,
 			);
@@ -432,6 +453,7 @@
 				03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */,
 				034A264B212B1D4200B0BCAD /* UserInfoDetailTableViewCell.xib in Resources */,
 				031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */,
+				034A2653212B396000B0BCAD /* LoginPage.storyboard in Resources */,
 				03EDA930210487EA006CCB67 /* Main.storyboard in Resources */,
 				034A2650212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib in Resources */,
 				0307320C2127AFD00037093E /* NoticeTableViewCell.xib in Resources */,
@@ -461,6 +483,7 @@
 			files = (
 				030731F021246D610037093E /* TicketsCollectionViewController.m in Sources */,
 				034A264A212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m in Sources */,
+				034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */,
 				03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */,
 				034A2645212B1CE200B0BCAD /* UserInfoTableViewController.m in Sources */,
 				03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */,
@@ -480,6 +503,7 @@
 				0307320B2127AFD00037093E /* NoticeTableViewCell.m in Sources */,
 				031859D7211FF4120038ED56 /* ActivityMainInfoView.m in Sources */,
 				03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */,
+				034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */,
 				031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */,
 				031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */,
 				030732122127B0190037093E /* UserInfoData.m in Sources */,
@@ -519,6 +543,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		034A2651212B396000B0BCAD /* LoginPage.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034A2652212B396000B0BCAD /* Base */,
+			);
+			name = LoginPage.storyboard;
+			sourceTree = "<group>";
+		};
 		03EDA92E210487EA006CCB67 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

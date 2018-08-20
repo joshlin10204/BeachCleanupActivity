@@ -8,10 +8,9 @@
 
 #import "BasicTabBarController.h"
 #import "BasicTabBar.h"
-
 #import "HomeViewController.h"
 
-@interface BasicTabBarController (){
+@interface BasicTabBarController ()<BasicTabBarDelegate,UITabBarControllerDelegate>{
     
     BasicTabBar * basicTabBar;
     HomeViewController * homeViewController;
@@ -24,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.delegate = self;
 
 
     
@@ -36,6 +35,7 @@
     
     
     basicTabBar = [[BasicTabBar alloc]init];
+    basicTabBar.delegate = self;
     [self setValue:basicTabBar forKey:@"tabBar"];
     CALayer *layer=[self createMaskLayer];
     [self.tabBar.layer addSublayer:layer];
@@ -43,19 +43,18 @@
     
 
 }
+- (void)onClickHomeBtn{
+    self.selectedIndex = 4;
+}
+-(void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    if (tabBarController.selectedIndex==1) {
+        [self performSegueWithIdentifier:@"PresentLoginView" sender:nil];
+    }
+}
 - (void)setTabBarItem:(UITabBarItem*)item image:(NSString *)image selectedImage:(NSString *)selectedImage{
     item.image = [[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     item.selectedImage = [[UIImage imageNamed:selectedImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
-//    self.title = nil;
-}
-
--(void)setupChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{
-    vc.tabBarItem.image = [[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    vc.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
-    UINavigationController *navVc = [[UINavigationController alloc]initWithRootViewController:vc];
-    [self addChildViewController:navVc];
 }
 
 - (CAShapeLayer *)createMaskLayer{

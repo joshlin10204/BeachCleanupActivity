@@ -87,7 +87,6 @@
 
 
 -(void)onClickCenterBtn:(id)sender{
-    NSLog(@"Click!!!");
-    
+    [self.delegate onClickHomeBtn];
 }
 @end
