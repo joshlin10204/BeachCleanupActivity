@@ -13,8 +13,10 @@
 - (void)prepareLayout {
     [super prepareLayout];
     self.scrollDirection = UICollectionViewScrollDirectionVertical;
-    self.headerReferenceSize = CGSizeMake(50, 50);
-    self.footerReferenceSize = CGSizeMake(10, 10);
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    self.headerReferenceSize = CGSizeMake(width, height*0.1);
+    self.footerReferenceSize = CGSizeMake(width, height*0.08);
 }
 
 - (CGFloat)minimumLineSpacing {

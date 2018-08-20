@@ -31,13 +31,6 @@
 
 static NSString * const reuseIdentifier = @"Cell";
 
-- (instancetype)init{
-    self = [super init];
-    ActivityCollectionViewFlowLayout * layout = [[ActivityCollectionViewFlowLayout alloc]init];
-    return [self initWithCollectionViewLayout:layout];
-    
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:YES];

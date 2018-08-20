@@ -8,19 +8,14 @@
 
 #import "BasicTabBarController.h"
 #import "BasicTabBar.h"
-#import "ActivityCollectionViewController.h"
-#import "TicketsCollectionViewController.h"
+
 #import "HomeViewController.h"
-#import "NoticeTableViewController.h"
-#import "UserInfoViewController.h"
+
 @interface BasicTabBarController (){
     
     BasicTabBar * basicTabBar;
-    ActivityCollectionViewController * activityCollectionViewController;
-    TicketsCollectionViewController * ticketsCollectionViewController;
     HomeViewController * homeViewController;
-    NoticeTableViewController * noticeTableViewController;
-    UserInfoViewController * userInfoViewController;
+
 }
 
 @end
@@ -31,30 +26,13 @@
     [super viewDidLoad];
     
 
-    activityCollectionViewController = [[ActivityCollectionViewController alloc]init];
-    ticketsCollectionViewController = [[TicketsCollectionViewController alloc]init];
-    homeViewController = [[HomeViewController alloc]init];
-    noticeTableViewController = [[NoticeTableViewController alloc]init];
-    userInfoViewController = [[UserInfoViewController alloc]init];
-    
 
     
-    [self setupChildVc:activityCollectionViewController
-                 title:@"Activity"
-                 image:@"TabBarItem_Activity_Unselected"
-         selectedImage:@"TabBarItem_Activity_Selected"];
-    [self setupChildVc:ticketsCollectionViewController
-                 title:@"Tickets"
-                 image:@"TabBarItem_Ticket_Unselected"
-         selectedImage:@"TabBarItem_Ticket_Selected"];
-    [self setupChildVc:noticeTableViewController
-                 title:@"Notice"
-                 image:@"TabBarItem_Notice_Unselected"
-         selectedImage:@"TabBarItem_Notice_Selected"];
-    [self setupChildVc:userInfoViewController
-                 title:@"UserInfo"
-                 image:@"TabBarItem_UserInfo_Unselected"
-         selectedImage:@"TabBarItem_UserInfo_Selected"];
+    [self setTabBarItem:self.tabBar.items[0] image:@"TabBarItem_Activity_Unselected" selectedImage:@"TabBarItem_Activity_Selected"];
+    [self setTabBarItem:self.tabBar.items[1] image:@"TabBarItem_Ticket_Unselected" selectedImage:@"TabBarItem_Ticket_Selected"];
+    [self setTabBarItem:self.tabBar.items[2] image:@"TabBarItem_Notice_Unselected" selectedImage:@"TabBarItem_Notice_Selected"];
+    [self setTabBarItem:self.tabBar.items[3] image:@"TabBarItem_UserInfo_Unselected" selectedImage:@"TabBarItem_UserInfo_Selected"];
+
     
     
     basicTabBar = [[BasicTabBar alloc]init];
@@ -64,6 +42,12 @@
     
     
 
+}
+- (void)setTabBarItem:(UITabBarItem*)item image:(NSString *)image selectedImage:(NSString *)selectedImage{
+    item.image = [[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item.selectedImage = [[UIImage imageNamed:selectedImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+//    self.title = nil;
 }
 
 -(void)setupChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{

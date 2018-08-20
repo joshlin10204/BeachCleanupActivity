@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="151" id="KGk-i7-Jjw" customClass="UserInfoDetailTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="553" height="151"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="515" height="150.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPW-3d-5wB">
+                        <rect key="frame" x="51" y="30" width="412" height="45.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Josh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsK-Mm-Tlc">
+                        <rect key="frame" x="51" y="75.5" width="412" height="45.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                        <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gsK-Mm-Tlc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6KO-Uj-DwE"/>
+                    <constraint firstItem="UPW-3d-5wB" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="30/100" id="7Jb-0R-sS6"/>
+                    <constraint firstItem="gsK-Mm-Tlc" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Fvo-sk-VhR"/>
+                    <constraint firstItem="UPW-3d-5wB" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fKR-Jf-NQM"/>
+                    <constraint firstItem="gsK-Mm-Tlc" firstAttribute="height" secondItem="UPW-3d-5wB" secondAttribute="height" id="icg-CR-SYh"/>
+                    <constraint firstItem="UPW-3d-5wB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="pHD-Zh-52a"/>
+                    <constraint firstItem="UPW-3d-5wB" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="80/100" id="phr-Qk-1Dm"/>
+                    <constraint firstItem="gsK-Mm-Tlc" firstAttribute="width" secondItem="UPW-3d-5wB" secondAttribute="width" id="uDJ-W5-i4d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="infoContentLabel" destination="gsK-Mm-Tlc" id="hmB-hL-Hi3"/>
+                <outlet property="infotitleLabel" destination="UPW-3d-5wB" id="Hc6-QC-1TS"/>
+            </connections>
+            <point key="canvasLocation" x="150.5" y="107.5"/>
+        </tableViewCell>
+    </objects>
+</document>
