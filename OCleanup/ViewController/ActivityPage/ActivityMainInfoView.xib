@@ -99,7 +99,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQg-9P-uKB">
                     <rect key="frame" x="132" y="251.5" width="112.5" height="20"/>
-                    <state key="normal" image="Facebook">
+                    <state key="normal" backgroundImage="Facebook__Activity_Button">
                         <color key="titleColor" red="0.43529411764705883" green="0.80392156862745101" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -174,6 +174,6 @@
         <image name="ActivityView_Location" width="22" height="27"/>
         <image name="ActivityView_Quota" width="28" height="28"/>
         <image name="ActivityView_Time" width="29" height="30"/>
-        <image name="Facebook" width="154" height="39"/>
+        <image name="Facebook__Activity_Button" width="154" height="39"/>
     </resources>
 </document>

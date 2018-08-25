@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>694719810010-e7t97ku8bk3emspomnddclhaf2iqup86.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.694719810010-e7t97ku8bk3emspomnddclhaf2iqup86</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDndbBXh5MvfG6Mh2Jx8BMJwo74Omc3uWI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>694719810010</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.JoshLin.OCleanup</string>
+	<key>PROJECT_ID</key>
+	<string>ocleanup</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ocleanup.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:694719810010:ios:6b068486f8982d64</string>
+	<key>DATABASE_URL</key>
+	<string>https://ocleanup.firebaseio.com</string>
+</dict>
+</plist>

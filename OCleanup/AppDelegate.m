@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+@import Firebase;
+@import GoogleSignIn;
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [FIRApp configure];
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
+    [GIDSignIn sharedInstance].clientID = [FIRApp defaultApp].options.clientID;
+    [GIDSignIn sharedInstance].delegate = self;
     return YES;
 }
 
@@ -47,5 +56,25 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    BOOL fbHandled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+    
+    BOOL gidHandled =[[GIDSignIn sharedInstance] handleURL:url
+                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+
+    BOOL handled = NO;
+    if (fbHandled&&gidHandled) {
+        handled =YES;
+    }
+    // Add any custom logic here.
+    return handled;
+}
 
 @end

@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *confirmTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (weak, nonatomic) IBOutlet UILabel *warnLabel;
+@property (weak, nonatomic) IBOutlet UIButton *registeredButton;
 
 @end
