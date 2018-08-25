@@ -22,6 +22,8 @@
 		031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859CC211FC8250038ED56 /* ActivityViewPresentAnimation.m */; };
 		031859D7211FF4120038ED56 /* ActivityMainInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859D6211FF4120038ED56 /* ActivityMainInfoView.m */; };
 		031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031859D8211FF4210038ED56 /* ActivityMainInfoView.xib */; };
+		033C5E8C212C5F64006666A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 033C5E8B212C5F64006666A1 /* GoogleService-Info.plist */; };
+		033C5E932130E769006666A1 /* AuthorizedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C5E922130E769006666A1 /* AuthorizedManager.m */; };
 		034A260C2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A260B2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m */; };
 		034A2645212B1CE200B0BCAD /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2644212B1CE200B0BCAD /* UserInfoTableViewController.m */; };
 		034A264A212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2648212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m */; };
@@ -45,6 +47,9 @@
 		03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */; };
 		03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA97E210E11CD006CCB67 /* ActivityViewController.m */; };
 		03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA984211347E4006CCB67 /* ActivityInfoData.m */; };
+		54FF5F08EF24C11C9AD4C9DF /* libPods-OCleanup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A86E4FDEF2DEE726BCFA4A /* libPods-OCleanup.a */; };
+		7B1E3F0215D3B0E5A361DBC5 /* libPods-OCleanupTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78823AA0E9572C47E48151CA /* libPods-OCleanupTests.a */; };
+		B1E4DA63D1172DE4888D6D43 /* libPods-OCleanupUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7737802089BE29FD197249EC /* libPods-OCleanupUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +97,9 @@
 		031859D5211FF4120038ED56 /* ActivityMainInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityMainInfoView.h; sourceTree = "<group>"; };
 		031859D6211FF4120038ED56 /* ActivityMainInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityMainInfoView.m; sourceTree = "<group>"; };
 		031859D8211FF4210038ED56 /* ActivityMainInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityMainInfoView.xib; sourceTree = "<group>"; };
+		033C5E8B212C5F64006666A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		033C5E912130E769006666A1 /* AuthorizedManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizedManager.h; sourceTree = "<group>"; };
+		033C5E922130E769006666A1 /* AuthorizedManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizedManager.m; sourceTree = "<group>"; };
 		034A260A2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		034A260B2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		034A2643212B1CE200B0BCAD /* UserInfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewController.h; sourceTree = "<group>"; };
@@ -135,6 +143,15 @@
 		03EDA97E210E11CD006CCB67 /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		03EDA983211347E4006CCB67 /* ActivityInfoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityInfoData.h; sourceTree = "<group>"; };
 		03EDA984211347E4006CCB67 /* ActivityInfoData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityInfoData.m; sourceTree = "<group>"; };
+		06A86E4FDEF2DEE726BCFA4A /* libPods-OCleanup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCleanup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1762A64EF4B9E5F8E9348965 /* Pods-OCleanupUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanupUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanupUITests/Pods-OCleanupUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5EDE64237F268D618CE4F0D8 /* Pods-OCleanupTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanupTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanupTests/Pods-OCleanupTests.release.xcconfig"; sourceTree = "<group>"; };
+		682FE61A4080DF33375E4EFA /* Pods-OCleanupTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanupTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanupTests/Pods-OCleanupTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7737802089BE29FD197249EC /* libPods-OCleanupUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCleanupUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78823AA0E9572C47E48151CA /* libPods-OCleanupTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCleanupTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9602CB67A420C0565E6E6235 /* Pods-OCleanup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanup.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanup/Pods-OCleanup.release.xcconfig"; sourceTree = "<group>"; };
+		A99DA1D37636CBD620600E1E /* Pods-OCleanup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanup/Pods-OCleanup.debug.xcconfig"; sourceTree = "<group>"; };
+		D028550284F5FD89D4C50C79 /* Pods-OCleanupUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanupUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanupUITests/Pods-OCleanupUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54FF5F08EF24C11C9AD4C9DF /* libPods-OCleanup.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B1E3F0215D3B0E5A361DBC5 /* libPods-OCleanupTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1E4DA63D1172DE4888D6D43 /* libPods-OCleanupUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +219,15 @@
 			path = NoticePage;
 			sourceTree = "<group>";
 		};
+		033C5E902130E047006666A1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				033C5E912130E769006666A1 /* AuthorizedManager.h */,
+				033C5E922130E769006666A1 /* AuthorizedManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		034A2646212B1CFA00B0BCAD /* SettingPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +262,8 @@
 				03EDA940210487EA006CCB67 /* OCleanupTests */,
 				03EDA94B210487EA006CCB67 /* OCleanupUITests */,
 				03EDA926210487EA006CCB67 /* Products */,
+				F9399A4EC8DC2F6B9C53FF13 /* Pods */,
+				7597DA06F5726320D1090F29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,12 +283,14 @@
 				03EDA928210487EA006CCB67 /* AppDelegate.h */,
 				03EDA929210487EA006CCB67 /* AppDelegate.m */,
 				03EDA986211347F2006CCB67 /* Data */,
+				033C5E902130E047006666A1 /* Manager */,
 				03EDA9872113482A006CCB67 /* Animation */,
 				03EDA98921135801006CCB67 /* ViewController */,
 				03EDA92E210487EA006CCB67 /* Main.storyboard */,
 				03EDA931210487EA006CCB67 /* Assets.xcassets */,
 				03EDA933210487EA006CCB67 /* LaunchScreen.storyboard */,
 				03EDA936210487EA006CCB67 /* Info.plist */,
+				033C5E8B212C5F64006666A1 /* GoogleService-Info.plist */,
 				03EDA937210487EA006CCB67 /* main.m */,
 			);
 			path = OCleanup;
@@ -342,6 +375,29 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		7597DA06F5726320D1090F29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06A86E4FDEF2DEE726BCFA4A /* libPods-OCleanup.a */,
+				78823AA0E9572C47E48151CA /* libPods-OCleanupTests.a */,
+				7737802089BE29FD197249EC /* libPods-OCleanupUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9399A4EC8DC2F6B9C53FF13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A99DA1D37636CBD620600E1E /* Pods-OCleanup.debug.xcconfig */,
+				9602CB67A420C0565E6E6235 /* Pods-OCleanup.release.xcconfig */,
+				682FE61A4080DF33375E4EFA /* Pods-OCleanupTests.debug.xcconfig */,
+				5EDE64237F268D618CE4F0D8 /* Pods-OCleanupTests.release.xcconfig */,
+				D028550284F5FD89D4C50C79 /* Pods-OCleanupUITests.debug.xcconfig */,
+				1762A64EF4B9E5F8E9348965 /* Pods-OCleanupUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -349,9 +405,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03EDA951210487EA006CCB67 /* Build configuration list for PBXNativeTarget "OCleanup" */;
 			buildPhases = (
+				E9BA8DE5625ED010069C09B1 /* [CP] Check Pods Manifest.lock */,
 				03EDA921210487EA006CCB67 /* Sources */,
 				03EDA922210487EA006CCB67 /* Frameworks */,
 				03EDA923210487EA006CCB67 /* Resources */,
+				AEFB4932E91675CA234F7A5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,6 +424,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03EDA954210487EA006CCB67 /* Build configuration list for PBXNativeTarget "OCleanupTests" */;
 			buildPhases = (
+				B623C177511952C4B92196C2 /* [CP] Check Pods Manifest.lock */,
 				03EDA939210487EA006CCB67 /* Sources */,
 				03EDA93A210487EA006CCB67 /* Frameworks */,
 				03EDA93B210487EA006CCB67 /* Resources */,
@@ -384,6 +443,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03EDA957210487EA006CCB67 /* Build configuration list for PBXNativeTarget "OCleanupUITests" */;
 			buildPhases = (
+				A3AB9BB14DDC57FF1D79F17A /* [CP] Check Pods Manifest.lock */,
 				03EDA944210487EA006CCB67 /* Sources */,
 				03EDA945210487EA006CCB67 /* Frameworks */,
 				03EDA946210487EA006CCB67 /* Resources */,
@@ -455,6 +515,7 @@
 				031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */,
 				034A2653212B396000B0BCAD /* LoginPage.storyboard in Resources */,
 				03EDA930210487EA006CCB67 /* Main.storyboard in Resources */,
+				033C5E8C212C5F64006666A1 /* GoogleService-Info.plist in Resources */,
 				034A2650212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib in Resources */,
 				0307320C2127AFD00037093E /* NoticeTableViewCell.xib in Resources */,
 			);
@@ -476,11 +537,91 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A3AB9BB14DDC57FF1D79F17A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OCleanupUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEFB4932E91675CA234F7A5E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OCleanup/Pods-OCleanup-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GTMOAuth2ViewTouch.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCleanup/Pods-OCleanup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B623C177511952C4B92196C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OCleanupTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9BA8DE5625ED010069C09B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OCleanup-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03EDA921210487EA006CCB67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033C5E932130E769006666A1 /* AuthorizedManager.m in Sources */,
 				030731F021246D610037093E /* TicketsCollectionViewController.m in Sources */,
 				034A264A212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m in Sources */,
 				034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */,
@@ -676,6 +817,7 @@
 		};
 		03EDA952210487EA006CCB67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A99DA1D37636CBD620600E1E /* Pods-OCleanup.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -690,6 +832,7 @@
 		};
 		03EDA953210487EA006CCB67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9602CB67A420C0565E6E6235 /* Pods-OCleanup.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -704,6 +847,7 @@
 		};
 		03EDA955210487EA006CCB67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682FE61A4080DF33375E4EFA /* Pods-OCleanupTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -719,6 +863,7 @@
 		};
 		03EDA956210487EA006CCB67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EDE64237F268D618CE4F0D8 /* Pods-OCleanupTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -734,6 +879,7 @@
 		};
 		03EDA958210487EA006CCB67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D028550284F5FD89D4C50C79 /* Pods-OCleanupUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFHCXY3FVB;
@@ -748,6 +894,7 @@
 		};
 		03EDA959210487EA006CCB67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1762A64EF4B9E5F8E9348965 /* Pods-OCleanupUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFHCXY3FVB;
