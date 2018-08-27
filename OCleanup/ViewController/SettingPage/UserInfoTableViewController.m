@@ -9,15 +9,14 @@
 #import "UserInfoTableViewController.h"
 #import "UserInfoPictureTableViewCell.h"
 #import "UserInfoDetailTableViewCell.h"
-
-#import "UserInfoData.h"
+#import "AccountRepository.h"
 
 static NSString *detailCelllID = @"UserInfoDetailTableViewCell";
 static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
 
 @interface UserInfoTableViewController ()<UITableViewDelegate,UITableViewDataSource>{
     
-    NSMutableDictionary *userInfo;
+    AccountInfoModel *accountInfo;
 }
 
 @end
@@ -31,7 +30,7 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:(245.0f/255.0f) green:(245.0f/255.0f) blue:(245.0f/255.0f) alpha:1];
 
-    [self initUserInfo];
+    [self initAccountInfo];
     [self.tableView registerNib:[UINib nibWithNibName:@"UserInfoDetailTableViewCell" bundle:nil]
          forCellReuseIdentifier:@"UserInfoDetailTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"UserInfoPictureTableViewCell" bundle:nil]
@@ -42,17 +41,15 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)initUserInfo{
-    UserInfoData * userInfoData = [[UserInfoData alloc]init];
-    userInfo = [userInfoData getUserInfo];
-    
+- (void)initAccountInfo{
+    accountInfo = [[AccountRepository sharedInstance] getAccountInfo];
 }
 
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return userInfo.count;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -63,9 +60,9 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
 {
     CGFloat cellHight;
     if (indexPath.section ==0) {
-        cellHight = self.view.frame.size.height * 0.2;
+        cellHight = self.view.frame.size.height * 0.3;
     }else{
-        cellHight = self.view.frame.size.height * 0.12;
+        cellHight = self.view.frame.size.height * 0.08;
         
     }
     
@@ -77,32 +74,24 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
     UserInfoPictureTableViewCell *pictureCell = [tableView dequeueReusableCellWithIdentifier:pictureCellID];
     switch (indexPath.section) {
         case 0:
-            pictureCell.infoImage.image = [userInfo objectForKey:USERINFO_IMAGE];
+            pictureCell.infoImage.image = accountInfo.image;
             return pictureCell;
         case 1:
             detailCelll.infotitleLabel.text = @"E-Mail";
-            detailCelll.infoContentLabel.text = [userInfo objectForKey:USERINFO_EMAIL];
+            detailCelll.infoContentLabel.text =accountInfo.email;
 
             return detailCelll;
         case 2:
             detailCelll.infotitleLabel.text = @"姓名";
-            detailCelll.infoContentLabel.text = [userInfo objectForKey:USERINFO_NAME];
+            detailCelll.infoContentLabel.text = accountInfo.name;
             
             return detailCelll;
 
         case 3:
             detailCelll.infotitleLabel.text = @"電話";
-            detailCelll.infoContentLabel.text = [userInfo objectForKey:USERINFO_PHONE];
+            detailCelll.infoContentLabel.text = accountInfo.phone;
             
             return detailCelll;
-
-        case 4:
-            detailCelll.infotitleLabel.text = @"性別";
-            detailCelll.infoContentLabel.text = [userInfo objectForKey:USERINFO_GENDER];
-            
-            return detailCelll;
-
-
         default:
             return detailCelll;
     }

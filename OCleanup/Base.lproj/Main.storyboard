@@ -133,7 +133,7 @@
         <!--設定-->
         <scene sceneID="Zob-vP-0Ex">
             <objects>
-                <tableViewController id="oJU-57-T4y" sceneMemberID="viewController">
+                <tableViewController id="oJU-57-T4y" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Jhk-7o-dnn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,9 +157,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="XSB-wp-0WC" kind="show" id="9P1-U2-bSk"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="3Of-Fw-YGL" style="IBUITableViewCellStyleDefault" id="UA1-i2-TMm">
                                         <rect key="frame" x="0.0" y="79" width="375" height="44"/>
@@ -229,6 +226,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="設定" id="j8V-Qc-IgJ"/>
+                    <connections>
+                        <outlet property="logoutCell" destination="vcb-Lf-gkJ" id="tnF-Ak-u30"/>
+                        <outlet property="userInfoCell" destination="1o4-MW-PBp" id="eMJ-UF-M9L"/>
+                        <segue destination="XSB-wp-0WC" kind="show" identifier="PresentUserInfoView" id="ToQ-UL-oNT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfr-HS-uNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

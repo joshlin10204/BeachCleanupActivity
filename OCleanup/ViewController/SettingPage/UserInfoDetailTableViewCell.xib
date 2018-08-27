@@ -22,14 +22,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPW-3d-5wB">
-                        <rect key="frame" x="51" y="30" width="412" height="45.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <rect key="frame" x="51" y="14.5" width="412" height="45.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Josh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsK-Mm-Tlc">
                         <rect key="frame" x="51" y="75.5" width="412" height="45.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -38,7 +38,7 @@
                     <constraint firstItem="gsK-Mm-Tlc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6KO-Uj-DwE"/>
                     <constraint firstItem="UPW-3d-5wB" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="30/100" id="7Jb-0R-sS6"/>
                     <constraint firstItem="gsK-Mm-Tlc" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Fvo-sk-VhR"/>
-                    <constraint firstItem="UPW-3d-5wB" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fKR-Jf-NQM"/>
+                    <constraint firstItem="UPW-3d-5wB" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" multiplier="40/100" id="fKR-Jf-NQM"/>
                     <constraint firstItem="gsK-Mm-Tlc" firstAttribute="height" secondItem="UPW-3d-5wB" secondAttribute="height" id="icg-CR-SYh"/>
                     <constraint firstItem="UPW-3d-5wB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="pHD-Zh-52a"/>
                     <constraint firstItem="UPW-3d-5wB" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="80/100" id="phr-Qk-1Dm"/>

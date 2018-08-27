@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "AccountRepository.h"
 #import "AuthorizedManager.h"
 
 
@@ -165,8 +165,9 @@
     [self showWarningLabel];
     
 }
--(void)authorizeLoginDidFinish{
+-(void)authorizeLoginDidFinish:(AccountInfoModel *)accountInfo{
     [loadIndicatorView stopAnimating];
+    [[AccountRepository sharedInstance]setAccountInfo:accountInfo];
     [self enableAllTextField:YES];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }

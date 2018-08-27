@@ -16,7 +16,6 @@
 		0307320B2127AFD00037093E /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 030732092127AFD00037093E /* NoticeTableViewCell.m */; };
 		0307320C2127AFD00037093E /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0307320A2127AFD00037093E /* NoticeTableViewCell.xib */; };
 		0307320F2127B0020037093E /* NoticeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307320E2127B0020037093E /* NoticeData.m */; };
-		030732122127B0190037093E /* UserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 030732112127B0190037093E /* UserInfoData.m */; };
 		031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859C6211CA7AF0038ED56 /* ActivityViewPresentationController.m */; };
 		031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859C9211FC7050038ED56 /* ActivityViewDismissAnimation.m */; };
 		031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859CC211FC8250038ED56 /* ActivityViewPresentAnimation.m */; };
@@ -24,6 +23,9 @@
 		031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031859D8211FF4210038ED56 /* ActivityMainInfoView.xib */; };
 		033C5E8C212C5F64006666A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 033C5E8B212C5F64006666A1 /* GoogleService-Info.plist */; };
 		033C5E932130E769006666A1 /* AuthorizedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C5E922130E769006666A1 /* AuthorizedManager.m */; };
+		033C5E972131D7A6006666A1 /* AccountRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C5E962131D7A6006666A1 /* AccountRepository.m */; };
+		033C5E9F2132656C006666A1 /* AccountInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C5E9E2132656C006666A1 /* AccountInfoModel.m */; };
+		033C5EA221326E5E006666A1 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C5EA121326E5E006666A1 /* SettingsTableViewController.m */; };
 		034A260C2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A260B2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m */; };
 		034A2645212B1CE200B0BCAD /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2644212B1CE200B0BCAD /* UserInfoTableViewController.m */; };
 		034A264A212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2648212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m */; };
@@ -86,8 +88,6 @@
 		0307320A2127AFD00037093E /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
 		0307320D2127B0020037093E /* NoticeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeData.h; sourceTree = "<group>"; };
 		0307320E2127B0020037093E /* NoticeData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeData.m; sourceTree = "<group>"; };
-		030732102127B0190037093E /* UserInfoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoData.h; sourceTree = "<group>"; };
-		030732112127B0190037093E /* UserInfoData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoData.m; sourceTree = "<group>"; };
 		031859C5211CA7AF0038ED56 /* ActivityViewPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewPresentationController.h; sourceTree = "<group>"; };
 		031859C6211CA7AF0038ED56 /* ActivityViewPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewPresentationController.m; sourceTree = "<group>"; };
 		031859C8211FC7050038ED56 /* ActivityViewDismissAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewDismissAnimation.h; sourceTree = "<group>"; };
@@ -100,6 +100,12 @@
 		033C5E8B212C5F64006666A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		033C5E912130E769006666A1 /* AuthorizedManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizedManager.h; sourceTree = "<group>"; };
 		033C5E922130E769006666A1 /* AuthorizedManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizedManager.m; sourceTree = "<group>"; };
+		033C5E952131D7A6006666A1 /* AccountRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountRepository.h; sourceTree = "<group>"; };
+		033C5E962131D7A6006666A1 /* AccountRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountRepository.m; sourceTree = "<group>"; };
+		033C5E9D2132656C006666A1 /* AccountInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountInfoModel.h; sourceTree = "<group>"; };
+		033C5E9E2132656C006666A1 /* AccountInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountInfoModel.m; sourceTree = "<group>"; };
+		033C5EA021326E5E006666A1 /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		033C5EA121326E5E006666A1 /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		034A260A2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		034A260B2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		034A2643212B1CE200B0BCAD /* UserInfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewController.h; sourceTree = "<group>"; };
@@ -228,9 +234,29 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		033C5E942131D776006666A1 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				033C5E952131D7A6006666A1 /* AccountRepository.h */,
+				033C5E962131D7A6006666A1 /* AccountRepository.m */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		033C5E9921323C79006666A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				033C5E9D2132656C006666A1 /* AccountInfoModel.h */,
+				033C5E9E2132656C006666A1 /* AccountInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		034A2646212B1CFA00B0BCAD /* SettingPage */ = {
 			isa = PBXGroup;
 			children = (
+				033C5EA021326E5E006666A1 /* SettingsTableViewController.h */,
+				033C5EA121326E5E006666A1 /* SettingsTableViewController.m */,
 				034A2643212B1CE200B0BCAD /* UserInfoTableViewController.h */,
 				034A2644212B1CE200B0BCAD /* UserInfoTableViewController.m */,
 				034A2647212B1D4200B0BCAD /* UserInfoDetailTableViewCell.h */,
@@ -283,6 +309,8 @@
 				03EDA928210487EA006CCB67 /* AppDelegate.h */,
 				03EDA929210487EA006CCB67 /* AppDelegate.m */,
 				03EDA986211347F2006CCB67 /* Data */,
+				033C5E942131D776006666A1 /* Repository */,
+				033C5E9921323C79006666A1 /* Model */,
 				033C5E902130E047006666A1 /* Manager */,
 				03EDA9872113482A006CCB67 /* Animation */,
 				03EDA98921135801006CCB67 /* ViewController */,
@@ -341,8 +369,6 @@
 				030731F82124871D0037093E /* TicketsData.m */,
 				0307320D2127B0020037093E /* NoticeData.h */,
 				0307320E2127B0020037093E /* NoticeData.m */,
-				030732102127B0190037093E /* UserInfoData.h */,
-				030732112127B0190037093E /* UserInfoData.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -622,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				033C5E932130E769006666A1 /* AuthorizedManager.m in Sources */,
+				033C5E9F2132656C006666A1 /* AccountInfoModel.m in Sources */,
 				030731F021246D610037093E /* TicketsCollectionViewController.m in Sources */,
 				034A264A212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m in Sources */,
 				034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */,
@@ -630,7 +657,9 @@
 				03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */,
 				031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */,
 				0307320F2127B0020037093E /* NoticeData.m in Sources */,
+				033C5E972131D7A6006666A1 /* AccountRepository.m in Sources */,
 				03EDA938210487EA006CCB67 /* main.m in Sources */,
+				033C5EA221326E5E006666A1 /* SettingsTableViewController.m in Sources */,
 				030731F92124871D0037093E /* TicketsData.m in Sources */,
 				030731F6212482DB0037093E /* TicketsCollectionViewCell.m in Sources */,
 				034A260C2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m in Sources */,
@@ -647,7 +676,6 @@
 				034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */,
 				031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */,
 				031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */,
-				030732122127B0190037093E /* UserInfoData.m in Sources */,
 				03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

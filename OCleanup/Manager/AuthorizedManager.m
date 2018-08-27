@@ -6,6 +6,8 @@
 //  Copyright © 2018年 JoshLin. All rights reserved.
 //
 
+#define AUTHORIZED_MANAGER_LOGIN_STATUS @"loginStatus"
+
 #import "AuthorizedManager.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -16,21 +18,38 @@
 static AuthorizedManager *instance;
 static dispatch_once_t onceToken;
 @interface AuthorizedManager()<GIDSignInUIDelegate,GIDSignInDelegate>{
-    
+    AccountInfoModel *accountInfoModel;
     AuthorizekError  authorizekError;
+    LoginStatusType loginStatus;
 }
+
 @end
 @implementation AuthorizedManager
 + (instancetype)sharedInstance
 {
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
-
+        
     });
     return instance;
 }
-#pragma mark  - Login
 
+- (LoginStatusType)currentLoginStatus{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults integerForKey:AUTHORIZED_MANAGER_LOGIN_STATUS]) {
+        loginStatus =[defaults integerForKey:AUTHORIZED_MANAGER_LOGIN_STATUS];
+    }else{
+        loginStatus =LoginStatusType_NotLogin;
+    }
+    return loginStatus;
+}
+
+- (void)setLoginStatus:(LoginStatusType)status{
+    loginStatus = status;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:loginStatus forKey:AUTHORIZED_MANAGER_LOGIN_STATUS];
+}
+#pragma mark  - Login
 #pragma mark  -Email
 
 - (void)loginFromEmail:(NSString*)email withPassword:(NSString*)password{
@@ -41,7 +60,8 @@ static dispatch_once_t onceToken;
     }else{
         [[FIRAuth auth]signInWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
             if (!error) {
-                [self.loginDelegate authorizeLoginDidFinish];
+                [self.loginDelegate authorizeLoginDidFinish:[self getAccountInfo:authResult]];
+                [self setLoginStatus:LoginStatusType_LoginFromEmail];
             }else{
                 if (error.code == 17011) {
                     [self.loginDelegate authorizeLoginDidFail:AuthorizekError_UserNotFound];
@@ -59,17 +79,17 @@ static dispatch_once_t onceToken;
 
 - (void)loginWithFacebookFromViewController:(UIViewController*)viewControler{
     FBSDKLoginManager *manager = [[FBSDKLoginManager alloc]init];
-//    [manager logOut];
     [manager logInWithReadPermissions:@[@"public_profile",@"email"] fromViewController:viewControler handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
         if (!error && !result.isCancelled) {
             if ([FBSDKAccessToken currentAccessToken]) {
                 FIRAuthCredential * credential = [FIRFacebookAuthProvider credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
                 [self registerWithFIRAuthCredential:credential];
+                [self setLoginStatus:LoginStatusType_LoginFromFacebook];
+
             }else{
                 [self.loginDelegate authorizeLoginDidFail:AuthorizekError_LoginFail];
             }
         }else{
-            NSLog(@"FB 失敗:%@",error);
             [self.loginDelegate authorizeLoginDidFail:AuthorizekError_LoginFail];
         }
     }];
@@ -94,33 +114,31 @@ static dispatch_once_t onceToken;
         [FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken
                                          accessToken:authentication.accessToken];
         [self registerWithFIRAuthCredential:credential];
+        [self setLoginStatus:LoginStatusType_LoginFromGooglePlus];
+
+
     } else {
-        NSLog(@"Google Plus 失敗 ：％＠");
         [self.loginDelegate authorizeLoginDidFail:AuthorizekError_LoginFail];
     }
 }
 
 // Present a view that prompts the user to sign in with Google
-- (void)signIn:(GIDSignIn *)signIn presentViewController:(UIViewController *)viewController {
-}
+- (void)signIn:(GIDSignIn *)signIn presentViewController:(UIViewController *)viewController {}
 
 // Dismiss the "Sign in with Google" view
-- (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController {
-}
-
+- (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController {}
 
 - (void)registerWithFIRAuthCredential:(FIRAuthCredential*)credential {
     [[FIRAuth auth]signInAndRetrieveDataWithCredential:credential completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
         if (!error) {
-            [self.loginDelegate authorizeLoginDidFinish];
-            
+            [self.loginDelegate authorizeLoginDidFinish:[self getAccountInfo:authResult]];
         }else{
-            NSLog(@"Credential 登入失敗:%@",error.localizedDescription);
             [self.loginDelegate authorizeLoginDidFail:AuthorizekError_LoginFail];
-
+            [self setLoginStatus:LoginStatusType_NotLogin];
         }
     }];
 }
+
 
 #pragma mark  - Registere
 
@@ -138,22 +156,49 @@ static dispatch_once_t onceToken;
                                 completion:^(FIRAuthDataResult * _Nullable authResult,
                                              NSError * _Nullable error) {
                                     if (!error) {
-                                        [self.registerDelegate authorizeRegisterDidFinish];
+                                        [self.registerDelegate authorizeRegisterDidFinish:[self getAccountInfo:authResult]];
+                                        [self setLoginStatus:LoginStatusType_LoginFromEmail];
                                     }else{
                                         if (error.code ==17007) {
                                             [self.registerDelegate authorizeRegisterDidFail:AuthorizekError_EmailAlreadyInUse];
 
                                         }else{
-                                            NSLog(@"失敗：%ld",error.code);
                                             [self.registerDelegate authorizeRegisterDidFail:AuthorizekError_RegisterFail];
-
+                                            [self setLoginStatus:LoginStatusType_NotLogin];
                                         }
                                     }
                                 }];
-        
     }
 
 }
+#pragma mark - FIRAuthDataResult
+
+- (AccountInfoModel*)getAccountInfo:(FIRAuthDataResult*)result{
+    
+    FIRUser *user = result.user;
+    accountInfoModel = [[AccountInfoModel alloc]init];
+    accountInfoModel.accountId = user.uid;
+    accountInfoModel.name = user.displayName;
+    accountInfoModel.email = user.email;
+    accountInfoModel.phone = user.phoneNumber;
+    NSString *imageString = [NSString stringWithFormat:@"%@?type=large",user.photoURL];
+    NSURL *imageUrl = [NSURL URLWithString:imageString];
+    accountInfoModel.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageUrl]];
+    
+    return accountInfoModel;
+}
+#pragma mark  - Logout
+
+- (void)logout{
+    [self setLoginStatus:LoginStatusType_NotLogin];
+    NSError *signOutError;
+    BOOL status = [[FIRAuth auth] signOut:&signOutError];
+    if (!status) {
+        NSLog(@"Error signing out: %@", signOutError);
+        return;
+    }
+}
+
 
 #pragma mark  - Validation Information
 - (BOOL)isValidEmail:(NSString*)email{
@@ -217,7 +262,7 @@ static dispatch_once_t onceToken;
 //    NSLog(@"尚未登入！！");
 //}else{
 //    NSLog(@"已經登入了！:%@",user);
-//    //                [[FIRAuth auth].currentUser updateEmail:@"TestEmail@email.com" completion:^(NSError *_Nullable error) {
+    //                [[FIRAuth auth].currentUser updateEmail:@"TestEmail@email.com" completion:^(NSError *_Nullable error) {
 //    //                    // ...
 //    //                    if (error) {
 //    //                        NSLog(@"更新Email 失敗:%@",error);

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "AccountInfoModel.h"
+
 typedef enum : NSInteger {
     AuthorizekError_LoginFail = 0,
     AuthorizekError_RegisterFail,
@@ -22,32 +24,38 @@ typedef enum : NSInteger {
     AuthorizekError_PasswordHaveSymbol,
     AuthorizekError_ConfirPasswordIsEmpty,
     AuthorizekError_ConfirPasswordNotEqual,
-
 } AuthorizekError;
-@protocol AuthorizeLoginDelegate<NSObject>
 
+typedef enum : NSInteger {
+    LoginStatusType_NotLogin = 0,
+    LoginStatusType_LoginFromFacebook,
+    LoginStatusType_LoginFromGooglePlus,
+    LoginStatusType_LoginFromEmail,
+} LoginStatusType;
+
+
+@protocol AuthorizeLoginDelegate<NSObject>
 @optional
 - (void)authorizeLoginDidStart;
 - (void)authorizeLoginDidFail:(AuthorizekError)error;
-- (void)authorizeLoginDidFinish;
-
+- (void)authorizeLoginDidFinish:(AccountInfoModel*)accountInfo;
 @end
 
 @protocol AuthorizeRegisterDelegate<NSObject>
-
 @optional
 - (void)authorizeRegisterDidStart;
 - (void)authorizeRegisterDidFail:(AuthorizekError)error;
-- (void)authorizeRegisterDidFinish;
-
+- (void)authorizeRegisterDidFinish:(AccountInfoModel*)accountInfo;
 @end
+
 
 @interface AuthorizedManager : NSObject
 @property (nonatomic, weak) id <AuthorizeLoginDelegate> loginDelegate;
 @property (nonatomic, weak) id <AuthorizeRegisterDelegate> registerDelegate;
 
-
 + (instancetype)sharedInstance;
+
+- (LoginStatusType)currentLoginStatus;
 
 - (void)loginFromEmail:(NSString*)email withPassword:(NSString*)password;
 
@@ -56,5 +64,8 @@ typedef enum : NSInteger {
 - (void)loginWithGooglePlusFromViewController:(UIViewController*)viewControler;
 
 - (void)registereWithEmail:(NSString*)email withPassword:(NSString*)password withConfirmPassword:(NSString*)confirmPassword;
+
+- (void)logout;
+
 
 @end

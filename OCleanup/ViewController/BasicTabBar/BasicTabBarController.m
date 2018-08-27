@@ -9,6 +9,8 @@
 #import "BasicTabBarController.h"
 #import "BasicTabBar.h"
 #import "HomeViewController.h"
+#import "AuthorizedManager.h"
+
 
 @interface BasicTabBarController ()<BasicTabBarDelegate,UITabBarControllerDelegate>{
     
@@ -47,8 +49,19 @@
     self.selectedIndex = 4;
 }
 -(void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    if (tabBarController.selectedIndex==1) {
+    
+
+}
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    
+    LoginStatusType status =  [[AuthorizedManager sharedInstance] currentLoginStatus];
+    BOOL isShouldLoginPage = viewController == [tabBarController.viewControllers objectAtIndex:1]||viewController == [tabBarController.viewControllers objectAtIndex:2]?YES:NO;
+    if (status ==LoginStatusType_NotLogin &&isShouldLoginPage) {
         [self performSegueWithIdentifier:@"PresentLoginView" sender:nil];
+        return NO;
+
+    }else{
+        return YES;
     }
 }
 - (void)setTabBarItem:(UITabBarItem*)item image:(NSString *)image selectedImage:(NSString *)selectedImage{

@@ -7,6 +7,7 @@
 //
 
 #import "RegisteredViewController.h"
+#import "AccountRepository.h"
 #import "AuthorizedManager.h"
 
 @interface RegisteredViewController ()<UITextFieldDelegate,AuthorizeRegisterDelegate>{
@@ -206,9 +207,10 @@
     [self showWarningLabel];
     
 }
--(void)authorizeRegisterDidFinish{
+-(void)authorizeRegisterDidFinish:(AccountInfoModel *)accountInfo{
     
     [loadIndicatorView stopAnimating];
+    [[AccountRepository sharedInstance]setAccountInfo:accountInfo];
     [self enableAllTextField:YES];
     [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 
