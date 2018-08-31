@@ -38,14 +38,14 @@ typedef enum : NSInteger {
 @optional
 - (void)authorizeLoginDidStart;
 - (void)authorizeLoginDidFail:(AuthorizekError)error;
-- (void)authorizeLoginDidFinish:(AccountInfoModel*)accountInfo;
+- (void)authorizeLoginDidFinish:(NSString*)accountID;
 @end
 
 @protocol AuthorizeRegisterDelegate<NSObject>
 @optional
 - (void)authorizeRegisterDidStart;
 - (void)authorizeRegisterDidFail:(AuthorizekError)error;
-- (void)authorizeRegisterDidFinish:(AccountInfoModel*)accountInfo;
+- (void)authorizeRegisterDidFinish:(NSString*)accountID;
 @end
 
 

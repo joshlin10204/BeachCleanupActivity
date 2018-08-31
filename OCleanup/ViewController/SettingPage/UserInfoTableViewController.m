@@ -74,7 +74,7 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
     UserInfoPictureTableViewCell *pictureCell = [tableView dequeueReusableCellWithIdentifier:pictureCellID];
     switch (indexPath.section) {
         case 0:
-            pictureCell.infoImage.image = accountInfo.image;
+            pictureCell.infoImage.image = accountInfo.photo;
             return pictureCell;
         case 1:
             detailCelll.infotitleLabel.text = @"E-Mail";

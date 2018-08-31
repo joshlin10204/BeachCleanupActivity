@@ -60,7 +60,7 @@ static dispatch_once_t onceToken;
     }else{
         [[FIRAuth auth]signInWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
             if (!error) {
-                [self.loginDelegate authorizeLoginDidFinish:[self getAccountInfo:authResult]];
+                [self.loginDelegate authorizeLoginDidFinish:authResult.user.uid];
                 [self setLoginStatus:LoginStatusType_LoginFromEmail];
             }else{
                 if (error.code == 17011) {
@@ -83,7 +83,7 @@ static dispatch_once_t onceToken;
         if (!error && !result.isCancelled) {
             if ([FBSDKAccessToken currentAccessToken]) {
                 FIRAuthCredential * credential = [FIRFacebookAuthProvider credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
-                [self registerWithFIRAuthCredential:credential];
+                [self loginWithFIRAuthCredential:credential];
                 [self setLoginStatus:LoginStatusType_LoginFromFacebook];
 
             }else{
@@ -113,7 +113,7 @@ static dispatch_once_t onceToken;
         FIRAuthCredential *credential =
         [FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken
                                          accessToken:authentication.accessToken];
-        [self registerWithFIRAuthCredential:credential];
+        [self loginWithFIRAuthCredential:credential];
         [self setLoginStatus:LoginStatusType_LoginFromGooglePlus];
 
 
@@ -128,10 +128,18 @@ static dispatch_once_t onceToken;
 // Dismiss the "Sign in with Google" view
 - (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController {}
 
-- (void)registerWithFIRAuthCredential:(FIRAuthCredential*)credential {
+#pragma mark  -FIRAuthCredential
+
+- (void)loginWithFIRAuthCredential:(FIRAuthCredential*)credential {
     [[FIRAuth auth]signInAndRetrieveDataWithCredential:credential completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
         if (!error) {
-            [self.loginDelegate authorizeLoginDidFinish:[self getAccountInfo:authResult]];
+            FIRDatabaseReference * databaseRef = [[[FIRDatabase database] reference]child:ACCOUNT_DATABASE];
+            [[databaseRef child:authResult.user.uid] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                if (!snapshot.exists) {
+                    [self createAccountInfoDatabase:authResult];
+                }
+                [self.loginDelegate authorizeLoginDidFinish:authResult.user.uid];
+            }];
         }else{
             [self.loginDelegate authorizeLoginDidFail:AuthorizekError_LoginFail];
             [self setLoginStatus:LoginStatusType_NotLogin];
@@ -156,7 +164,8 @@ static dispatch_once_t onceToken;
                                 completion:^(FIRAuthDataResult * _Nullable authResult,
                                              NSError * _Nullable error) {
                                     if (!error) {
-                                        [self.registerDelegate authorizeRegisterDidFinish:[self getAccountInfo:authResult]];
+                                        [self createAccountInfoDatabase:authResult];
+                                        [self.registerDelegate authorizeRegisterDidFinish:authResult.user.uid];
                                         [self setLoginStatus:LoginStatusType_LoginFromEmail];
                                     }else{
                                         if (error.code ==17007) {
@@ -173,20 +182,26 @@ static dispatch_once_t onceToken;
 }
 #pragma mark - FIRAuthDataResult
 
-- (AccountInfoModel*)getAccountInfo:(FIRAuthDataResult*)result{
-    
+- (void)createAccountInfoDatabase:(FIRAuthDataResult*)result{
     FIRUser *user = result.user;
-    accountInfoModel = [[AccountInfoModel alloc]init];
-    accountInfoModel.accountId = user.uid;
-    accountInfoModel.name = user.displayName;
-    accountInfoModel.email = user.email;
-    accountInfoModel.phone = user.phoneNumber;
+    NSMutableDictionary *info = [[NSMutableDictionary alloc]init];
+    [info setObject:user.uid forKey:ACCOUNT_DATABASE_KEY_ID];
+    [info setObject:user.email forKey:ACCOUNT_DATABASE_KEY_EMAIL];
+    [info setObject:user.displayName?:@"" forKey:ACCOUNT_DATABASE_KEY_NAME];
+    [info setObject:user.phoneNumber?:@"" forKey:ACCOUNT_DATABASE_KEY_PHONE];
+    [info setObject:@"NO" forKey:ACCOUNT_DATABASE_KEY_ISMANAGER];
+    NSDictionary* dictionary = [NSDictionary dictionaryWithDictionary:info];
+
     NSString *imageString = [NSString stringWithFormat:@"%@?type=large",user.photoURL];
     NSURL *imageUrl = [NSURL URLWithString:imageString];
-    accountInfoModel.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageUrl]];
-    
-    return accountInfoModel;
+    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+
+    FIRDatabaseReference * databaseRef = [[[FIRDatabase database] reference]child:ACCOUNT_DATABASE];
+    FIRStorageReference *storageRef =[[[FIRStorage storage] reference]child:ACCOUNT_IMAGE_STORAGE];
+    [[databaseRef child:user.uid]setValue:dictionary];
+    [[storageRef child:user.uid] putData:imageData];
 }
+
 #pragma mark  - Logout
 
 - (void)logout{
@@ -254,27 +269,6 @@ static dispatch_once_t onceToken;
         return YES;
     }
 }
-
-
-//FIRUser *user = [[FIRAuth auth] currentUser];
-//
-//if (user == nil) {
-//    NSLog(@"尚未登入！！");
-//}else{
-//    NSLog(@"已經登入了！:%@",user);
-    //                [[FIRAuth auth].currentUser updateEmail:@"TestEmail@email.com" completion:^(NSError *_Nullable error) {
-//    //                    // ...
-//    //                    if (error) {
-//    //                        NSLog(@"更新Email 失敗:%@",error);
-//    //                    }else{
-//    //                        NSLog(@"更新Email 成功");
-//    //
-//    //                    }
-//    //                }];
-//}
-
-
-
 
 
 @end

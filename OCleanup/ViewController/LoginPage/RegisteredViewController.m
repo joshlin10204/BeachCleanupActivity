@@ -207,10 +207,11 @@
     [self showWarningLabel];
     
 }
--(void)authorizeRegisterDidFinish:(AccountInfoModel *)accountInfo{
+-(void)authorizeRegisterDidFinish:(NSString *)accountID{
     
     [loadIndicatorView stopAnimating];
-    [[AccountRepository sharedInstance]setAccountInfo:accountInfo];
+    [[AccountRepository sharedInstance]loadAccountInfoFromAccountID:accountID];
+    [[AccountRepository sharedInstance]loadAccountPhotoFromAccountID:accountID];
     [self enableAllTextField:YES];
     [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 
