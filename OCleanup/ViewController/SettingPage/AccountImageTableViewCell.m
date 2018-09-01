@@ -6,9 +6,9 @@
 //  Copyright © 2018年 JoshLin. All rights reserved.
 //
 
-#import "UserInfoPictureTableViewCell.h"
+#import "AccountImageTableViewCell.h"
 
-@implementation UserInfoPictureTableViewCell
+@implementation AccountImageTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

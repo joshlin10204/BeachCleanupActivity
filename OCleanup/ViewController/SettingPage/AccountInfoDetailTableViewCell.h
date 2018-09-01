@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserInfoDetailTableViewCell : UITableViewCell
+@interface AccountInfoDetailTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *infotitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoContentLabel;
 

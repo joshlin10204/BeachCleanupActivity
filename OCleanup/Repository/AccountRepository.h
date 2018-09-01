@@ -15,7 +15,7 @@
 
 - (void)loadAccountInfoFromAccountID:(NSString*)accountId;
 
-- (void)loadAccountPhotoFromAccountID:(NSString*)accountId;
+- (void)loadAccountImageFromAccountID:(NSString*)accountId;
 
 - (AccountInfoModel*)getAccountInfo;
 

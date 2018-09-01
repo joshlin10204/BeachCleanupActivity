@@ -27,15 +27,14 @@
 		033C5E9F2132656C006666A1 /* AccountInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C5E9E2132656C006666A1 /* AccountInfoModel.m */; };
 		033C5EA221326E5E006666A1 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C5EA121326E5E006666A1 /* SettingsTableViewController.m */; };
 		034A260C2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A260B2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m */; };
-		034A2645212B1CE200B0BCAD /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2644212B1CE200B0BCAD /* UserInfoTableViewController.m */; };
-		034A264A212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2648212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m */; };
-		034A264B212B1D4200B0BCAD /* UserInfoDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A2649212B1D4200B0BCAD /* UserInfoDetailTableViewCell.xib */; };
-		034A264F212B1D8500B0BCAD /* UserInfoPictureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A264D212B1D8500B0BCAD /* UserInfoPictureTableViewCell.m */; };
-		034A2650212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A264E212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib */; };
+		034A2645212B1CE200B0BCAD /* AccountInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2644212B1CE200B0BCAD /* AccountInfoTableViewController.m */; };
+		034A264A212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2648212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.m */; };
+		034A264B212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A2649212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.xib */; };
+		034A264F212B1D8500B0BCAD /* AccountImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A264D212B1D8500B0BCAD /* AccountImageTableViewCell.m */; };
+		034A2650212B1D8500B0BCAD /* AccountImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A264E212B1D8500B0BCAD /* AccountImageTableViewCell.xib */; };
 		034A2653212B396000B0BCAD /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034A2651212B396000B0BCAD /* LoginPage.storyboard */; };
 		034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2656212B39C900B0BCAD /* LoginViewController.m */; };
 		034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2659212B39E900B0BCAD /* RegisteredViewController.m */; };
-		03EC25B7213A267900118EEA /* PhotoLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC25B6213A267900118EEA /* PhotoLibraryViewController.m */; };
 		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
 		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
 		03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA931210487EA006CCB67 /* Assets.xcassets */; };
@@ -109,21 +108,19 @@
 		033C5EA121326E5E006666A1 /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		034A260A2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		034A260B2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		034A2643212B1CE200B0BCAD /* UserInfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewController.h; sourceTree = "<group>"; };
-		034A2644212B1CE200B0BCAD /* UserInfoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableViewController.m; sourceTree = "<group>"; };
-		034A2647212B1D4200B0BCAD /* UserInfoDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoDetailTableViewCell.h; sourceTree = "<group>"; };
-		034A2648212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoDetailTableViewCell.m; sourceTree = "<group>"; };
-		034A2649212B1D4200B0BCAD /* UserInfoDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoDetailTableViewCell.xib; sourceTree = "<group>"; };
-		034A264C212B1D8500B0BCAD /* UserInfoPictureTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoPictureTableViewCell.h; sourceTree = "<group>"; };
-		034A264D212B1D8500B0BCAD /* UserInfoPictureTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoPictureTableViewCell.m; sourceTree = "<group>"; };
-		034A264E212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoPictureTableViewCell.xib; sourceTree = "<group>"; };
+		034A2643212B1CE200B0BCAD /* AccountInfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountInfoTableViewController.h; sourceTree = "<group>"; };
+		034A2644212B1CE200B0BCAD /* AccountInfoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountInfoTableViewController.m; sourceTree = "<group>"; };
+		034A2647212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountInfoDetailTableViewCell.h; sourceTree = "<group>"; };
+		034A2648212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountInfoDetailTableViewCell.m; sourceTree = "<group>"; };
+		034A2649212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoDetailTableViewCell.xib; sourceTree = "<group>"; };
+		034A264C212B1D8500B0BCAD /* AccountImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountImageTableViewCell.h; sourceTree = "<group>"; };
+		034A264D212B1D8500B0BCAD /* AccountImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountImageTableViewCell.m; sourceTree = "<group>"; };
+		034A264E212B1D8500B0BCAD /* AccountImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountImageTableViewCell.xib; sourceTree = "<group>"; };
 		034A2652212B396000B0BCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OCleanup/Base.lproj/LoginPage.storyboard; sourceTree = "<group>"; };
 		034A2655212B39C900B0BCAD /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		034A2656212B39C900B0BCAD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		034A2658212B39E900B0BCAD /* RegisteredViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteredViewController.h; sourceTree = "<group>"; };
 		034A2659212B39E900B0BCAD /* RegisteredViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteredViewController.m; sourceTree = "<group>"; };
-		03EC25B5213A267900118EEA /* PhotoLibraryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoLibraryViewController.h; sourceTree = "<group>"; };
-		03EC25B6213A267900118EEA /* PhotoLibraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoLibraryViewController.m; sourceTree = "<group>"; };
 		03EDA925210487EA006CCB67 /* OCleanup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCleanup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EDA928210487EA006CCB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03EDA929210487EA006CCB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -260,14 +257,14 @@
 			children = (
 				033C5EA021326E5E006666A1 /* SettingsTableViewController.h */,
 				033C5EA121326E5E006666A1 /* SettingsTableViewController.m */,
-				034A2643212B1CE200B0BCAD /* UserInfoTableViewController.h */,
-				034A2644212B1CE200B0BCAD /* UserInfoTableViewController.m */,
-				034A2647212B1D4200B0BCAD /* UserInfoDetailTableViewCell.h */,
-				034A2648212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m */,
-				034A2649212B1D4200B0BCAD /* UserInfoDetailTableViewCell.xib */,
-				034A264C212B1D8500B0BCAD /* UserInfoPictureTableViewCell.h */,
-				034A264D212B1D8500B0BCAD /* UserInfoPictureTableViewCell.m */,
-				034A264E212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib */,
+				034A2643212B1CE200B0BCAD /* AccountInfoTableViewController.h */,
+				034A2644212B1CE200B0BCAD /* AccountInfoTableViewController.m */,
+				034A2647212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.h */,
+				034A2648212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.m */,
+				034A2649212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.xib */,
+				034A264C212B1D8500B0BCAD /* AccountImageTableViewCell.h */,
+				034A264D212B1D8500B0BCAD /* AccountImageTableViewCell.m */,
+				034A264E212B1D8500B0BCAD /* AccountImageTableViewCell.xib */,
 			);
 			path = SettingPage;
 			sourceTree = "<group>";
@@ -282,15 +279,6 @@
 				034A2651212B396000B0BCAD /* LoginPage.storyboard */,
 			);
 			path = LoginPage;
-			sourceTree = "<group>";
-		};
-		03EC25B8213A272600118EEA /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				03EC25B5213A267900118EEA /* PhotoLibraryViewController.h */,
-				03EC25B6213A267900118EEA /* PhotoLibraryViewController.m */,
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 		03EDA91C210487EA006CCB67 = {
@@ -401,7 +389,6 @@
 		03EDA98921135801006CCB67 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				03EC25B8213A272600118EEA /* Tools */,
 				030731A92123401E0037093E /* BasicTabBar */,
 				03EDA97C210E0FBE006CCB67 /* ActivityPage */,
 				030731AA212340320037093E /* TicketPage */,
@@ -550,12 +537,12 @@
 				03EDA935210487EA006CCB67 /* LaunchScreen.storyboard in Resources */,
 				030731FB212496F00037093E /* TicketsCollectionViewCell.xib in Resources */,
 				03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */,
-				034A264B212B1D4200B0BCAD /* UserInfoDetailTableViewCell.xib in Resources */,
+				034A264B212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.xib in Resources */,
 				031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */,
 				034A2653212B396000B0BCAD /* LoginPage.storyboard in Resources */,
 				03EDA930210487EA006CCB67 /* Main.storyboard in Resources */,
 				033C5E8C212C5F64006666A1 /* GoogleService-Info.plist in Resources */,
-				034A2650212B1D8500B0BCAD /* UserInfoPictureTableViewCell.xib in Resources */,
+				034A2650212B1D8500B0BCAD /* AccountImageTableViewCell.xib in Resources */,
 				0307320C2127AFD00037093E /* NoticeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,10 +650,10 @@
 				033C5E932130E769006666A1 /* AuthorizedManager.m in Sources */,
 				033C5E9F2132656C006666A1 /* AccountInfoModel.m in Sources */,
 				030731F021246D610037093E /* TicketsCollectionViewController.m in Sources */,
-				034A264A212B1D4200B0BCAD /* UserInfoDetailTableViewCell.m in Sources */,
+				034A264A212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.m in Sources */,
 				034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */,
 				03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */,
-				034A2645212B1CE200B0BCAD /* UserInfoTableViewController.m in Sources */,
+				034A2645212B1CE200B0BCAD /* AccountInfoTableViewController.m in Sources */,
 				03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */,
 				031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */,
 				0307320F2127B0020037093E /* NoticeData.m in Sources */,
@@ -678,9 +665,8 @@
 				034A260C2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m in Sources */,
 				030731F32124716B0037093E /* TicketsCollectionViewFlowLayout.m in Sources */,
 				03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */,
-				034A264F212B1D8500B0BCAD /* UserInfoPictureTableViewCell.m in Sources */,
+				034A264F212B1D8500B0BCAD /* AccountImageTableViewCell.m in Sources */,
 				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
-				03EC25B7213A267900118EEA /* PhotoLibraryViewController.m in Sources */,
 				03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */,
 				03EDA96821078132006CCB67 /* HomeViewController.m in Sources */,
 				030732012127A4E00037093E /* NoticeTableViewController.m in Sources */,

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserInfoTableViewController : UITableViewController
+@interface AccountInfoTableViewController : UITableViewController
 
 @end

@@ -27,7 +27,7 @@
 @property (nonatomic,strong) NSString *accountId;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *email;
-@property (nonatomic,strong) UIImage *photo;
+@property (nonatomic,strong) UIImage *image;
 @property (nonatomic,strong) NSString *phone;
 @property (nonatomic,assign) BOOL isManager;
 

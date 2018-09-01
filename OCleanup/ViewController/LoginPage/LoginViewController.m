@@ -168,7 +168,7 @@
 -(void)authorizeLoginDidFinish:(NSString *)accountID{
     [loadIndicatorView stopAnimating];
     [[AccountRepository sharedInstance]loadAccountInfoFromAccountID:accountID];
-    [[AccountRepository sharedInstance]loadAccountPhotoFromAccountID:accountID];
+    [[AccountRepository sharedInstance]loadAccountImageFromAccountID:accountID];
     [self enableAllTextField:YES];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }

@@ -6,14 +6,14 @@
 //  Copyright © 2018年 JoshLin. All rights reserved.
 //
 
-#import "UserInfoTableViewController.h"
-#import "UserInfoPictureTableViewCell.h"
-#import "UserInfoDetailTableViewCell.h"
+#import "AccountInfoTableViewController.h"
+#import "AccountImageTableViewCell.h"
+#import "AccountInfoDetailTableViewCell.h"
 #import "AccountRepository.h"
 
-static NSString *detailCelllID = @"UserInfoDetailTableViewCell";
-static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
-@interface UserInfoTableViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+static NSString *detailCelllID = @"AccountInfoDetailTableViewCell";
+static NSString *imageCellID = @"AccountImageTableViewCell";
+@interface AccountInfoTableViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     
     AccountInfoModel *accountInfo;
     NSInteger selectSection;
@@ -22,7 +22,7 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
 
 @end
 
-@implementation UserInfoTableViewController
+@implementation AccountInfoTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,10 +34,10 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:(245.0f/255.0f) green:(245.0f/255.0f) blue:(245.0f/255.0f) alpha:1];
 
-    [self.tableView registerNib:[UINib nibWithNibName:@"UserInfoDetailTableViewCell" bundle:nil]
-         forCellReuseIdentifier:@"UserInfoDetailTableViewCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"UserInfoPictureTableViewCell" bundle:nil]
-         forCellReuseIdentifier:@"UserInfoPictureTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"AccountInfoDetailTableViewCell" bundle:nil]
+         forCellReuseIdentifier:@"AccountInfoDetailTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"AccountImageTableViewCell" bundle:nil]
+         forCellReuseIdentifier:@"AccountImageTableViewCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,9 +94,8 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"000");
-    UserInfoDetailTableViewCell *detailCelll = [tableView dequeueReusableCellWithIdentifier:detailCelllID];
-    UserInfoPictureTableViewCell *pictureCell = [tableView dequeueReusableCellWithIdentifier:pictureCellID];
+    AccountInfoDetailTableViewCell *detailCelll = [tableView dequeueReusableCellWithIdentifier:detailCelllID];
+    AccountImageTableViewCell *pictureCell = [tableView dequeueReusableCellWithIdentifier:imageCellID];
     pictureCell.selectionStyle =UITableViewCellSelectionStyleNone;
     detailCelll.selectionStyle =UITableViewCellSelectionStyleNone;
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
@@ -108,7 +107,7 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
     
     switch (indexPath.section) {
         case 0:
-            pictureCell.infoImage.image = accountInfo.photo;
+            pictureCell.infoImage.image = accountInfo.image;
             return pictureCell;
         case 1:
             detailCelll.infotitleLabel.text = @"E-Mail";
@@ -238,7 +237,7 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
 
     [self dismissViewControllerAnimated:YES completion:nil];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    accountInfo.photo = image;
+    accountInfo.image = image;
     [self updateAccountInfo];
     
 }

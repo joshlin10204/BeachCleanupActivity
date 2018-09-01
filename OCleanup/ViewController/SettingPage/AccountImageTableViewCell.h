@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserInfoPictureTableViewCell : UITableViewCell
+@interface AccountImageTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *infoImage;
 
 @end

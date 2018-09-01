@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="1880" y="1611"/>
         </scene>
-        <!--User Info Table View Controller-->
+        <!--Account Info Table View Controller-->
         <scene sceneID="LN9-cO-XYw">
             <objects>
-                <tableViewController id="XSB-wp-0WC" customClass="UserInfoTableViewController" sceneMemberID="viewController">
+                <tableViewController id="XSB-wp-0WC" customClass="AccountInfoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hiz-MC-Zzz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

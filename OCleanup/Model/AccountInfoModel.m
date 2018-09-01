@@ -20,7 +20,7 @@
         self.name = [coder decodeObjectForKey:@"name"];
         self.email = [coder decodeObjectForKey:@"email"];
         self.phone = [coder decodeObjectForKey:@"phone"];
-        self.photo = [coder decodeObjectForKey:@"photo"];
+        self.image = [coder decodeObjectForKey:@"image"];
     }
     return self;
 }
@@ -30,7 +30,7 @@
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.email forKey:@"email"];
     [aCoder encodeObject:self.phone forKey:@"phone"];
-    [aCoder encodeObject:self.photo forKey:@"photo"];
+    [aCoder encodeObject:self.image forKey:@"image"];
 
 }
 @end

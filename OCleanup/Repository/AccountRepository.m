@@ -46,9 +46,9 @@ static dispatch_once_t onceToken;
     [info setObject:accountInfo.phone forKey:ACCOUNT_DATABASE_KEY_PHONE];
     NSDictionary* dictionary = [NSDictionary dictionaryWithDictionary:info];
     [self setAccountInfoUserDefaults:dictionary];
-    [self setAccountImageUserDefaults:accountInfo.photo];
+    [self setAccountImageUserDefaults:accountInfo.image];
     [[self.databaseRef child:accountInfo.accountId]  updateChildValues:dictionary];
-    [self uploadAccountPhoto:accountInfo.photo withAccountID:accountInfo.accountId];
+    [self uploadAccountPhoto:accountInfo.image withAccountID:accountInfo.accountId];
 }
 
 
@@ -60,7 +60,7 @@ static dispatch_once_t onceToken;
     self.accountInfo.email = [info objectForKey:ACCOUNT_DATABASE_KEY_EMAIL];
     self.accountInfo.name = [info objectForKey:ACCOUNT_DATABASE_KEY_NAME];
     self.accountInfo.phone = [info objectForKey:ACCOUNT_DATABASE_KEY_PHONE];
-    self.accountInfo.photo =[self getAccountImageUserDefaults];
+    self.accountInfo.image =[self getAccountImageUserDefaults];
     
     
     return self.accountInfo;
@@ -86,7 +86,7 @@ static dispatch_once_t onceToken;
 
 #pragma mark  -Account Image Storage
 
-- (void)loadAccountPhotoFromAccountID:(NSString*)accountId{
+- (void)loadAccountImageFromAccountID:(NSString*)accountId{
     [[self.storageRef child:accountId]dataWithMaxSize:1 * 1024 * 1024 completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error ==nil) {
             UIImage *accountImage = [UIImage imageWithData:data];
