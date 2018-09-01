@@ -35,8 +35,8 @@
 		034A2653212B396000B0BCAD /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034A2651212B396000B0BCAD /* LoginPage.storyboard */; };
 		034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2656212B39C900B0BCAD /* LoginViewController.m */; };
 		034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2659212B39E900B0BCAD /* RegisteredViewController.m */; };
-		03EC2604213A9CB800118EEA /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EC2603213A9CB800118EEA /* LoadingView.xib */; };
-		03EC2607213A9D6600118EEA /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC2606213A9D6600118EEA /* LoadingView.m */; };
+		03EC260C213AB67000118EEA /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EC2609213AB66F00118EEA /* LoadingView.xib */; };
+		03EC260D213AB67000118EEA /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC260B213AB66F00118EEA /* LoadingView.m */; };
 		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
 		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
 		03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA931210487EA006CCB67 /* Assets.xcassets */; };
@@ -123,9 +123,9 @@
 		034A2656212B39C900B0BCAD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		034A2658212B39E900B0BCAD /* RegisteredViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteredViewController.h; sourceTree = "<group>"; };
 		034A2659212B39E900B0BCAD /* RegisteredViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteredViewController.m; sourceTree = "<group>"; };
-		03EC2603213A9CB800118EEA /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
-		03EC2605213A9D6600118EEA /* LoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
-		03EC2606213A9D6600118EEA /* LoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		03EC2609213AB66F00118EEA /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingView.xib; path = OCleanup/ViewController/Tools/LoadingView.xib; sourceTree = SOURCE_ROOT; };
+		03EC260A213AB66F00118EEA /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingView.h; path = OCleanup/ViewController/Tools/LoadingView.h; sourceTree = SOURCE_ROOT; };
+		03EC260B213AB66F00118EEA /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingView.m; path = OCleanup/ViewController/Tools/LoadingView.m; sourceTree = SOURCE_ROOT; };
 		03EDA925210487EA006CCB67 /* OCleanup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCleanup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EDA928210487EA006CCB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03EDA929210487EA006CCB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -289,9 +289,9 @@
 		03EC2608213AAC2900118EEA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				03EC2605213A9D6600118EEA /* LoadingView.h */,
-				03EC2606213A9D6600118EEA /* LoadingView.m */,
-				03EC2603213A9CB800118EEA /* LoadingView.xib */,
+				03EC260A213AB66F00118EEA /* LoadingView.h */,
+				03EC260B213AB66F00118EEA /* LoadingView.m */,
+				03EC2609213AB66F00118EEA /* LoadingView.xib */,
 			);
 			name = Tools;
 			path = "New Group";
@@ -560,7 +560,7 @@
 				03EDA930210487EA006CCB67 /* Main.storyboard in Resources */,
 				033C5E8C212C5F64006666A1 /* GoogleService-Info.plist in Resources */,
 				034A2650212B1D8500B0BCAD /* AccountImageTableViewCell.xib in Resources */,
-				03EC2604213A9CB800118EEA /* LoadingView.xib in Resources */,
+				03EC260C213AB67000118EEA /* LoadingView.xib in Resources */,
 				0307320C2127AFD00037093E /* NoticeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,6 +666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				033C5E932130E769006666A1 /* AuthorizedManager.m in Sources */,
+				03EC260D213AB67000118EEA /* LoadingView.m in Sources */,
 				033C5E9F2132656C006666A1 /* AccountInfoModel.m in Sources */,
 				030731F021246D610037093E /* TicketsCollectionViewController.m in Sources */,
 				034A264A212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.m in Sources */,
@@ -692,7 +693,6 @@
 				031859D7211FF4120038ED56 /* ActivityMainInfoView.m in Sources */,
 				03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */,
 				034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */,
-				03EC2607213A9D6600118EEA /* LoadingView.m in Sources */,
 				031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */,
 				031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */,
 				03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */,
