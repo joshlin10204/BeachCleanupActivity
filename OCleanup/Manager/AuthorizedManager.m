@@ -191,15 +191,17 @@ static dispatch_once_t onceToken;
     [info setObject:user.phoneNumber?:@"" forKey:ACCOUNT_DATABASE_KEY_PHONE];
     [info setObject:@"NO" forKey:ACCOUNT_DATABASE_KEY_ISMANAGER];
     NSDictionary* dictionary = [NSDictionary dictionaryWithDictionary:info];
-
-    NSString *imageString = [NSString stringWithFormat:@"%@?type=large",user.photoURL];
-    NSURL *imageUrl = [NSURL URLWithString:imageString];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-
     FIRDatabaseReference * databaseRef = [[[FIRDatabase database] reference]child:ACCOUNT_DATABASE];
-    FIRStorageReference *storageRef =[[[FIRStorage storage] reference]child:ACCOUNT_IMAGE_STORAGE];
     [[databaseRef child:user.uid]setValue:dictionary];
-    [[storageRef child:user.uid] putData:imageData];
+
+    if (user.photoURL!=nil) {
+        NSString *imageString = [NSString stringWithFormat:@"%@?type=large",user.photoURL];
+        NSURL *imageUrl = [NSURL URLWithString:imageString];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+        FIRStorageReference *storageRef =[[[FIRStorage storage] reference]child:ACCOUNT_IMAGE_STORAGE];
+        [[storageRef child:user.uid] putData:imageData];
+    }
+
 }
 
 #pragma mark  - Logout

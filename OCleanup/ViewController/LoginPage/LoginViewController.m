@@ -9,13 +9,13 @@
 #import "LoginViewController.h"
 #import "AccountRepository.h"
 #import "AuthorizedManager.h"
+#import "LoadingView.h"
 
 
 @interface LoginViewController ()<UITextFieldDelegate,AuthorizeLoginDelegate>{
     
-    UIActivityIndicatorView *loadIndicatorView;
     NSString * warnText ;
-
+    LoadingView *loadingView;
 }
 
 @end
@@ -27,8 +27,8 @@
 
     
     self.loginButton.layer.cornerRadius =10;
-    [self initActivityIndicator];
     [self initTexfieldDelegate];
+    [self initLoadingView];
     
     [AuthorizedManager sharedInstance].loginDelegate=self;
 
@@ -38,21 +38,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - LoadingView
+- (void)initLoadingView{
+    loadingView = [[LoadingView alloc]initWithFrame:self.view.frame];
+    loadingView.hidden =YES;
+    [self.view addSubview:loadingView];
+    
+}
 
 #pragma mark Touches View Event
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self closeKeyboard];
 
 }
-#pragma mark ActivityIndicator
-- (void)initActivityIndicator{
-    loadIndicatorView=[[UIActivityIndicatorView alloc]initWithFrame:CGRectZero];
-    [loadIndicatorView setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height*36/100)];
-    [loadIndicatorView setHidesWhenStopped:YES];
-    [loadIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [loadIndicatorView setColor:[UIColor grayColor]];
-    [self.view addSubview:loadIndicatorView];
-}
+
 #pragma mark - UITextField
 - (void)initTexfieldDelegate{
     self.emailTextField.delegate = self;
@@ -112,14 +111,17 @@
 #pragma mark Click Event
 
 - (IBAction)onClickLoginBtn:(id)sender {
+    loadingView.hidden =NO;
     [[AuthorizedManager sharedInstance]loginFromEmail:self.emailTextField.text
                                          withPassword:self.passwordTextField.text];
 
 }
 - (IBAction)onClickFaceBookBtn:(id)sender {
+    loadingView.hidden =NO;
     [[AuthorizedManager sharedInstance]loginWithFacebookFromViewController:self];
 }
 - (IBAction)onClickGooglePlusBtn:(id)sender {
+    loadingView.hidden =NO;
     [[AuthorizedManager sharedInstance]loginWithGooglePlusFromViewController:self];
 }
 - (IBAction)onClickCloseBtn:(id)sender {
@@ -129,12 +131,11 @@
 #pragma mark - #pragma mark AuthorizedManager Delegate
 
 - (void)authorizeLoginDidStart{
-    [loadIndicatorView startAnimating];
     [self enableAllTextField:NO];
     [self closeKeyboard];
 }
 - (void)authorizeLoginDidFail:(AuthorizekError)error{
-    [loadIndicatorView stopAnimating];
+    loadingView.hidden =YES;
     [self enableAllTextField:YES];
     switch (error) {
         case AuthorizekError_LoginFail:
@@ -166,10 +167,10 @@
     
 }
 -(void)authorizeLoginDidFinish:(NSString *)accountID{
-    [loadIndicatorView stopAnimating];
     [[AccountRepository sharedInstance]loadAccountInfoFromAccountID:accountID];
     [[AccountRepository sharedInstance]loadAccountImageFromAccountID:accountID];
     [self enableAllTextField:YES];
+    loadingView.hidden =YES;
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

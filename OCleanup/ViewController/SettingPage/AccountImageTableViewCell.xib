@@ -21,7 +21,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="357" height="259.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-Pc-UJF">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AccountImage_None" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-Pc-UJF">
                         <rect key="frame" x="88" y="39" width="181.5" height="181.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Ell-Pc-UJF" secondAttribute="height" multiplier="1:1" id="ib9-jS-tkU"/>
@@ -41,4 +41,7 @@
             <point key="canvasLocation" x="50.5" y="20"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="AccountImage_None" width="500" height="500"/>
+    </resources>
 </document>

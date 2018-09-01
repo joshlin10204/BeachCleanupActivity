@@ -107,7 +107,9 @@ static NSString *imageCellID = @"AccountImageTableViewCell";
     
     switch (indexPath.section) {
         case 0:
-            pictureCell.infoImage.image = accountInfo.image;
+            if (accountInfo.image!=nil) {
+                pictureCell.infoImage.image = accountInfo.image;
+            }
             return pictureCell;
         case 1:
             detailCelll.infotitleLabel.text = @"E-Mail";

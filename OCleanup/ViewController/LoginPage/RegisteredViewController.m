@@ -9,11 +9,13 @@
 #import "RegisteredViewController.h"
 #import "AccountRepository.h"
 #import "AuthorizedManager.h"
+#import "LoadingView.h"
 
 @interface RegisteredViewController ()<UITextFieldDelegate,AuthorizeRegisterDelegate>{
     CGFloat spacingWithKeyboardAndCursor;
-    UIActivityIndicatorView *loadIndicatorView;
     NSString * warnText ;
+    LoadingView *loadingView;
+
 }
 
 @end
@@ -24,9 +26,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.registeredButton.layer.cornerRadius =10;
-    [self initActivityIndicator];
     [self initTexfieldDelegate];
     [self registerNotification];
+    [self initLoadingView];
+
     [AuthorizedManager sharedInstance].registerDelegate = self;
     
     
@@ -72,7 +75,13 @@
         }];
     }
 }
-
+#pragma mark - LoadingView
+- (void)initLoadingView{
+    loadingView = [[LoadingView alloc]initWithFrame:self.view.frame];
+    loadingView.hidden =YES;
+    [self.view addSubview:loadingView];
+    
+}
 
 #pragma mark Touches View Event
 
@@ -83,15 +92,6 @@
     [self.nameTextField resignFirstResponder];
     [self.phoneTextField resignFirstResponder];
     
-}
-#pragma mark ActivityIndicator
-- (void)initActivityIndicator{
-    loadIndicatorView=[[UIActivityIndicatorView alloc]initWithFrame:CGRectZero];
-    [loadIndicatorView setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height*36/100)];
-    [loadIndicatorView setHidesWhenStopped:YES];
-    [loadIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [loadIndicatorView setColor:[UIColor grayColor]];
-    [self.view addSubview:loadIndicatorView];
 }
 
 
@@ -155,8 +155,9 @@
 
 #pragma mark - Click Event
 - (IBAction)onClickRegisteredBtn:(id)sender {
-    
-    [loadIndicatorView startAnimating];
+
+    loadingView.hidden =NO;
+
     [[AuthorizedManager sharedInstance]registereWithEmail:self.emailTextField.text withPassword:self.passwordTextField.text withConfirmPassword:self.confirmTextField.text];
 }
 - (IBAction)onClickCloseBtn:(id)sender {
@@ -168,7 +169,8 @@
     
 }
 -(void)authorizeRegisterDidFail:(AuthorizekError)error{
-    [loadIndicatorView stopAnimating];
+    loadingView.hidden =YES;
+
     [self enableAllTextField:YES];
     switch (error) {
         case AuthorizekError_RegisterFail:
@@ -209,7 +211,7 @@
 }
 -(void)authorizeRegisterDidFinish:(NSString *)accountID{
     
-    [loadIndicatorView stopAnimating];
+    loadingView.hidden =NO;
     [[AccountRepository sharedInstance]loadAccountInfoFromAccountID:accountID];
     [[AccountRepository sharedInstance]loadAccountImageFromAccountID:accountID];
     [self enableAllTextField:YES];

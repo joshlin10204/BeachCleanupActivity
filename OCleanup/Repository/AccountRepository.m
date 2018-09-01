@@ -68,6 +68,7 @@ static dispatch_once_t onceToken;
 - (void)removeAccountInfo{
     
     [self removeAccountInfoUserDefaults];
+    [self removeAccountImageUserDefaults];
 }
 #pragma mark  -Account Info Database
 - (void)loadAccountInfoFromAccountID:(NSString*)accountId{
