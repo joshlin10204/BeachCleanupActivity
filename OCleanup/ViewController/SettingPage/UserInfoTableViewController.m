@@ -13,10 +13,11 @@
 
 static NSString *detailCelllID = @"UserInfoDetailTableViewCell";
 static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
-
-@interface UserInfoTableViewController ()<UITableViewDelegate,UITableViewDataSource>{
+@interface UserInfoTableViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     
     AccountInfoModel *accountInfo;
+    NSInteger selectSection;
+    UIImagePickerController * imagePickerViewController;
 }
 
 @end
@@ -25,12 +26,14 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadAccountInfo];
+    [self initImagePickerViewController];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:(245.0f/255.0f) green:(245.0f/255.0f) blue:(245.0f/255.0f) alpha:1];
 
-    [self initAccountInfo];
     [self.tableView registerNib:[UINib nibWithNibName:@"UserInfoDetailTableViewCell" bundle:nil]
          forCellReuseIdentifier:@"UserInfoDetailTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"UserInfoPictureTableViewCell" bundle:nil]
@@ -41,10 +44,21 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)initAccountInfo{
-    accountInfo = [[AccountRepository sharedInstance] getAccountInfo];
-}
 
+
+
+- (void)loadAccountInfo{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        accountInfo = [[AccountRepository sharedInstance] getAccountInfo];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
+}
+- (void)updateAccountInfo{
+    [self.tableView reloadData];
+    [[AccountRepository sharedInstance]updateAccountInfo:accountInfo];
+}
 
 #pragma mark - Table view data source
 
@@ -69,9 +83,29 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
     return cellHight;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    view.tintColor = [UIColor clearColor];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return self.view.frame.size.height*0.03;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"000");
     UserInfoDetailTableViewCell *detailCelll = [tableView dequeueReusableCellWithIdentifier:detailCelllID];
     UserInfoPictureTableViewCell *pictureCell = [tableView dequeueReusableCellWithIdentifier:pictureCellID];
+    pictureCell.selectionStyle =UITableViewCellSelectionStyleNone;
+    detailCelll.selectionStyle =UITableViewCellSelectionStyleNone;
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+                                             initWithTarget:self action:@selector(onClickAccountImage)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    [pictureCell.infoImage addGestureRecognizer:tapRecognizer];
+    [pictureCell.infoImage setUserInteractionEnabled:YES];
+
+    
     switch (indexPath.section) {
         case 0:
             pictureCell.infoImage.image = accountInfo.photo;
@@ -79,14 +113,15 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
         case 1:
             detailCelll.infotitleLabel.text = @"E-Mail";
             detailCelll.infoContentLabel.text =accountInfo.email;
-
+            detailCelll.accessoryType = UITableViewCellAccessoryNone;
+            
             return detailCelll;
         case 2:
             detailCelll.infotitleLabel.text = @"姓名";
             detailCelll.infoContentLabel.text = accountInfo.name;
             
             return detailCelll;
-
+            
         case 3:
             detailCelll.infotitleLabel.text = @"電話";
             detailCelll.infoContentLabel.text = accountInfo.phone;
@@ -95,53 +130,121 @@ static NSString *pictureCellID = @"UserInfoPictureTableViewCell";
         default:
             return detailCelll;
     }
-
+    
+    
+    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    selectSection = indexPath.section;
+    switch (indexPath.section) {
+        case 2:
+            [self presentEditAlertWithTitle:@"修改名字" withContent:accountInfo.name withKeyboardType:UIKeyboardTypeDefault];
+            break;
+        case 3:
+            [self presentEditAlertWithTitle:@"修改電話" withContent:accountInfo.phone withKeyboardType:UIKeyboardTypePhonePad];
+            break;
+            
+        default:
+            break;
+    }
     
     
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)onClickAccountImage{
+    [self presentSelectImageSourceAlertSheet];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+#pragma mark - AlertView
+
+- (void)presentSelectImageSourceAlertSheet{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *photoLibaryAction = [UIAlertAction actionWithTitle:@"開啟相簿"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * _Nonnull action) {
+                                                                  [self presentPhotoLibraryView];
+                                                                  
+                                                              }];
+    UIAlertAction *camaraAction = [UIAlertAction actionWithTitle:@"開啟相機"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             
+                                                             [self presentCamaraView];
+                                                         }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:photoLibaryAction];
+    [alertController addAction:camaraAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)presentEditAlertWithTitle:(NSString*)titleString withContent:(NSString*)content withKeyboardType:(UIKeyboardType)type{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:titleString
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.keyboardType = type;
+        textField.text = content;
+    }];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"確定"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                         UITextField *textField =alertController.textFields.firstObject;
+                                                         if (selectSection==2) {
+                                                             accountInfo.name=textField.text;
+                                                         }
+                                                         if (selectSection==3) {
+                                                             accountInfo.phone=textField.text;
+                                                         }
+                                                         [self updateAccountInfo];
+
+                                                     }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertController addAction:okAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
-*/
+#pragma mark - UIImagePickerController
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (void)initImagePickerViewController{
+    imagePickerViewController = [[UIImagePickerController alloc] init];
+    imagePickerViewController.delegate = self;
 }
-*/
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)presentPhotoLibraryView{
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        imagePickerViewController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:imagePickerViewController animated:YES completion:nil];
+    }
 }
-*/
+- (void)presentCamaraView{
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerViewController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePickerViewController.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        imagePickerViewController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+        [self presentViewController:imagePickerViewController animated:YES completion:nil];
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    accountInfo.photo = image;
+    [self updateAccountInfo];
+    
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end

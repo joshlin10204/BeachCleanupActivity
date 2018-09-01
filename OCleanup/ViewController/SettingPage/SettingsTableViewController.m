@@ -61,6 +61,8 @@
         if (cell == self.userInfoCell) {
             [self performSegueWithIdentifier:@"PresentUserInfoView" sender:nil];
         }
+        
+
     }
     
 }

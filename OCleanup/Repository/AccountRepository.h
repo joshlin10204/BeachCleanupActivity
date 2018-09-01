@@ -13,11 +13,16 @@
 
 + (instancetype)sharedInstance;
 
+- (void)loadAccountInfoFromAccountID:(NSString*)accountId;
+
+- (void)loadAccountPhotoFromAccountID:(NSString*)accountId;
+
 - (AccountInfoModel*)getAccountInfo;
+
+- (void)updateAccountInfo:(AccountInfoModel*)accountInfo;
 
 - (void)removeAccountInfo;
 
 
-- (void)loadAccountInfoFromAccountID:(NSString*)accountId;
-- (void)loadAccountPhotoFromAccountID:(NSString*)accountId;
+
 @end

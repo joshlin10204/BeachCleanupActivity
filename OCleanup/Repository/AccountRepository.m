@@ -17,7 +17,8 @@ static dispatch_once_t onceToken;
 @interface AccountRepository()
 @property (strong, nonatomic) FIRDatabaseReference * databaseRef;
 @property (strong, nonatomic) FIRStorageReference * storageRef;
-
+@property (strong, nonatomic) AccountInfoModel *accountInfo;
+@property (strong, nonatomic) NSUserDefaults *defaults;
 @end
 @implementation AccountRepository
 
@@ -28,6 +29,9 @@ static dispatch_once_t onceToken;
         instance = [[self alloc] init];
         instance.databaseRef =[[[FIRDatabase database] reference]child:ACCOUNT_DATABASE];
         instance.storageRef =[[[FIRStorage storage] reference]child:ACCOUNT_IMAGE_STORAGE];
+        instance.accountInfo = [[AccountInfoModel alloc]init];
+        instance.defaults = [NSUserDefaults standardUserDefaults];
+
 
     });
     return instance;
@@ -35,14 +39,16 @@ static dispatch_once_t onceToken;
 
 - (void)updateAccountInfo:(AccountInfoModel*)accountInfo{
     
-    [self setAccountInfoUserDefaults:accountInfo];
     NSMutableDictionary *info = [[NSMutableDictionary alloc]init];
     [info setObject:accountInfo.accountId forKey:ACCOUNT_DATABASE_KEY_ID];
     [info setObject:accountInfo.name forKey:ACCOUNT_DATABASE_KEY_NAME];
     [info setObject:accountInfo.email forKey:ACCOUNT_DATABASE_KEY_EMAIL];
     [info setObject:accountInfo.phone forKey:ACCOUNT_DATABASE_KEY_PHONE];
     NSDictionary* dictionary = [NSDictionary dictionaryWithDictionary:info];
-    [self.databaseRef  updateChildValues:dictionary];
+    [self setAccountInfoUserDefaults:dictionary];
+    [self setAccountImageUserDefaults:accountInfo.photo];
+    [[self.databaseRef child:accountInfo.accountId]  updateChildValues:dictionary];
+    [self uploadAccountPhoto:accountInfo.photo withAccountID:accountInfo.accountId];
 }
 
 
@@ -50,15 +56,14 @@ static dispatch_once_t onceToken;
 - (AccountInfoModel*)getAccountInfo{
 
     NSDictionary *info =[self getAccountInfoUserDefaults];
-    AccountInfoModel *accountInfo = [[AccountInfoModel alloc]init];
-    accountInfo.accountId = [info objectForKey:ACCOUNT_DATABASE_KEY_ID];
-    accountInfo.email = [info objectForKey:ACCOUNT_DATABASE_KEY_EMAIL];
-    accountInfo.name = [info objectForKey:ACCOUNT_DATABASE_KEY_NAME];
-    accountInfo.phone = [info objectForKey:ACCOUNT_DATABASE_KEY_PHONE];
-    accountInfo.photo =[self getAccountImageUserDefaults];
+    self.accountInfo.accountId = [info objectForKey:ACCOUNT_DATABASE_KEY_ID];
+    self.accountInfo.email = [info objectForKey:ACCOUNT_DATABASE_KEY_EMAIL];
+    self.accountInfo.name = [info objectForKey:ACCOUNT_DATABASE_KEY_NAME];
+    self.accountInfo.phone = [info objectForKey:ACCOUNT_DATABASE_KEY_PHONE];
+    self.accountInfo.photo =[self getAccountImageUserDefaults];
     
     
-    return accountInfo;
+    return self.accountInfo;
 }
 - (void)removeAccountInfo{
     
@@ -93,7 +98,7 @@ static dispatch_once_t onceToken;
 
 - (void)uploadAccountPhoto:(UIImage*)image withAccountID:(NSString*)accountId{
     
-    NSData *imageData = UIImagePNGRepresentation(image);
+    NSData *imageData = UIImageJPEGRepresentation(image,0.6) ;
     [[self.storageRef child:accountId] putData:imageData];
     
 }
@@ -102,31 +107,36 @@ static dispatch_once_t onceToken;
 #pragma mark  -UserDefaults
 
 - (void)setAccountInfoUserDefaults:(NSDictionary*)accountInfo{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:accountInfo forKey:ACCOUNT_USERDEFAULTS_KEY_INFO];
+    self.defaults = [NSUserDefaults standardUserDefaults];
+    [self.defaults setObject:accountInfo forKey:ACCOUNT_USERDEFAULTS_KEY_INFO];
+    
+    
 }
 
 - (NSDictionary*)getAccountInfoUserDefaults{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *infoData = [defaults objectForKey:ACCOUNT_USERDEFAULTS_KEY_INFO];
+    self.defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *infoData = [self.defaults objectForKey:ACCOUNT_USERDEFAULTS_KEY_INFO];
     return infoData;
 }
 - (void)removeAccountInfoUserDefaults{
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ACCOUNT_USERDEFAULTS_KEY_INFO];
+    [self.defaults removeObjectForKey:ACCOUNT_USERDEFAULTS_KEY_INFO];
+
 
 }
-
-
 - (void)setAccountImageUserDefaults:(UIImage*)image{
-    NSData *imageData = UIImagePNGRepresentation(image) ;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:imageData forKey:ACCOUNT_USERDEFAULTS_KEY_IMAGE];
+    NSData *imageData = UIImageJPEGRepresentation(image,0.6) ;
+    self.defaults = [NSUserDefaults standardUserDefaults];
+    [self.defaults setObject:imageData forKey:ACCOUNT_USERDEFAULTS_KEY_IMAGE];
 }
 
 - (UIImage*)getAccountImageUserDefaults{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData* imageData = [defaults objectForKey:ACCOUNT_USERDEFAULTS_KEY_IMAGE];
+    self.defaults = [NSUserDefaults standardUserDefaults];
+    NSData* imageData = [self.defaults objectForKey:ACCOUNT_USERDEFAULTS_KEY_IMAGE];
     UIImage *image = [UIImage imageWithData:imageData];;
     return image;
 }
+- (void)removeAccountImageUserDefaults{
+    [self.defaults removeObjectForKey:ACCOUNT_USERDEFAULTS_KEY_IMAGE];
+}
+
 @end
