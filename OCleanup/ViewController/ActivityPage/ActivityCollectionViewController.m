@@ -9,17 +9,16 @@
 #import "ActivityCollectionViewController.h"
 #import "ActivityCollectionViewCell.h"
 #import "ActivityViewController.h"
-#import "ActivityInfoData.h"
-
 #import "ActivityViewPresentationController.h"
 #import "ActivityCollectionViewFlowLayout.h"
+#import "ActivityInfoRepository.h"
 
 
-@interface ActivityCollectionViewController ()<UIViewControllerTransitioningDelegate>
+
+@interface ActivityCollectionViewController ()<UIViewControllerTransitioningDelegate,ActivityInfoRepositoryDelegate>
 {
 
-    ActivityInfoData * activityInfoData;
-    NSMutableArray * allActivityInfoArray;
+    NSArray * allActivityInfoArray;
     ActivityViewController * activityViewController;
     ActivityViewPresentationController * activityViewPresentationController;
     
@@ -48,13 +47,24 @@ static NSString * const reuseIdentifier = @"Cell";
     self.navigationController.navigationBar.shadowImage = [UIImage new];
 }
 
+#pragma mark ActivityInfoRepository
+
 - (void)initActivityInfoData{
-    activityInfoData = [[ActivityInfoData alloc]init];
-    allActivityInfoArray = [activityInfoData getAllActivityInfo];
-    [self.collectionView reloadData];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[ActivityInfoRepository sharedInstance]loadAllActivityInfo];
+    });
+    [ActivityInfoRepository sharedInstance].delegate = self;
 
 }
+- (void)loadAllActivityInfoDidFinish:(NSArray *)allActivituInfo{
+    NSLog(@"收到 :%@",allActivituInfo[0]);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        allActivityInfoArray = allActivituInfo;
+        [self.collectionView reloadData];
+        
+    });
 
+}
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -71,13 +81,23 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ActivityCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    ActivityInfoModel *activityInfo = [allActivityInfoArray objectAtIndex:indexPath.row];
     
-    NSMutableDictionary *activityInfo = [allActivityInfoArray objectAtIndex:indexPath.row];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // retrive image on global queue
+        UIImage * img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:activityInfo.imageUrl]]];
+        activityInfo.image = img;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.activityImage.image =img;
+            cell.titleLabel.text = activityInfo.title;
+            cell.subtitleLabel.text = activityInfo.subtitle;
+        });
+    });
     
     // Configure the cell
-    [cell.activityImage  setImage:[activityInfo objectForKey:ACTIVITY_INFO_IMAGE]];
-    cell.titleLabel.text = [activityInfo objectForKey:ACTIVITY_INFO_TITLE];
-    cell.subtitleLabel.text = [activityInfo objectForKey:ACTIVITY_INFO_SUBTITLE];
+
+    
 
     return cell;
 }
@@ -87,7 +107,7 @@ static NSString * const reuseIdentifier = @"Cell";
     CGRect cellFrame = [self.collectionView convertRect:attributes.frame toView:self.view];
     
     activityViewController = [[ActivityViewController alloc]init];
-    activityViewController.activityInfo = [allActivityInfoArray objectAtIndex:indexPath.row];
+    activityViewController.activityInfoModel = [allActivityInfoArray objectAtIndex:indexPath.row];
     
     activityViewPresentationController = [[ActivityViewPresentationController alloc]initWithPresentedViewController:activityViewController presentingViewController:self];
     activityViewPresentationController.cellFrame = cellFrame;

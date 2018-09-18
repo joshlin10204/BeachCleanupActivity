@@ -7,7 +7,6 @@
 //
 
 #import "ActivityViewController.h"
-#import "ActivityInfoData.h"
 #import "ActivityMainInfoView.h"
 
 @interface ActivityViewController ()<UIViewControllerTransitioningDelegate,UIScrollViewDelegate>{
@@ -30,8 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-
+    
 
     
     [self initScrollVIew];
@@ -103,7 +101,7 @@
 - (void)initActivityImageView{
     
     
-    self.activityImageView = [[UIImageView alloc]initWithImage:[self.activityInfo objectForKey:ACTIVITY_INFO_IMAGE]];
+    self.activityImageView = [[UIImageView alloc]initWithImage:self.activityInfoModel.image];
     self.activityImageView.clipsToBounds = YES;
     self.activityImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.contentView addSubview:self.activityImageView];
@@ -149,7 +147,7 @@
                                            green:(20.0f / 255.0f)
                                             blue:(20.0f / 255.0f)
                                            alpha:1];
-    titleLabel.text = [self.activityInfo objectForKey:ACTIVITY_INFO_TITLE];
+    titleLabel.text = self.activityInfoModel.title;
     [titleInfoBasicView addSubview:titleLabel];
     
     
@@ -177,7 +175,7 @@
                                               green:(127.0f / 255.0f)
                                                blue:(127.0f / 255.0f)
                                               alpha:1];
-    subtitleLabel.text = [self.activityInfo objectForKey:ACTIVITY_INFO_SUBTITLE];
+    subtitleLabel.text = self.activityInfoModel.subtitle;
     [titleInfoBasicView addSubview:subtitleLabel];
     
     
@@ -292,15 +290,15 @@
 
 
 
-    activityMainInfoView.locationLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_LOCATION];
-    activityMainInfoView.dateLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_DATE];
-    activityMainInfoView.timeLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_TIME];
-    activityMainInfoView.amountLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_AMOUNT];
-    activityMainInfoView.quotaLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_QUOTA];
-    activityMainInfoView.aboutLabel.text=[self.activityInfo objectForKey:ACTIVITY_INFO_ABOUT];
-    activityMainInfoView.latitudeString = [self.activityInfo objectForKey:ACTIVITY_INFO_LATITUDE];
-    activityMainInfoView.longitudeString = [self.activityInfo objectForKey:ACTIVITY_INFO_LONGITUDE];
-    activityMainInfoView.facebookID = [self.activityInfo objectForKey:ACTIVITY_INFO_FACEBOOKID];
+    activityMainInfoView.locationLabel.text=self.activityInfoModel.address;
+    activityMainInfoView.dateLabel.text = self.activityInfoModel.date;
+    activityMainInfoView.timeLabel.text = self.activityInfoModel.time;
+    activityMainInfoView.amountLabel.text = self.activityInfoModel.amount;
+    activityMainInfoView.quotaLabel.text = self.activityInfoModel.quota;
+    activityMainInfoView.aboutLabel.text = self.activityInfoModel.about;
+    activityMainInfoView.latitudeString = self.activityInfoModel.latitude;
+    activityMainInfoView.longitudeString = self.activityInfoModel.longitude;
+    activityMainInfoView.facebookID = self.activityInfoModel.fbId;
 }
 
 //

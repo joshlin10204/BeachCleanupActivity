@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActivityInfoModel.h"
 
 @interface ActivityViewController : UIViewController
-@property (strong,nonatomic)NSMutableDictionary *activityInfo;
+@property (strong,nonatomic)ActivityInfoModel *activityInfoModel;
 @property (strong,nonatomic)UIView *contentView;
 @property (strong,nonatomic)UIImageView *activityImageView;
 @property (strong,nonatomic)UIScrollView *scrollView;

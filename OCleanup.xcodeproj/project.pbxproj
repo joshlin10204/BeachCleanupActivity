@@ -35,8 +35,10 @@
 		034A2653212B396000B0BCAD /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034A2651212B396000B0BCAD /* LoginPage.storyboard */; };
 		034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2656212B39C900B0BCAD /* LoginViewController.m */; };
 		034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2659212B39E900B0BCAD /* RegisteredViewController.m */; };
+		03B4DF69213AF68F00D382EC /* ActivityInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B4DF68213AF68F00D382EC /* ActivityInfoModel.m */; };
 		03EC260C213AB67000118EEA /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EC2609213AB66F00118EEA /* LoadingView.xib */; };
 		03EC260D213AB67000118EEA /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC260B213AB66F00118EEA /* LoadingView.m */; };
+		03EC2610213AB71700118EEA /* ActivityInfoRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC260F213AB71700118EEA /* ActivityInfoRepository.m */; };
 		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
 		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
 		03EDA932210487EA006CCB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA931210487EA006CCB67 /* Assets.xcassets */; };
@@ -50,7 +52,6 @@
 		03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA977210E084D006CCB67 /* ActivityCollectionViewCell.m */; };
 		03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */; };
 		03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA97E210E11CD006CCB67 /* ActivityViewController.m */; };
-		03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA984211347E4006CCB67 /* ActivityInfoData.m */; };
 		54FF5F08EF24C11C9AD4C9DF /* libPods-OCleanup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A86E4FDEF2DEE726BCFA4A /* libPods-OCleanup.a */; };
 		7B1E3F0215D3B0E5A361DBC5 /* libPods-OCleanupTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78823AA0E9572C47E48151CA /* libPods-OCleanupTests.a */; };
 		B1E4DA63D1172DE4888D6D43 /* libPods-OCleanupUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7737802089BE29FD197249EC /* libPods-OCleanupUITests.a */; };
@@ -123,9 +124,13 @@
 		034A2656212B39C900B0BCAD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		034A2658212B39E900B0BCAD /* RegisteredViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteredViewController.h; sourceTree = "<group>"; };
 		034A2659212B39E900B0BCAD /* RegisteredViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteredViewController.m; sourceTree = "<group>"; };
-		03EC2609213AB66F00118EEA /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingView.xib; path = OCleanup/ViewController/Tools/LoadingView.xib; sourceTree = SOURCE_ROOT; };
-		03EC260A213AB66F00118EEA /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingView.h; path = OCleanup/ViewController/Tools/LoadingView.h; sourceTree = SOURCE_ROOT; };
-		03EC260B213AB66F00118EEA /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingView.m; path = OCleanup/ViewController/Tools/LoadingView.m; sourceTree = SOURCE_ROOT; };
+		03B4DF67213AF68F00D382EC /* ActivityInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityInfoModel.h; sourceTree = "<group>"; };
+		03B4DF68213AF68F00D382EC /* ActivityInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityInfoModel.m; sourceTree = "<group>"; };
+		03EC2609213AB66F00118EEA /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingView.xib; path = OCleanup/ViewController/Other/LoadingView.xib; sourceTree = SOURCE_ROOT; };
+		03EC260A213AB66F00118EEA /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingView.h; path = OCleanup/ViewController/Other/LoadingView.h; sourceTree = SOURCE_ROOT; };
+		03EC260B213AB66F00118EEA /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingView.m; path = OCleanup/ViewController/Other/LoadingView.m; sourceTree = SOURCE_ROOT; };
+		03EC260E213AB71700118EEA /* ActivityInfoRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityInfoRepository.h; sourceTree = "<group>"; };
+		03EC260F213AB71700118EEA /* ActivityInfoRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityInfoRepository.m; sourceTree = "<group>"; };
 		03EDA925210487EA006CCB67 /* OCleanup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCleanup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EDA928210487EA006CCB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03EDA929210487EA006CCB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -152,8 +157,6 @@
 		03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCollectionViewController.m; sourceTree = "<group>"; };
 		03EDA97D210E11CD006CCB67 /* ActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		03EDA97E210E11CD006CCB67 /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
-		03EDA983211347E4006CCB67 /* ActivityInfoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityInfoData.h; sourceTree = "<group>"; };
-		03EDA984211347E4006CCB67 /* ActivityInfoData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityInfoData.m; sourceTree = "<group>"; };
 		06A86E4FDEF2DEE726BCFA4A /* libPods-OCleanup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCleanup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1762A64EF4B9E5F8E9348965 /* Pods-OCleanupUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanupUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanupUITests/Pods-OCleanupUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5EDE64237F268D618CE4F0D8 /* Pods-OCleanupTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanupTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanupTests/Pods-OCleanupTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 			children = (
 				033C5E952131D7A6006666A1 /* AccountRepository.h */,
 				033C5E962131D7A6006666A1 /* AccountRepository.m */,
+				03EC260E213AB71700118EEA /* ActivityInfoRepository.h */,
+				03EC260F213AB71700118EEA /* ActivityInfoRepository.m */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -253,6 +258,8 @@
 			children = (
 				033C5E9D2132656C006666A1 /* AccountInfoModel.h */,
 				033C5E9E2132656C006666A1 /* AccountInfoModel.m */,
+				03B4DF67213AF68F00D382EC /* ActivityInfoModel.h */,
+				03B4DF68213AF68F00D382EC /* ActivityInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,15 +293,14 @@
 			path = LoginPage;
 			sourceTree = "<group>";
 		};
-		03EC2608213AAC2900118EEA /* Tools */ = {
+		03B4DF66213AF57000D382EC /* Other */ = {
 			isa = PBXGroup;
 			children = (
 				03EC260A213AB66F00118EEA /* LoadingView.h */,
 				03EC260B213AB66F00118EEA /* LoadingView.m */,
 				03EC2609213AB66F00118EEA /* LoadingView.xib */,
 			);
-			name = Tools;
-			path = "New Group";
+			path = Other;
 			sourceTree = "<group>";
 		};
 		03EDA91C210487EA006CCB67 = {
@@ -379,8 +385,6 @@
 		03EDA986211347F2006CCB67 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				03EDA983211347E4006CCB67 /* ActivityInfoData.h */,
-				03EDA984211347E4006CCB67 /* ActivityInfoData.m */,
 				030731F72124871D0037093E /* TicketsData.h */,
 				030731F82124871D0037093E /* TicketsData.m */,
 				0307320D2127B0020037093E /* NoticeData.h */,
@@ -405,7 +409,7 @@
 		03EDA98921135801006CCB67 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				03EC2608213AAC2900118EEA /* Tools */,
+				03B4DF66213AF57000D382EC /* Other */,
 				030731A92123401E0037093E /* BasicTabBar */,
 				03EDA97C210E0FBE006CCB67 /* ActivityPage */,
 				030731AA212340320037093E /* TicketPage */,
@@ -677,6 +681,7 @@
 				031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */,
 				0307320F2127B0020037093E /* NoticeData.m in Sources */,
 				033C5E972131D7A6006666A1 /* AccountRepository.m in Sources */,
+				03EC2610213AB71700118EEA /* ActivityInfoRepository.m in Sources */,
 				03EDA938210487EA006CCB67 /* main.m in Sources */,
 				033C5EA221326E5E006666A1 /* SettingsTableViewController.m in Sources */,
 				030731F92124871D0037093E /* TicketsData.m in Sources */,
@@ -684,9 +689,9 @@
 				034A260C2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m in Sources */,
 				030731F32124716B0037093E /* TicketsCollectionViewFlowLayout.m in Sources */,
 				03EDA95F21061D7A006CCB67 /* BasicTabBar.m in Sources */,
+				03B4DF69213AF68F00D382EC /* ActivityInfoModel.m in Sources */,
 				034A264F212B1D8500B0BCAD /* AccountImageTableViewCell.m in Sources */,
 				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
-				03EDA985211347E4006CCB67 /* ActivityInfoData.m in Sources */,
 				03EDA96821078132006CCB67 /* HomeViewController.m in Sources */,
 				030732012127A4E00037093E /* NoticeTableViewController.m in Sources */,
 				0307320B2127AFD00037093E /* NoticeTableViewCell.m in Sources */,
