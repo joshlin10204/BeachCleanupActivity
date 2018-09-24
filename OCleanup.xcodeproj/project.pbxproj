@@ -35,6 +35,7 @@
 		034A2653212B396000B0BCAD /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034A2651212B396000B0BCAD /* LoginPage.storyboard */; };
 		034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2656212B39C900B0BCAD /* LoginViewController.m */; };
 		034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2659212B39E900B0BCAD /* RegisteredViewController.m */; };
+		0383B3FC215639B800FE8589 /* ScanCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0383B3FB215639B800FE8589 /* ScanCameraViewController.m */; };
 		03B4DF69213AF68F00D382EC /* ActivityInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B4DF68213AF68F00D382EC /* ActivityInfoModel.m */; };
 		03EC260C213AB67000118EEA /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EC2609213AB66F00118EEA /* LoadingView.xib */; };
 		03EC260D213AB67000118EEA /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC260B213AB66F00118EEA /* LoadingView.m */; };
@@ -124,6 +125,8 @@
 		034A2656212B39C900B0BCAD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		034A2658212B39E900B0BCAD /* RegisteredViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteredViewController.h; sourceTree = "<group>"; };
 		034A2659212B39E900B0BCAD /* RegisteredViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteredViewController.m; sourceTree = "<group>"; };
+		0383B3FA215639B800FE8589 /* ScanCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCameraViewController.h; sourceTree = "<group>"; };
+		0383B3FB215639B800FE8589 /* ScanCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanCameraViewController.m; sourceTree = "<group>"; };
 		03B4DF67213AF68F00D382EC /* ActivityInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityInfoModel.h; sourceTree = "<group>"; };
 		03B4DF68213AF68F00D382EC /* ActivityInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityInfoModel.m; sourceTree = "<group>"; };
 		03EC2609213AB66F00118EEA /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingView.xib; path = OCleanup/ViewController/Other/LoadingView.xib; sourceTree = SOURCE_ROOT; };
@@ -293,6 +296,23 @@
 			path = LoginPage;
 			sourceTree = "<group>";
 		};
+		0383B3F82156398300FE8589 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0383B3F92156399600FE8589 /* ScanCamera */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		0383B3F92156399600FE8589 /* ScanCamera */ = {
+			isa = PBXGroup;
+			children = (
+				0383B3FA215639B800FE8589 /* ScanCameraViewController.h */,
+				0383B3FB215639B800FE8589 /* ScanCameraViewController.m */,
+			);
+			path = ScanCamera;
+			sourceTree = "<group>";
+		};
 		03B4DF66213AF57000D382EC /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +429,7 @@
 		03EDA98921135801006CCB67 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0383B3F82156398300FE8589 /* Tools */,
 				03B4DF66213AF57000D382EC /* Other */,
 				030731A92123401E0037093E /* BasicTabBar */,
 				03EDA97C210E0FBE006CCB67 /* ActivityPage */,
@@ -674,6 +695,7 @@
 				033C5E9F2132656C006666A1 /* AccountInfoModel.m in Sources */,
 				030731F021246D610037093E /* TicketsCollectionViewController.m in Sources */,
 				034A264A212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.m in Sources */,
+				0383B3FC215639B800FE8589 /* ScanCameraViewController.m in Sources */,
 				034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */,
 				03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */,
 				034A2645212B1CE200B0BCAD /* AccountInfoTableViewController.m in Sources */,

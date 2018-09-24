@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="972" y="104"/>
         </scene>
-        <!--Tickets Collection View Controller-->
+        <!--Tickets-->
         <scene sceneID="DwL-sk-jHN">
             <objects>
                 <collectionViewController id="Vge-0D-dzt" customClass="TicketsCollectionViewController" sceneMemberID="viewController">
@@ -95,11 +95,30 @@
                             <outlet property="delegate" destination="Vge-0D-dzt" id="2Ss-kc-gc5"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="LmB-ep-jNV"/>
+                    <navigationItem key="navigationItem" title="Tickets" id="UP8-MP-7gn"/>
+                    <connections>
+                        <segue destination="57J-Hz-Tym" kind="push" identifier="PresentScanCameraView" id="3Jr-wX-swS"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXN-Dr-McR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1846" y="106"/>
+        </scene>
+        <!--Scan Camera View Controller-->
+        <scene sceneID="KDu-QF-cer">
+            <objects>
+                <viewController id="57J-Hz-Tym" customClass="ScanCameraViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="08d-ZK-Vzs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="rYZ-tI-CvN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2aj-14-q9R"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uCl-Ec-DQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3250" y="49"/>
         </scene>
         <!--通知-->
         <scene sceneID="klh-rb-1mc">

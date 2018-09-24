@@ -10,11 +10,15 @@
 #import "TicketsCollectionViewFlowLayout.h"
 #import "TicketsCollectionViewCell.h"
 #import "TicketsData.h"
+#import "ScanCameraViewController.h"
+
 
 
 @interface TicketsCollectionViewController (){
     NSMutableArray * allTicketsArray;
     TicketsData *ticketsData;
+    ScanCameraViewController *scanCameraViewController;
+    BOOL isOnClickScanQRCodeBtn;
 
 }
 
@@ -34,12 +38,19 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[TicketsCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     [self initTicektsData];
-    
+    [self initScanQRCodeButtonItem];
+
+
 }
+
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    isOnClickScanQRCodeBtn = NO;
+    
     //NavigationBar 設置透明
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    //    self.navigationController.navigationBar.shadowImage = [UIImage new];
+
 }
 
 - (void)initTicektsData{
@@ -49,6 +60,21 @@ static NSString * const reuseIdentifier = @"Cell";
 
 }
 
+- (void)initScanQRCodeButtonItem{
+    
+    CGFloat height = self.navigationController.navigationBar.frame.size.height*0.7 ;
+    CGFloat width = height ;
+    UIView *itemView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width, height) ];
+    UIButton *button = [[UIButton alloc]initWithFrame:itemView.frame];
+    [button setImage:[UIImage imageNamed:@"NavigationBarItem_Ticket_ScanQRCode"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(onClickScanQRCodeBtn) forControlEvents:UIControlEventTouchUpInside];
+    
+    [itemView addSubview:button];
+    
+    UIBarButtonItem *item =[[UIBarButtonItem alloc]initWithCustomView:itemView];
+    self.navigationItem.rightBarButtonItem= item;
+
+}
 
 
 #pragma mark <UICollectionViewDataSource>
@@ -83,6 +109,17 @@ static NSString * const reuseIdentifier = @"Cell";
     
     return cell;
 }
+
+- (void)onClickScanQRCodeBtn{
+    
+    ///MARK:避免連點導致開啟太多ScanCameraView
+    if (!isOnClickScanQRCodeBtn) {
+        NSLog(@"isOnClickScanQRCodeBtn");
+        isOnClickScanQRCodeBtn = YES;
+        [self performSegueWithIdentifier:@"PresentScanCameraView" sender:nil];
+    }
+}
+
 
 
 @end

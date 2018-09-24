@@ -28,6 +28,20 @@
     
     [GIDSignIn sharedInstance].clientID = [FIRApp defaultApp].options.clientID;
     [GIDSignIn sharedInstance].delegate = self;
+    
+    
+    ///MARK: 設定UINavigationBar 背景與Title 顏色
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(111.0f/255.0f)
+                                                                  green:(205.0f/255.0f)
+                                                                   blue:(253.0f/255.0f)
+                                                                  alpha:1]];
+    
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+    attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:attrs];
+    
+
     return YES;
 }
 
