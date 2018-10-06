@@ -10,14 +10,12 @@
 #import "TicketsCollectionViewFlowLayout.h"
 #import "TicketsCollectionViewCell.h"
 #import "TicketsData.h"
-#import "ScanCameraViewController.h"
 
 
 
 @interface TicketsCollectionViewController (){
     NSMutableArray * allTicketsArray;
     TicketsData *ticketsData;
-    ScanCameraViewController *scanCameraViewController;
     BOOL isOnClickScanQRCodeBtn;
 
 }

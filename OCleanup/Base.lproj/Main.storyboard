@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="1846" y="106"/>
         </scene>
-        <!--Scan Camera View Controller-->
+        <!--ScanQR Code View Controller-->
         <scene sceneID="KDu-QF-cer">
             <objects>
-                <viewController id="57J-Hz-Tym" customClass="ScanCameraViewController" sceneMemberID="viewController">
+                <viewController id="57J-Hz-Tym" customClass="ScanQRCodeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="08d-ZK-Vzs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCl-Ec-DQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3250" y="49"/>
+            <point key="canvasLocation" x="2662" y="106"/>
         </scene>
         <!--通知-->
         <scene sceneID="klh-rb-1mc">

@@ -57,7 +57,7 @@
     LoginStatusType status =  [[AuthorizedManager sharedInstance] currentLoginStatus];
     BOOL isShouldLoginPage = viewController == [tabBarController.viewControllers objectAtIndex:1]||viewController == [tabBarController.viewControllers objectAtIndex:2]?YES:NO;
     if (status ==LoginStatusType_NotLogin &&isShouldLoginPage) {
-//        [self performSegueWithIdentifier:@"PresentLoginView" sender:nil];
+        [self performSegueWithIdentifier:@"PresentLoginView" sender:nil];
         return NO;
     }else{
         return YES;

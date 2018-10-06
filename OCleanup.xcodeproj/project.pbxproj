@@ -21,6 +21,11 @@
 		031859CD211FC8250038ED56 /* ActivityViewPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859CC211FC8250038ED56 /* ActivityViewPresentAnimation.m */; };
 		031859D7211FF4120038ED56 /* ActivityMainInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 031859D6211FF4120038ED56 /* ActivityMainInfoView.m */; };
 		031859D9211FF4210038ED56 /* ActivityMainInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031859D8211FF4210038ED56 /* ActivityMainInfoView.xib */; };
+		0330BCD0215A94C300A173EE /* ScanCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330BCCF215A94C300A173EE /* ScanCameraView.m */; };
+		0330BCD4215A976200A173EE /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330BCD3215A976200A173EE /* ScanQRCodeViewController.m */; };
+		0330BCD9215A981600A173EE /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330BCD7215A981600A173EE /* LoadingView.m */; };
+		0330BCDA215A981600A173EE /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0330BCD8215A981600A173EE /* LoadingView.xib */; };
+		0330BD1B215D4E0E00A173EE /* TicketInspectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330BD1A215D4E0E00A173EE /* TicketInspectionManager.m */; };
 		033C5E8C212C5F64006666A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 033C5E8B212C5F64006666A1 /* GoogleService-Info.plist */; };
 		033C5E932130E769006666A1 /* AuthorizedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C5E922130E769006666A1 /* AuthorizedManager.m */; };
 		033C5E972131D7A6006666A1 /* AccountRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C5E962131D7A6006666A1 /* AccountRepository.m */; };
@@ -35,10 +40,7 @@
 		034A2653212B396000B0BCAD /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034A2651212B396000B0BCAD /* LoginPage.storyboard */; };
 		034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2656212B39C900B0BCAD /* LoginViewController.m */; };
 		034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2659212B39E900B0BCAD /* RegisteredViewController.m */; };
-		0383B3FC215639B800FE8589 /* ScanCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0383B3FB215639B800FE8589 /* ScanCameraViewController.m */; };
 		03B4DF69213AF68F00D382EC /* ActivityInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B4DF68213AF68F00D382EC /* ActivityInfoModel.m */; };
-		03EC260C213AB67000118EEA /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EC2609213AB66F00118EEA /* LoadingView.xib */; };
-		03EC260D213AB67000118EEA /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC260B213AB66F00118EEA /* LoadingView.m */; };
 		03EC2610213AB71700118EEA /* ActivityInfoRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC260F213AB71700118EEA /* ActivityInfoRepository.m */; };
 		03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA929210487EA006CCB67 /* AppDelegate.m */; };
 		03EDA930210487EA006CCB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EDA92E210487EA006CCB67 /* Main.storyboard */; };
@@ -53,6 +55,7 @@
 		03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA977210E084D006CCB67 /* ActivityCollectionViewCell.m */; };
 		03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */; };
 		03EDA97F210E11CD006CCB67 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EDA97E210E11CD006CCB67 /* ActivityViewController.m */; };
+		03F7A4722168C35100B4BD55 /* TicketInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F7A4712168C35100B4BD55 /* TicketInfoModel.m */; };
 		54FF5F08EF24C11C9AD4C9DF /* libPods-OCleanup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A86E4FDEF2DEE726BCFA4A /* libPods-OCleanup.a */; };
 		7B1E3F0215D3B0E5A361DBC5 /* libPods-OCleanupTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78823AA0E9572C47E48151CA /* libPods-OCleanupTests.a */; };
 		B1E4DA63D1172DE4888D6D43 /* libPods-OCleanupUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7737802089BE29FD197249EC /* libPods-OCleanupUITests.a */; };
@@ -101,6 +104,15 @@
 		031859D5211FF4120038ED56 /* ActivityMainInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityMainInfoView.h; sourceTree = "<group>"; };
 		031859D6211FF4120038ED56 /* ActivityMainInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityMainInfoView.m; sourceTree = "<group>"; };
 		031859D8211FF4210038ED56 /* ActivityMainInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityMainInfoView.xib; sourceTree = "<group>"; };
+		0330BCCE215A94C300A173EE /* ScanCameraView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCameraView.h; sourceTree = "<group>"; };
+		0330BCCF215A94C300A173EE /* ScanCameraView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanCameraView.m; sourceTree = "<group>"; };
+		0330BCD2215A976200A173EE /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
+		0330BCD3215A976200A173EE /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
+		0330BCD6215A981600A173EE /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		0330BCD7215A981600A173EE /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		0330BCD8215A981600A173EE /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		0330BD19215D4E0E00A173EE /* TicketInspectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketInspectionManager.h; sourceTree = "<group>"; };
+		0330BD1A215D4E0E00A173EE /* TicketInspectionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketInspectionManager.m; sourceTree = "<group>"; };
 		033C5E8B212C5F64006666A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		033C5E912130E769006666A1 /* AuthorizedManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizedManager.h; sourceTree = "<group>"; };
 		033C5E922130E769006666A1 /* AuthorizedManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizedManager.m; sourceTree = "<group>"; };
@@ -125,13 +137,8 @@
 		034A2656212B39C900B0BCAD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		034A2658212B39E900B0BCAD /* RegisteredViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteredViewController.h; sourceTree = "<group>"; };
 		034A2659212B39E900B0BCAD /* RegisteredViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteredViewController.m; sourceTree = "<group>"; };
-		0383B3FA215639B800FE8589 /* ScanCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCameraViewController.h; sourceTree = "<group>"; };
-		0383B3FB215639B800FE8589 /* ScanCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanCameraViewController.m; sourceTree = "<group>"; };
 		03B4DF67213AF68F00D382EC /* ActivityInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityInfoModel.h; sourceTree = "<group>"; };
 		03B4DF68213AF68F00D382EC /* ActivityInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityInfoModel.m; sourceTree = "<group>"; };
-		03EC2609213AB66F00118EEA /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingView.xib; path = OCleanup/ViewController/Other/LoadingView.xib; sourceTree = SOURCE_ROOT; };
-		03EC260A213AB66F00118EEA /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingView.h; path = OCleanup/ViewController/Other/LoadingView.h; sourceTree = SOURCE_ROOT; };
-		03EC260B213AB66F00118EEA /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingView.m; path = OCleanup/ViewController/Other/LoadingView.m; sourceTree = SOURCE_ROOT; };
 		03EC260E213AB71700118EEA /* ActivityInfoRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityInfoRepository.h; sourceTree = "<group>"; };
 		03EC260F213AB71700118EEA /* ActivityInfoRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityInfoRepository.m; sourceTree = "<group>"; };
 		03EDA925210487EA006CCB67 /* OCleanup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCleanup.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +167,8 @@
 		03EDA97A210E0F41006CCB67 /* ActivityCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCollectionViewController.m; sourceTree = "<group>"; };
 		03EDA97D210E11CD006CCB67 /* ActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		03EDA97E210E11CD006CCB67 /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		03F7A4702168C35100B4BD55 /* TicketInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketInfoModel.h; sourceTree = "<group>"; };
+		03F7A4712168C35100B4BD55 /* TicketInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketInfoModel.m; sourceTree = "<group>"; };
 		06A86E4FDEF2DEE726BCFA4A /* libPods-OCleanup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCleanup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1762A64EF4B9E5F8E9348965 /* Pods-OCleanupUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanupUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanupUITests/Pods-OCleanupUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5EDE64237F268D618CE4F0D8 /* Pods-OCleanupTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCleanupTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCleanupTests/Pods-OCleanupTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +229,8 @@
 				030731F4212482DB0037093E /* TicketsCollectionViewCell.h */,
 				030731F5212482DB0037093E /* TicketsCollectionViewCell.m */,
 				030731FA212496F00037093E /* TicketsCollectionViewCell.xib */,
+				0330BCD2215A976200A173EE /* ScanQRCodeViewController.h */,
+				0330BCD3215A976200A173EE /* ScanQRCodeViewController.m */,
 			);
 			path = TicketPage;
 			sourceTree = "<group>";
@@ -236,11 +247,32 @@
 			path = NoticePage;
 			sourceTree = "<group>";
 		};
+		0330BCD1215A970600A173EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0330BCD5215A981600A173EE /* LoadingView */,
+				0383B3F92156399600FE8589 /* ScanCamera */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0330BCD5215A981600A173EE /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				0330BCD6215A981600A173EE /* LoadingView.h */,
+				0330BCD7215A981600A173EE /* LoadingView.m */,
+				0330BCD8215A981600A173EE /* LoadingView.xib */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
 		033C5E902130E047006666A1 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				033C5E912130E769006666A1 /* AuthorizedManager.h */,
 				033C5E922130E769006666A1 /* AuthorizedManager.m */,
+				0330BD19215D4E0E00A173EE /* TicketInspectionManager.h */,
+				0330BD1A215D4E0E00A173EE /* TicketInspectionManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -263,6 +295,8 @@
 				033C5E9E2132656C006666A1 /* AccountInfoModel.m */,
 				03B4DF67213AF68F00D382EC /* ActivityInfoModel.h */,
 				03B4DF68213AF68F00D382EC /* ActivityInfoModel.m */,
+				03F7A4702168C35100B4BD55 /* TicketInfoModel.h */,
+				03F7A4712168C35100B4BD55 /* TicketInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,31 +330,13 @@
 			path = LoginPage;
 			sourceTree = "<group>";
 		};
-		0383B3F82156398300FE8589 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				0383B3F92156399600FE8589 /* ScanCamera */,
-			);
-			path = Tools;
-			sourceTree = "<group>";
-		};
 		0383B3F92156399600FE8589 /* ScanCamera */ = {
 			isa = PBXGroup;
 			children = (
-				0383B3FA215639B800FE8589 /* ScanCameraViewController.h */,
-				0383B3FB215639B800FE8589 /* ScanCameraViewController.m */,
+				0330BCCE215A94C300A173EE /* ScanCameraView.h */,
+				0330BCCF215A94C300A173EE /* ScanCameraView.m */,
 			);
 			path = ScanCamera;
-			sourceTree = "<group>";
-		};
-		03B4DF66213AF57000D382EC /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				03EC260A213AB66F00118EEA /* LoadingView.h */,
-				03EC260B213AB66F00118EEA /* LoadingView.m */,
-				03EC2609213AB66F00118EEA /* LoadingView.xib */,
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		03EDA91C210487EA006CCB67 = {
@@ -355,6 +371,7 @@
 				033C5E9921323C79006666A1 /* Model */,
 				033C5E902130E047006666A1 /* Manager */,
 				03EDA9872113482A006CCB67 /* Animation */,
+				0330BCD1215A970600A173EE /* View */,
 				03EDA98921135801006CCB67 /* ViewController */,
 				03EDA92E210487EA006CCB67 /* Main.storyboard */,
 				03EDA931210487EA006CCB67 /* Assets.xcassets */,
@@ -429,8 +446,6 @@
 		03EDA98921135801006CCB67 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0383B3F82156398300FE8589 /* Tools */,
-				03B4DF66213AF57000D382EC /* Other */,
 				030731A92123401E0037093E /* BasicTabBar */,
 				03EDA97C210E0FBE006CCB67 /* ActivityPage */,
 				030731AA212340320037093E /* TicketPage */,
@@ -585,7 +600,7 @@
 				03EDA930210487EA006CCB67 /* Main.storyboard in Resources */,
 				033C5E8C212C5F64006666A1 /* GoogleService-Info.plist in Resources */,
 				034A2650212B1D8500B0BCAD /* AccountImageTableViewCell.xib in Resources */,
-				03EC260C213AB67000118EEA /* LoadingView.xib in Resources */,
+				0330BCDA215A981600A173EE /* LoadingView.xib in Resources */,
 				0307320C2127AFD00037093E /* NoticeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,12 +705,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0330BCD4215A976200A173EE /* ScanQRCodeViewController.m in Sources */,
 				033C5E932130E769006666A1 /* AuthorizedManager.m in Sources */,
-				03EC260D213AB67000118EEA /* LoadingView.m in Sources */,
 				033C5E9F2132656C006666A1 /* AccountInfoModel.m in Sources */,
 				030731F021246D610037093E /* TicketsCollectionViewController.m in Sources */,
 				034A264A212B1D4200B0BCAD /* AccountInfoDetailTableViewCell.m in Sources */,
-				0383B3FC215639B800FE8589 /* ScanCameraViewController.m in Sources */,
 				034A2657212B39C900B0BCAD /* LoginViewController.m in Sources */,
 				03EDA95C21061D2C006CCB67 /* BasicTabBarController.m in Sources */,
 				034A2645212B1CE200B0BCAD /* AccountInfoTableViewController.m in Sources */,
@@ -706,6 +720,7 @@
 				03EC2610213AB71700118EEA /* ActivityInfoRepository.m in Sources */,
 				03EDA938210487EA006CCB67 /* main.m in Sources */,
 				033C5EA221326E5E006666A1 /* SettingsTableViewController.m in Sources */,
+				0330BCD9215A981600A173EE /* LoadingView.m in Sources */,
 				030731F92124871D0037093E /* TicketsData.m in Sources */,
 				030731F6212482DB0037093E /* TicketsCollectionViewCell.m in Sources */,
 				034A260C2128096F00B0BCAD /* ActivityCollectionViewFlowLayout.m in Sources */,
@@ -716,11 +731,14 @@
 				03EDA92A210487EA006CCB67 /* AppDelegate.m in Sources */,
 				03EDA96821078132006CCB67 /* HomeViewController.m in Sources */,
 				030732012127A4E00037093E /* NoticeTableViewController.m in Sources */,
+				0330BCD0215A94C300A173EE /* ScanCameraView.m in Sources */,
 				0307320B2127AFD00037093E /* NoticeTableViewCell.m in Sources */,
 				031859D7211FF4120038ED56 /* ActivityMainInfoView.m in Sources */,
+				03F7A4722168C35100B4BD55 /* TicketInfoModel.m in Sources */,
 				03EDA978210E084D006CCB67 /* ActivityCollectionViewCell.m in Sources */,
 				034A265A212B39E900B0BCAD /* RegisteredViewController.m in Sources */,
 				031859C7211CA7AF0038ED56 /* ActivityViewPresentationController.m in Sources */,
+				0330BD1B215D4E0E00A173EE /* TicketInspectionManager.m in Sources */,
 				031859CA211FC7050038ED56 /* ActivityViewDismissAnimation.m in Sources */,
 				03EDA97B210E0F41006CCB67 /* ActivityCollectionViewController.m in Sources */,
 			);

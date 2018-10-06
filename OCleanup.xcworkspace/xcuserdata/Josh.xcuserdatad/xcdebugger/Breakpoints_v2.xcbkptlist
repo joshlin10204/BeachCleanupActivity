@@ -57,14 +57,94 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OCleanup/ViewController/TicketPage/TicketsCollectionViewController.m"
-            timestampString = "559498687.582816"
+            filePath = "OCleanup/Repository/AccountRepository.m"
+            timestampString = "560511985.176231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-loadAccountImageFromAccountID:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AccountRepository loadAccountImageFromAccountID:]"
+                  moduleName = "OCleanup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Josh/Documents/App/Apps/OCleanup/OCleanup/Repository/AccountRepository.m"
+                  timestampString = "560362071.836918"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__51-[AccountRepository loadAccountImageFromAccountID:]_block_invoke"
+                  moduleName = "OCleanup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Josh/Documents/App/Apps/OCleanup/OCleanup/Repository/AccountRepository.m"
+                  timestampString = "560362071.8415"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCleanup/Repository/AccountRepository.m"
+            timestampString = "560511985.176734"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-loadAccountInfoFromAccountID:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AccountRepository loadAccountInfoFromAccountID:]"
+                  moduleName = "OCleanup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Josh/Documents/App/Apps/OCleanup/OCleanup/Repository/AccountRepository.m"
+                  timestampString = "560362071.851959"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__50-[AccountRepository loadAccountInfoFromAccountID:]_block_invoke"
+                  moduleName = "OCleanup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Josh/Documents/App/Apps/OCleanup/OCleanup/Repository/AccountRepository.m"
+                  timestampString = "560362071.854515"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
