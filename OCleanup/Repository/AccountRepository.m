@@ -121,8 +121,6 @@ static dispatch_once_t onceToken;
 }
 - (void)removeAccountInfoUserDefaults{
     [self.defaults removeObjectForKey:ACCOUNT_USERDEFAULTS_KEY_INFO];
-
-
 }
 - (void)setAccountImageUserDefaults:(UIImage*)image{
     NSData *imageData = UIImageJPEGRepresentation(image,0.6) ;

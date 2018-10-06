@@ -80,6 +80,10 @@
             errorString = @"無此票券";
             break;
             
+        case TicketInspectionError_NotYetStarted:
+            errorString = @"此票券活動尚未開始";
+            break;
+            
         default:
             break;
     }

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
+#define ACTIVITY_USERDEFAULTS_KEY_ALL_INFO @"allActivityInfo"
+
 @interface ActivityInfoModel : NSObject
 @property (nonatomic,strong) NSString *activityId;
 @property (nonatomic,strong) NSString *title;

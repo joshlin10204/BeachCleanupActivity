@@ -21,6 +21,7 @@ typedef enum : NSInteger {
     TicketInspectionError_NoJoin ,
     TicketInspectionError_isCheckIn,
     TicketInspectionError_NotPaid,
+    TicketInspectionError_NotYetStarted,
 
 } TicketInspectionError;
 

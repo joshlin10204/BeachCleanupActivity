@@ -15,6 +15,8 @@ static dispatch_once_t onceToken;
 @interface ActivityInfoRepository()
 @property (strong, nonatomic) FIRDatabaseReference * databaseRef;
 @property (strong, nonatomic) FIRStorageReference * storageRef;
+@property (strong, nonatomic) NSUserDefaults *defaults;
+
 @end
 
 @implementation ActivityInfoRepository
@@ -24,7 +26,7 @@ static dispatch_once_t onceToken;
         instance = [[self alloc] init];
         instance.databaseRef =[[[FIRDatabase database] reference]child:@"activitys"];
         instance.storageRef =[[[FIRStorage storage] reference]child:@""];
-        
+        instance.defaults = [NSUserDefaults standardUserDefaults];
     });
     return instance;
 }
@@ -37,18 +39,19 @@ static dispatch_once_t onceToken;
     [self.databaseRef observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSDictionary *allInfo = snapshot.value;
         NSArray* allActivityInfoArray = [self sortAllActivityInfo:allInfo];
+        [self setAllActivityInfoUserDefaults:allInfo];
         [self.delegate loadAllActivityInfoDidFinish:allActivityInfoArray];
     }];
     
     
 }
 
-- (void)loadAccountInfoFromActivityID:(NSString*)activityId{
-    
-    [[self.databaseRef child:activityId] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        NSDictionary *info = snapshot.value;
-    }];
-    
+- (ActivityInfoModel*)getActivityInfoFromId:(NSString*)activityId{
+
+    NSDictionary *allActivityInfo = [self getAllActivityInfoUserDefaults];
+    NSDictionary *activityInfo = [allActivityInfo objectForKey:activityId];
+    ActivityInfoModel *model = [self getActivityInfoModelFromDictionary:activityInfo];
+    return model;
 }
 
 - (NSArray *)sortAllActivityInfo:(NSDictionary*)allInfo{
@@ -57,7 +60,7 @@ static dispatch_once_t onceToken;
     NSMutableArray *allActivityInfoArray = [[NSMutableArray alloc]init];
     for (NSUInteger i = keys.count; i>0; i--) {
         NSDictionary *info = [allInfo objectForKey:keys[i-1]];
-        ActivityInfoModel *model = [self getAllActivityInfoModelFromDictionary:info];
+        ActivityInfoModel *model = [self getActivityInfoModelFromDictionary:info];
         [allActivityInfoArray addObject:model];
     }
     //依照 date 排序
@@ -69,7 +72,7 @@ static dispatch_once_t onceToken;
 }
 
 
-- (ActivityInfoModel*)getAllActivityInfoModelFromDictionary:(NSDictionary*)dictionary{
+- (ActivityInfoModel*)getActivityInfoModelFromDictionary:(NSDictionary*)dictionary{
     ActivityInfoModel *model = [[ActivityInfoModel alloc]init];
     model.activityId=[dictionary objectForKey:ACTIVITY_INFO_DATABASE_ID];
     model.title=[dictionary objectForKey:ACTIVITY_INFO_DATABASE_TITLE];
@@ -90,7 +93,31 @@ static dispatch_once_t onceToken;
     return model;
 }
 
-#pragma mark  -Activity Image Storage
+
+
+#pragma mark  -UserDefaults
+
+- (void)setAllActivityInfoUserDefaults:(NSDictionary*)allActivityInfo{
+    NSData *allActivityInfoData = [NSKeyedArchiver archivedDataWithRootObject:allActivityInfo];
+    self.defaults = [NSUserDefaults standardUserDefaults];
+    [self.defaults setObject:allActivityInfoData forKey:ACTIVITY_USERDEFAULTS_KEY_ALL_INFO];
+}
+
+- (NSDictionary*)getAllActivityInfoUserDefaults{
+    self.defaults = [NSUserDefaults standardUserDefaults];
+    NSData *allActivityInfoData = [self.defaults objectForKey:ACTIVITY_USERDEFAULTS_KEY_ALL_INFO];
+    NSDictionary *allActivityInfo = [NSKeyedUnarchiver unarchiveObjectWithData:allActivityInfoData];
+    return allActivityInfo;
+    
+
+}
+
+
+
+
+
+
+#pragma mark  -NOT USE Activity Image Storage
 
 - (void)loadActivityImageFromActivityID:(NSString*)activityId{
     [[self.storageRef child:activityId]dataWithMaxSize:1 * 1024 * 1024 completion:^(NSData * _Nullable data, NSError * _Nullable error) {

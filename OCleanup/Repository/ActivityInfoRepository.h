@@ -35,4 +35,7 @@
 + (instancetype)sharedInstance;
 
 - (void)loadAllActivityInfo;
+
+- (ActivityInfoModel*)getActivityInfoFromId:(NSString*)activityId;
+
 @end

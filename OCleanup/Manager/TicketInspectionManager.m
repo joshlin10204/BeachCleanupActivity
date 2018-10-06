@@ -7,6 +7,8 @@
 //
 
 #import "TicketInspectionManager.h"
+#import "ActivityInfoRepository.h"
+
 static TicketInspectionManager *instance;
 static dispatch_once_t onceToken;
 
@@ -79,19 +81,27 @@ static dispatch_once_t onceToken;
 - (void)checkTikcetInfo:(NSDictionary*)info{
     
     TicketInfoModel *ticketInfo = [self getTicketInfoModelFromDictionary:info];
+    ActivityInfoModel *activityInfo = [[ActivityInfoRepository sharedInstance]getActivityInfoFromId:ticketInfo.activityId];
+    NSString *activityDate = activityInfo.date;
     
-    if (!ticketInfo.isPaid) {
-        [self.delegate inspectTicketDidFail:TicketInspectionError_NotPaid];
-        
-    }else if (ticketInfo.isCheckIn){
-        
-        [self.delegate inspectTicketDidFail:TicketInspectionError_isCheckIn];
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd"];
+    NSString *currentDateString = [dateFormatter stringFromDate:currentDate];
 
+    if (![activityDate isEqualToString:currentDateString]) {
+        [self.delegate inspectTicketDidFail:TicketInspectionError_NotYetStarted];
     }else{
-        
-        [self.delegate inspectTicketDidFinish:ticketInfo];
-        
+        if (!ticketInfo.isPaid) {
+            [self.delegate inspectTicketDidFail:TicketInspectionError_NotPaid];
+        }else if (ticketInfo.isCheckIn){
+            [self.delegate inspectTicketDidFail:TicketInspectionError_isCheckIn];
+        }else{
+            [self.delegate inspectTicketDidFinish:ticketInfo];
+        }
     }
+    
+
     
 }
 
